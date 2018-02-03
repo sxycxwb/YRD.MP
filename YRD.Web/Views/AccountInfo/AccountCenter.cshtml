@@ -1,0 +1,441 @@
+﻿@model YRD.Model.ViewModels.ViewAccountCenter
+@{
+    ViewBag.Title = "商家信息";
+    ViewBag.menuid = 1111;
+}
+@section css    {
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/system-manage.css" />
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?v=1.3"></script>-->
+    @*<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=sHbEAq46hWM8kVhKYf9GyuCb5ZOpkv44"></script>*@
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=E89c3170a4053d5a506cdcb11cf670b2"></script>
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb sm_ac">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/AccountInfo/AccountCenter">商家信息</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <div class="tab-content">
+                            <!--商家资料-->
+                            <div class="active tab-pane" id="business_info">
+                                @using (Ajax.BeginForm("SaveAccountCenter", null, new AjaxOptions()
+                                {
+                                    HttpMethod = "Post",
+                                    OnBegin = "SubAjax.Loading",
+                                    OnComplete = "SubAjax.Complate",
+                                    OnFailure = "SubAjax.Failure",
+                                    OnSuccess = "SubAjax.Success"
+                                }, new { @class = "form-horizontal bi_form", @role = "form", @id = "commentForm" }))
+                                {
+
+                                    <input type="hidden" name="ID" value="@Model.ID" />
+
+                                    <div class="control-group ">
+                                        <label class="control-label">商家类别</label>
+                                        <div class="controls">
+                                            <span class="help-inline">@Model.ShopTypeText</span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group ">
+                                        <label class="control-label">商家名称</label>
+                                        <div class="controls">
+                                            <span class="help-inline">@Model.ShopName</span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group ">
+                                        <label class="control-label">店铺类型</label>
+                                        <div class="controls">
+                                            <input type="text" class="m-wrap small i-center shopstyle" value="@Model.PropertyIDText" readonly />
+                                            <!--<input type="text" class="m-wrap small i-center shopstyle" value="直营型分店" readonly />-->
+                                            <!--<input type="text" class="m-wrap small i-center shopstyle" value="加盟型分店" readonly />-->
+                                            <!--<input type="text" class="m-wrap small i-center shopstyle" value="总店" readonly />-->
+                                            @*<a href="sm_ac_all_stores.html" class="all_stores_btn hide">全部店面</a>*@
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">开通时间</label>
+                                        <div class="controls">
+                                            <span class="help-inline start-time">@Model.StartTime</span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">到期时间</label>
+                                        <div class="controls">
+                                            <span class="help-inline end-time">@Model.EndTime</span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">联系人</label>
+                                        <div class="controls">
+                                            <input type="text" class="m-wrap small" name="LinkMan" value="@Model.LinkMan" datatype="*2-50" />
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">吧台电话</label>
+                                        <div class="controls">
+                                            <input type="text" class="m-wrap small" name="Tel" value="@Model.Tel" datatype="n" />
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">预订</label>
+                                        <div class="controls">
+                                            <div class="inline-block">
+                                                <span class="rd rd_check">
+                                                    <input type="radio" class="cbrd disupport_book" name="IsCanReserve" value="0" @(Model.IsCanReserve == 0 ? "Checked=\"Checked\"" : "") />
+                                                </span>
+                                                <span class="text-inline">不支持</span>
+                                            </div>
+                                            <div class="inline-block">
+                                                <span class="rd">
+                                                    <input type="radio" class="cbrd support_book" name="IsCanReserve" value="1" @(Model.IsCanReserve == 1 ? "Checked=\"Checked\"" : "") />
+                                                </span>
+                                                <span class="text-inline">支持</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="book_process">
+                                        <img class="book_arrow" src="@ConfigHelper.GetCdnUrl/Content/image/book-arrow.png" />
+                                        <img class="book_img" src="@ConfigHelper.GetCdnUrl/Content/image/book-process.png" />
+                                    </div>
+                                    <div class="control-group book_phone" style="display: none">
+                                        <label class="control-label">预订手机</label>
+                                        <div class="controls">
+                                            <input type="text" class="m-wrap small" id="phone" name="phone" value="@Model.Phone" />
+                                        </div>
+                                    </div>
+                                    <div class="control-group book_yzm" style="display: none">
+                                        <label class="control-label">验证码</label>
+                                        <div class="controls">
+                                            <input type="text" class="m-wrap small" name="VaildCode" value="@Model.VaildCode" />
+                                            <a class="btn yellow getma" onclick="getCodes()">获取验证码</a>
+                                            <a class="btn yellow regetma" style="display: none"><span>60</span> s后重发</a>
+                                        </div>
+                                    </div>
+                                    <div class="control-group opening_time">
+                                        <label class="control-label">营业时间</label>
+                                        <div class="controls">
+                                            <div class="lunch">
+                                                <span>午餐</span>
+                                                <select class="m-wrap small lunch-start" id="BusinessTimeStartLunch" name="BusinessTimeStartLunch">
+                                                    <option value=""></option>
+                                                    <option value="11:00">11:00</option>
+                                                    <option value="12:00">12:00</option>
+                                                    <option value="13:00">13:00</option>
+                                                    <option value="14:00">14:00</option>
+                                                    <option value="15:00">15:00</option>
+                                                    <option value="16:00">16:00</option>
+                                                    <option value="17:00">17:00</option>
+                                                    <option value="18:00">18:00</option>
+                                                </select>
+                                                <span>到</span>
+                                                <select class="m-wrap small lunch-end" id="BusinessTimeEndLunch" name="BusinessTimeEndLunch">
+                                                    <option value=""></option>
+                                                    <option value="11:00">11:00</option>
+                                                    <option value="12:00">12:00</option>
+                                                    <option value="13:00">13:00</option>
+                                                    <option value="14:00">14:00</option>
+                                                    <option value="15:00">15:00</option>
+                                                    <option value="16:00">16:00</option>
+                                                    <option value="17:00">17:00</option>
+                                                    <option value="18:00">18:00</option>
+                                                </select>
+                                            </div>
+                                            <div class="dinner">
+                                                <span>晚餐</span>
+                                                <select class="m-wrap small dinner-start" id="BusinessTimeStartDinner" name="BusinessTimeStartDinner">
+                                                    <option value=""></option>
+                                                    <option value="18:00">18:00</option>
+                                                    <option value="19:00">19:00</option>
+                                                    <option value="20:00">20:00</option>
+                                                    <option value="21:00">21:00</option>
+                                                    <option value="22:00">22:00</option>
+                                                    <option value="23:00">23:00</option>
+                                                    <option value="00:00">00:00</option>
+                                                </select>
+                                                <span>到</span>
+                                                <select class="m-wrap small dinner-end" id="BusinessTimeEndDinner" name="BusinessTimeEndDinner">
+                                                    <option value=""></option>
+                                                    <option value="18:00">18:00</option>
+                                                    <option value="19:00">19:00</option>
+                                                    <option value="20:00">20:00</option>
+                                                    <option value="21:00">21:00</option>
+                                                    <option value="22:00">22:00</option>
+                                                    <option value="23:00">23:00</option>
+                                                    <option value="00:00">00:00</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">所在地</label>
+                                        <div class="controls">
+                                            @*<span class="help-inline">山西省----太原市----小店区----晋阳街</span>*@
+                                            <span class="help-inline">@Model.ProvinceIDText----@Model.CityIDText----@Model.CountyIDText----@Model.AreaIDText</span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">详细地址</label>
+                                        <div class="controls">
+                                            <span class="help-inline">@Model.AddressInfo</span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">地图位置</label>
+                                        <div class="controls">
+                                            <span class="help-inline">经度：</span>
+                                            <input type="text" class="m-wrap medium" id="jd" name="MapLng" readonly value="@Model.MapLng" />
+                                            <span class="help-inline">纬度：</span>
+                                            <input type="text" class="m-wrap medium" id="wd" name="MapLat" readonly value="@Model.MapLat" />
+                                            <!--显示地图-->
+                                            <div id="container"></div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group business_certificate">
+                                        <label class="control-label">商家证件</label>
+                                        <div class="controls">
+                                            @*<span class="help-inline">上传时间：2016-02-30</span>
+                                                <br /><br />*@
+                                            <!--营业执照-->
+                                            <div class="businessImg">
+                                                @if (Model.ImageBusinesslicence.IsNull())
+                                                {
+                                                    <img src="@ConstantHelper.uploaderimg" />
+                                                }
+                                                else
+                                                {
+                                                    <img src="@ConfigHelper.GetFileServiceUrl@Model.ImageBusinesslicence" />
+                                                }
+                                                <p>营业执照</p>
+                                                <div class="modal-backdrop">
+                                                    <div class="showImg">
+                                                        <a href="" class="closed"></a>
+                                                        <img src="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--餐饮服务许可证-->
+                                            <div class="businessImg">
+                                                @if (Model.ImagePermitlicense.IsNull())
+                                                {
+                                                    <img src="@ConstantHelper.uploaderimg" />
+                                                }
+                                                else
+                                                {
+                                                    <img src="@ConfigHelper.GetFileServiceUrl@Model.ImagePermitlicense" />
+                                                }
+
+                                                <p>餐饮服务许可证</p>
+                                                <div class="modal-backdrop">
+                                                    <div class="showImg">
+                                                        <a href="" class="closed"></a>
+                                                        <img src="" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">列表图</label>
+                                        <div class="controls file-group">
+                                            <span class="help-inline file">图片显示尺寸为170*140，大小为1M，请选择相同比例的图片上传，只能上传一张</span>
+                                            <div class="upload-box">
+                                                <div class="upload-list upload-singleImg">
+                                                    <div class="upload-item">
+                                                        @if (Model.ListImg.IsNull())
+                                                        {
+                                                            <img class="upload" src="@ConfigHelper.GetFileServiceUrl/Content/image/upload.png" />
+                                                        }
+                                                        else
+                                                        {
+                                                            <img class="upload" src="@ConfigHelper.GetFileServiceUrl@Model.ListImg" />
+                                                        }
+                                                        <a href="javascript:;" class="upload-delete"></a>
+                                                        <input id="uploadify1" class="upload-file" type="file" />
+                                                        <input type="hidden" name="ListImg" value="@Model.ListImg" data-file="0" />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">环境图</label>
+                                        <div class="controls">
+                                            <span class="help-inline file">图片显示尺寸为750*308，大小为3M，请选择相同比例的图片上传，最多上传十张</span>
+                                            <div class="upload-box">
+                                                <div class="upload-list upload-multiImg">
+                                                    @if (Model.ImgUrlList.Count < 10)
+                                                    {
+                                                        foreach (var item in Model.ImgUrlList)
+                                                        {
+                                                            <div class="upload-item">
+                                                                @if (item.ImgUrl.IsNull())
+                                                                {
+                                                                    <img class="upload" src="@ConstantHelper.uploaderimg" />
+                                                                }
+                                                                else
+                                                                {
+                                                                    <img class="upload" src="@ConfigHelper.GetFileServiceUrl/@item.ImgUrl" />
+                                                                }
+                                                                <a href="javascript:;" class="upload-delete"></a>
+                                                                <input id="uploadify" class="upload-file" type="file" />
+                                                                <input type="hidden" name="imgurl" value="@item.ImgUrl" data-file="1" />
+                                                            </div>
+                                                        }
+                                                        <div class="upload-item">
+                                                            <img class="upload" src="@ConfigHelper.GetFileServiceUrl/Content/image/upload.png" />
+                                                            <a href="javascript:;" class="upload-delete"></a>
+                                                            <input id="uploadify" class="upload-file" type="file" />
+                                                            <input type="hidden" name="imgurl" value="" data-file="0" />
+                                                        </div>
+                                                    }
+                                                    else
+                                                    {
+                                                        foreach (var item in Model.ImgUrlList)
+                                                        {
+                                                            <div class="upload-item">
+                                                                @if (item.ImgUrl.IsNull())
+                                                                {
+                                                                    <img class="upload" src="@ConstantHelper.uploaderimg" />
+                                                                }
+                                                                else
+                                                                {
+                                                                    <img class="upload" src="@ConfigHelper.GetFileServiceUrl/@item.ImgUrl" />
+                                                                }
+                                                                <a href="javascript:;" class="upload-delete"></a>
+                                                                <input id="uploadify" class="upload-file" type="file" />
+                                                                <input type="hidden" name="imgurl" value="@item.ImgUrl" data-file="1" />
+                                                            </div>
+                                                        }
+                                                    }
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label">商家简介</label>
+                                        <div class="controls">
+                                            <textarea name="Introduction" cols="1" rows="10" class="span8 m-wrap">@Model.Introduction</textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn blue medium">保存</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <!--本页js-->
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/system-manage.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/map-show.js"></script>
+    <script src="~/Content/jQuery-File-Upload-9.5.7/js/vendor/jquery.ui.widget.js"></script>
+    <script src="~/Content/jQuery-File-Upload-9.5.7/js/jquery.iframe-transport.js"></script>
+    <script src="~/Content/jQuery-File-Upload-9.5.7/js/jquery.fileupload.js"></script>
+    <script src="~/Content/jQuery-File-Upload-9.5.7/js/jquery.fileupload-process.js"></script>
+    <script src="~/Content/JS/MyForm.js"></script>
+
+
+    <script type="text/javascript">
+$(function () {
+    $("#BusinessTimeStartLunch").val('@Model.BusinessTimeStartLunch');
+    $("#BusinessTimeEndLunch").val('@Model.BusinessTimeEndLunch');
+    $("#BusinessTimeStartDinner").val('@Model.BusinessTimeStartDinner');
+    $("#BusinessTimeEndDinner").val('@Model.BusinessTimeEndDinner');
+    })
+    </script>
+    <script type="text/javascript">
+        var iframe = false;
+        if ($.support.leadingWhitespace) {
+            iframe = true;
+        }
+        $("#uploadify1").fileupload({
+            url: "/AccountInfo/uploadimagelistimg",
+            paramName: "fileData",
+            formData: {'width': 170, 'height': 140, 'size':1048576},
+            dataType: 'json',
+            iframe: iframe,
+            acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+            //maxFileSize: 1048576, // 1M
+            done: function (e, result) {
+                var resultJson = eval(result.result);//$.parseJSON(result.result);
+                if (resultJson.status == "0") {
+                    alert(resultJson.error);
+                    return;
+                }
+                else {
+                    $(this).siblings('img.upload').attr('src', resultJson.filelink);
+                    $(this).siblings('input[type="hidden"]').val(resultJson.filepath);
+                    $(this).siblings('input[type="hidden"]').attr('data-file', '1');
+                }
+            }
+        });
+
+        $('.upload-multiImg').on('click', '.upload-file', function () {
+            $(this).fileupload({
+                url: "/AccountInfo/uploadimageenvironmentimg",
+                paramName: "fileData",
+                formData: {'width': 750, 'height': 308, 'size': 3145728},
+                dataType: 'json',
+                iframe: iframe,
+                acceptFileTypes: /(\.|\/)(gif|jpe?g|png)$/i,
+                //maxFileSize: 3145728, // 3M
+                done: function (e, result) {
+                    var resultJson = eval(result.result);//$.parseJSON(result.result);
+                    if (resultJson.status == "0") {
+                        var json = {
+                            "type": "warning",
+                            "mainMsg": resultJson.error,
+                            "detailMsg": "",
+                            "close": true,
+                            "btnText": ["确定"]
+                        }
+                        $.jhNotifyBar(json);
+                        return;
+                    }
+                    else {
+
+                        $(this).siblings('img.upload').attr('src', resultJson.filelink);
+                        $(this).siblings('input[type="hidden"]').val(resultJson.filepath);
+                       var datafile= $(this).siblings('input[type="hidden"]').attr('data-file');
+                       if (datafile==0) {
+                           uploadItem(10,'@ConfigHelper.GetCdnUrl/Content/image/upload.png','uploadify','imgurl','imgurl','')
+                       }
+                        $(this).siblings('input[type="hidden"]').attr('data-file', '1');
+                    }
+                }
+
+            })
+        });
+        function getCodes() {
+            $.post("/AccountInfo/PostVaildCode", { phone: $("#phone").val() }, function (result) {
+                alert(result.Message);
+                if (result.Code == 1) {
+                    getma();
+                }
+
+            }, "json");
+        }
+    </script>
+}
+

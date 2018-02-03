@@ -1,0 +1,142 @@
+﻿
+@{
+    ViewBag.menuid = 1119;
+    ViewBag.Title = "分销订单";
+}
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+<!--右侧内容-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionBalance">三级分销</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionOrder">分销订单</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li><a href="/DistributionBank/DistributionBalance">分销账户</a></li>
+                            <li><a href="/DistributionBank/JinbiDetail">账户明细</a></li>
+                            <li class="active"><a href="#td_distribute_order" data-toggle="tab">分销订单</a></li>
+                            <li><a href="/DistributionBank/DistributionContract">签署合同</a></li>
+                            <li><a href="/DistributionBank/DistributionPercentage">返利设置</a></li>
+                            <li><a href="/DistributionBank/DistributionOpen">分销开启</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--分销订单-->
+                            <div class="active tab-pane" id="td_distribute_order">
+                                <table class="table table-hover table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>时间</th>
+                                            <th>订单号</th>
+                                            <th>订单金额</th>
+                                            <th>分销比例</th>
+                                            <th>分销金额</th>
+                                            <th>状态</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="time">2017-12-12 <br />12:12:12</td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td class="f00">未返</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td>已返</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!--分页区-->
+                                <div class="row-fluid">
+                                    <div class="span12">
+                                        <div class="pagination">
+                                            <ul>
+                                                <li class="prev disabled">
+                                                    <a href="#">←<span class="hidden-480">Prev</span></a>
+                                                </li>
+                                                <li class="active"><a href="#">1</a></li>
+                                                <li><a href="#">2</a></li>
+                                                <li><a href="#">3</a></li>
+                                                <li><a href="#">4</a></li>
+                                                <li><a href="#">5</a></li>
+                                                <li><a href="#">...</a></li>
+                                                <li><a href="#">20</a></li>
+                                                <li class="next">
+                                                    <a href="#"><span class="hidden-480">Next</span>→</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="~/Content/JS/MyTable.js"></script>
+    <script>
+        var isPage = true;
+        var dataSource = "/DistributionBank/getJinbiDetail";
+
+        var searchWhereData = function () {
+            return {
+            }
+        }
+
+        var searchData = function (e) {
+            var sd = {
+                start: e.start,
+                length: e.length,
+                draw: e.draw
+            };
+            var object = $.extend(sd, searchWhereData())
+            return object;
+        };
+        var columns = [//绑定数据 
+
+            {
+                data: 'CreateTime'
+            },
+            {
+                data: 'Jinbi'
+            },
+            {
+                data: 'TypeName'
+            },
+
+            { data: 'Remark' },
+        ];
+    </script>
+}

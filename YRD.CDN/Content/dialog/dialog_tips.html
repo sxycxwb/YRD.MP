@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>dialog</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/jh_alert.css">
+
+
+	<script type="text/javascript" src = "js/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src = "js/jh_alert_tips.js"></script>
+	<style type="text/css">
+		
+		.option_box > p, .option_box > h2{
+			text-indent: 1em;
+		}
+
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-12 option_box">
+				<h3 class = "text-danger">
+					信息提示弹框需要三个文件一起使用<small>( 用户后台提示信息弹窗 )</small> 
+					<a class = "text-primary" href="js/jh_alert_tips.js" target= "_blank"> jh_alert_tips.js</a>、 
+					<a class = "text-primary" href="css/jh_alert.css" target= "_blank"> jh_alert.css</a>、
+					<a class = "text-primary" href="css/font-awesome.min.css" target= "_blank"> font-awesome.min.css</a>
+					<small>( 字体图标库 )</small> 
+				</h3>
+				<h5>
+					<p class = "bg-primary" style = "padding:10px; border-radius : 5px;">参数介绍:</p>
+				</h5>
+				<p>type            : 'success',                                        // 弹框类型（success, error, warning）</p>
+	            <p>mainMsg         : 'your main tips message',                         // 主要内容</p>
+	            <p>detailMsg       : 'your detail tips message',                       // 详细内容</p>
+	            <p>delay           : 3000,                                             // 显示延迟时间</p> 
+	            <p>animationSpeed  : 200,                                              // 运动时间</p>
+	            <p>cssClass        : '',                                               // 追加 class 类名</p>
+	            <p>close           : false,                                            // 是否显示底部 确定 取消 按钮</p>
+	            <p>btnText         : ['OK', 'Cancle'],                                 // 底部按钮文字 ( 数组中有几项就出项几个按钮 )</p>
+	            <p>onClickOk       : null,                                             // 确定的回调函数</p>
+	            <p>onClickCancle   : null,                                             // 取消的回调函数</p>
+			</div>
+			<div class="col-md-12">
+				<h5>
+					<p class = "bg-primary" style = "padding:10px; border-radius : 5px; color: #fff">无操作按钮 / 自动隐藏 ( close = false )</p>
+				</h5>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-4">
+					<p> 成功 </p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="6">
+{
+	"type" : "success",
+	"mainMsg" : "这是成功提示",
+	"detailMsg" : "这是详细信息提示",
+	"close" : false
+}</textarea>
+					</br>
+					<button class="btn btn-success">成功 ( type = "success")</button>
+				</div>
+				<div class="col-md-4">
+					<p> 失败 </p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="6">
+{
+	"type" : "error",
+	"mainMsg" : "这是失败提示",
+	"detailMsg" : "这是详细信息提示",
+	"close" : false
+}</textarea>
+					</br>
+					<button class="btn btn-danger">失败 ( type = "error")</button>
+				</div>
+				<div class="col-md-4">
+					<p> 警告 </p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="6">
+{
+	"type" : "warning",
+	"mainMsg" : "这是警告提示",
+	"detailMsg" : "这是详细信息提示",
+	"close" : false
+}</textarea>
+					</br>
+					<button class="btn btn-warning">警告 ( type = "warning")</button>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<h5>
+					<p class = "bg-primary" style = "padding:10px; border-radius : 5px; color: #fff">有操作按钮 / 无回掉函数 ( close = true )</p>
+				</h5>
+			</div>
+			<div class="col-md-12">
+				<div class="col-md-4">
+					<p> 显示默认的操作按钮 </p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="7">
+{
+	"type" : "success",
+	"mainMsg" : "这是成功提示",
+	"detailMsg" : "这是详细信息提示",
+	"close" : true
+}</textarea>
+					</br>
+					<button class="btn btn-success">成功</button>
+				</div>
+				<div class="col-md-4">
+					<p> 自定义两个操作按钮 </p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="7">
+{
+	"type" : "error",
+	"mainMsg" : "这是成功提示",
+	"detailMsg" : "这是详细信息提示",
+	"close" : true,
+	"btnText" : ["确定", "取消"]
+}</textarea>
+					</br>
+					<button class="btn btn-danger">失败</button>
+				</div>
+				<div class="col-md-4">
+					<p> 自定义一个按钮 </p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="7">
+{
+	"type" : "warning",
+	"mainMsg" : "这是成功提示",
+	"detailMsg" : "这是详细信息提示",
+	"close" : true,
+	"btnText" : ["确定"]
+}</textarea>
+					</br>
+					<button class="btn btn-warning">警告</button>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<h5>
+					<p class = "bg-primary" style = "padding:10px; border-radius : 5px; color: #fff">有操作按钮 / 有回掉函数 ( close = true )</p>
+				</h5>
+				<div class="col-md-6">
+					<p> 成功回掉函数 </p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="10">
+{
+	"type" : "success",
+	"mainMsg" : "这是成功提示",
+	"detailMsg" : "这是详细信息提示",
+	"close" : true,
+	"btnText" : ["确定", "取消"],
+	"onClickOk" : function(){
+		alert("这是成功的回掉函数")
+	}
+}</textarea>
+					</br>
+					<button id = "ok" class="btn btn-success">成功</button>
+				</div>
+				<div class="col-md-6">
+					<p> 取消回掉函数 </p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="10">
+{
+	"type" : "error",
+	"mainMsg" : "这是成功提示",
+	"detailMsg" : "这是详细信息提示",
+	"close" : true,
+	"btnText" : ["确定", "取消"],
+	"onClickCancle" : 'function(){
+		alert("这是取消的回掉函数")
+	}'
+}</textarea>
+					</br>
+					<button id = "cancel" class="btn btn-danger">失败</button>
+				</div>
+			</div>
+			<div class="col-md-12">
+				<h5>
+					<p class = "bg-primary" style = "padding:10px; border-radius : 5px; color: #fff">弹出指定的 html 标签 / jqObject</p>
+				</h5>
+				<div class="col-md-4">
+					<p>指定 html 标签</p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="10">
+{
+	"type" : "error",
+	"mainMsg" : "<span class = 'text-danger'>这是成功提示</span>",
+	"detailMsg" : "这是详细信息提示",
+	"close" : true,
+	"btnText" : ["确定", "取消"]
+}</textarea>
+					</br>
+					<button class = "btn btn-primary">指定 html 标签</button>
+				</div>
+				<div class="col-md-4">
+					<p>指定 jquery 对象</p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="10">
+{
+	"type" : "error",
+	"mainMsg" : "$('#tipsDialog_1')",
+	"detailMsg" : "$('#tipsDialog_2')",
+	"close" : true,
+	"btnText" : ["确定", "取消"]
+}</textarea>
+					</br>
+					<button id = "jq" class = "btn btn-primary">指定 jquery 对象</button>
+				</div>
+				<div class="col-md-4">
+					<p>被弹出的 jquery 对象代码</p>
+					<textarea disabled class = "form-control" name="" id="" cols="30" rows="10">
+<div id="tipsDialog_1" style = "display:none">
+	这是主要的 jquery object 对象
+</div>
+<div id="tipsDialog_2" style = "display:none">
+	这是详情的 jquery object 对象
+</div></textarea>
+					</br>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="tipsDialog_1" style = "display:none">
+		这是主要的 jquery object 对象
+	</div>
+	<div id="tipsDialog_2" style = "display:none">
+		这是详情的 jquery object 对象
+	</div>
+	<script type="text/javascript">
+
+		$(".btn").click(function(){
+
+			var code = $(this).siblings("textarea").val();
+
+			if($(this).attr("id") == "ok"){
+
+				var json = {
+					"type" : "success",
+					"mainMsg" : "这是成功提示",
+					"detailMsg" : "这是详细信息提示",
+					"close" : true,
+					"btnText" : ["确定", "取消"],
+					"onClickOk" : function(){
+						alert("这是成功的回掉函数")
+					}
+				}
+
+			}else if($(this).attr("id") == "cancel"){
+
+				var json = {
+					"type" : "success",
+					"mainMsg" : "这是成功提示",
+					"detailMsg" : "这是详细信息提示",
+					"close" : true,
+					"btnText" : ["确定", "取消"],
+					"onClickCancle" : function(){
+						alert("这是取消的回掉函数")
+					}
+				}
+
+			}else if($(this).attr("id") == "jq"){
+
+				var json = {
+					"type" : "success",
+					"mainMsg" : $("#tipsDialog_1"),
+					"detailMsg" : $('#tipsDialog_2'),
+					"close" : true,
+					"btnText" : ["确定", "取消"]
+				}
+
+			}else{
+				var json = JSON.parse(code);
+			}
+
+			$.jhNotifyBar(json)
+
+		});
+
+	</script>
+
+
+</body>
+</html>

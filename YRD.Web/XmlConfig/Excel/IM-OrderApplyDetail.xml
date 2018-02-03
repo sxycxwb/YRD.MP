@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>MaterialTitle</code>
+    <name>名称</name>
+  </field>
+  <field>
+    <code>MaterialSpecName</code>
+    <name>规格</name>
+  </field>
+  <field>
+    <code>MaterialUnitName</code>
+    <name>单位</name>
+  </field>
+  <field>
+    <code>CountBudget</code>
+    <name>采购数量</name>
+  </field>
+  <field>
+    <code>CountReal</code>
+    <name>审核数量</name>
+  </field>
+  <field>
+    <code>RemainCount</code>
+    <name>库存量</name>
+  </field>
+  <field>
+    <code>PriceBudget</code>
+    <name>采购单价</name>
+  </field>
+  <field>
+    <code>PriceReal</code>
+    <name>审核单价</name>
+  </field>
+  <field>
+    <code>TotalPriceBudget</code>
+    <name>预算总额</name>
+  </field>
+  <field>
+    <code>TotalPriceReal</code>
+    <name>核准总额</name>
+  </field>
+  <field>
+    <code>LastPrice</code>
+    <name>上次入库单价</name>
+  </field>
+</fields>

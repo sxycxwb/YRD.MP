@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>LoginName</code>
+    <name>姓名</name>
+  </field>
+  <field>
+    <code>RoleName</code>
+    <name>角色</name>
+  </field>
+  <field>
+    <code>CreateTime</code>
+    <name>开卡时间</name>
+  </field>
+  <field>
+    <code>CardName</code>
+    <name>卡号</name>
+  </field>
+  <field>
+    <code>CardName</code>
+    <name>持卡人</name>
+  </field>
+  <field>
+    <code>CardUserPhone</code>
+    <name>手机号</name>
+  </field>
+  <field>
+    <code>FirstBuyMoney</code>
+    <name>开卡金额</name>
+  </field>
+  <field>
+    <code>TotalMoney</code>
+    <name>累计充值</name>
+  </field>
+</fields>

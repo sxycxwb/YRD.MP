@@ -1,0 +1,214 @@
+﻿@model YRD.Model.ViewModels.ViewModel
+@{
+    ViewBag.Title = "营业明细--订单详情";
+}
+
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+    <!--本页.css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/iconbg.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/common.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/operation_manage.css" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li class="backprev">
+                        <a href="javascript:history.back();">返回上一级</a>
+                    </li>
+                    <li>
+                        <b class="iconbg txt"></b>
+                        <a>经营管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/BusinessRecords/OmOperationRecord">营业记录</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/BusinessRecords/OmOrOperationDetail">营业明细</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a>订单详情</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--详情内容-->
+        <div class="row-fluid" id="om_operation_record">
+            <!-- 桌台详情-->
+            <div class="odContainer">
+                <div class="tabbable portlet-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#tableDetail" data-toggle="tab">桌台详情</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="active tab-pane" id="tableDetail">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <td class="tdTitle">餐桌</td>
+                                        <td class="tdCont"><span>@ViewBag.RoomName  @Model.Name</span> - <span>@ViewBag.TableName</span></td>
+                                        <td class="tdTitle">订单金额</td>
+                                        <td class="tdCont"><span class="t-lock">@ViewBag.OrderPrice</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">订单编号</td>
+                                        <td class="tdCont">@ViewBag.ID</td>
+                                        <td class="tdTitle">人数</td>
+                                        <td class="tdCont">@ViewBag.PeopleCount</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">开台时间</td>
+                                        <td class="tdCont">@ViewBag.CreateTime</td>
+                                        <td class="tdTitle">点餐</td>
+                                        <td class="tdCont">@ViewBag.OrderSource</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">结账时间</td>
+                                        <td class="tdCont">@ViewBag.CompleteOrderTime</td>
+                                        <td class="tdTitle">姓名</td>
+                                        <td class="tdCont">@ViewBag.UserName（@ViewBag.Phone）</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">菜品金额</td>
+                                        <td class="tdCont"><span class="t-lock">@ViewBag.OrderPrice</span></td>
+                                        <td class="tdTitle">客人口味</td>
+                                        <td class="tdCont">@ViewBag.FoodTaste1</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">点餐优惠</td>
+                                        <td class="tdCont">@ViewBag.Discount</td>
+                                        <td class="tdTitle">客人忌口</td>
+                                        <td class="tdCont">@ViewBag.FoodTaste2</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="tdTitle">订单备注</td>
+                                        <td colspan="3">@ViewBag.Introduction</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 菜品明细-->
+            <div class="odContainer">
+                <div class="tabbable portlet-tabs">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#foodDetail" data-toggle="tab">菜品明细</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="active tab-pane" id="foodDetail">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>名称</th>
+                                        <th>类别</th>
+                                        <th>规格</th>
+                                        <th>数量</th>
+                                        <th>单价</th>
+                                        <th>小计</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @*@foreach (var item in collection)
+                                        {
+
+                                        }*@
+                                    @foreach (var item in Model.ListOrder)
+                                    {
+                                        if (item.AddType == 1)
+                                        {
+                                            <tr>
+                                                <td>@item.FoodName</td>
+                                                <td>@item.FoodTypeName</td>
+                                                <td>@item.FoodSpecificationsName</td>
+                                                <td>@item.GoodsCount</td>
+                                                <td>@item.GoodsPrice</td>
+                                                <td>@item.GoodsTotalPrice</td>
+                                            </tr>
+                                        }
+                                        else if (item.AddType == 2)
+                                        {
+                                            <tr class="fdGiveRow">
+                                                <td>@item.FoodName</td>
+                                                <td>@item.FoodTypeName</td>
+                                                <td>@item.FoodSpecificationsName</td>
+                                                <td>@item.GoodsCount</td>
+                                                <td>@item.GoodsPrice</td>
+                                                <td>@item.GoodsTotalPrice</td>
+                                            </tr>
+                                        }
+                                        else if (item.AddType == 3)
+                                        {
+                                            <tr class="fdReturnRow">
+                                                <td>@item.FoodName</td>
+                                                <td>@item.FoodTypeName</td>
+                                                <td>@item.FoodSpecificationsName</td>
+                                                <td>@item.GoodsCount</td>
+                                                <td>@item.GoodsPrice</td>
+                                                <td>@item.GoodsTotalPrice</td>
+                                            </tr>
+                                        }
+                                    }
+                                    @*<tr>
+                                            <td>麻婆豆角</td>
+                                            <td>经典菜系</td>
+                                            <td>大份</td>
+                                            <td>1</td>
+                                            <td>18</td>
+                                            <td>18</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="om_or_od_comboDetail.html">超值套餐</a></td>
+                                            <td>套餐</td>
+                                            <td>默认</td>
+                                            <td>1</td>
+                                            <td>88</td>
+                                            <td>88</td>
+                                        </tr>
+                                        <tr class="fdGiveRow">
+                                            <td>麻婆豆角（赠）</td>
+                                            <td>经典菜系</td>
+                                            <td>大份</td>
+                                            <td>1</td>
+                                            <td>18</td>
+                                            <td>0</td>
+                                        </tr>
+                                        <tr class="fdReturnRow">
+                                            <td>刀削面（退）</td>
+                                            <td>经典菜系</td>
+                                            <td>大份</td>
+                                            <td>1</td>
+                                            <td>18</td>
+                                            <td>-18</td>
+                                        </tr>*@
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/common.js"></script>
+    <script>
+        jQuery(document).ready(function () {
+            App.init();
+            Index.init();
+        });
+        $(function () {
+            $('#loadSidebar').load('loadsidebar.html', function () {
+                toggleSidebar();
+                jumpSubmenu('yyjl');
+            });
+        });
+    </script>
+}

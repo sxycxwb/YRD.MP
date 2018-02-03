@@ -1,0 +1,62 @@
+﻿@model YRD.Model.ViewModels.ViewShopSms
+@{
+    ViewBag.Title = "短信余额";
+    ViewBag.menuid = 1117;
+}
+@section css    {
+    <!--本页css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/MessageBank/MessageBalance">短信余额</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#message_balance" data-toggle="tab">短信余额</a></li>
+                            <li><a href="/MessageBank/RechargeDetail">购买列表</a></li>
+                            <li><a href="/MessageBank/MessageDetail">短信明细</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--账户余额-->
+                            <div class="active tab-pane" id="message_balance">
+                                 <div class="numBox">
+                                    <div>剩余短信（条）：</div>
+                                    <div>
+                                        <span class="messageNum"><b>@Model.SmsCount</b></span>
+                                        <a href="/MessageBank/AddMessageRecharge" class="btn blue">立即购买</a>
+                                    </div>
+                                 </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+
+    <!--本页js-->
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/account-manage.js"></script>
+
+}

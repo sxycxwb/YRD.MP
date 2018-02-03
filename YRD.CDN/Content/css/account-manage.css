@@ -1,0 +1,325 @@
+/*
+账户余额--账户余额
+*/
+.numBox{
+    background-color: #F3F3F3;
+    padding: 20px 10px;
+}
+.numBox > div{
+    margin-bottom: 10px;
+}
+#account_balance .balanceBox,
+#message_balance .messageNum,
+#promise_money .balanceBox{
+    font-size: 30px;
+    margin-right: 50px;
+    vertical-align: middle;
+}
+#account_balance .balanceInfo {
+    margin-top: 20px;
+}
+#account_balance .rechargeStyle .rsIcon{
+    display: inline-block;
+    width: 88px;
+    height: 20px;
+    background: url("../image/icon/icons.png") no-repeat 0 -120px;
+}
+#account_balance .rechargeStyle .alipayIcon{
+    width: 100px;
+    background-position: -91px -120px;
+}
+
+/*
+账户余额--充值列表
+*/
+#rechargeList .repayBtn{
+    color: #06c;
+}
+/*
+支付管理--密码设置
+*/
+#pm_password_set form .control-label{
+    width: 100px;
+}
+#pm_password_set .changeBtn{
+    border: 1px solid #666;
+    padding: 3px 10px;
+    vertical-align: middle;
+    position: relative;
+    top: 5px;
+    color: #666;
+}
+
+
+/*
+短信余额
+*/
+#ab_message_recharge .recharge-btns>button{
+    min-width: 150px;
+    margin-right: 10px;
+    outline: none !important;
+    background-color: transparent;
+    border: 1px solid #ddd;
+}
+#ab_message_recharge .recharge-btns>button:hover {
+    background-color: transparent !important;
+}
+#ab_message_recharge .recharge-btns>button.select,
+#ab_message_recharge .recharge-btns>button.select:hover{
+    background: #f60 !important;
+    color: #fff;
+}
+#ab_message_recharge .payBox{
+    font-size: 28px;
+    color: #f60;
+}
+
+
+/*
+三级分销--分销账户
+*/
+#promise_money .rollBtn{
+    width: 84px;
+    height: 33px;
+    line-height: 33px;
+    padding: 0;
+    text-align: center;
+    margin-right: 20px;
+    border:1px solid #f60;
+    background-color: #f60;
+}
+#promise_money .rollBtn.rollOutBtn{
+    background-color: transparent;
+    border-color: #f60;
+    color: #f60;
+}
+#promise_money .rollOutBtn:hover{
+    background-color: #E5E5E5 !important;
+    color: #f60 !important;
+}
+#promise_money .numBox .t-lock{
+    margin-top: 20px;
+}
+#promise_money .promiseInfo {
+    margin-top: 10px;
+    line-height: 35px;
+    padding-left: 30px;
+}
+#promise_money .promiseInfo .piLabel,
+#td_open .openInfo .oiLabel,
+#td_rebate_set .rateExplain .reLabel{
+    display: inline-block;
+    width: 3%;
+    vertical-align: top;
+}
+#promise_money .promiseInfo .piContent,
+#td_open .openInfo .oiContent,
+#td_rebate_set .rateExplain .reContent{
+    display: inline-block;
+    width: 90%;
+    vertical-align: top;
+}
+#promise_money > form .control-label{
+    width: 100px;
+}
+#promise_money > form .form-actions > button{
+    width: 130px;
+    height: 33px;
+    line-height: 33px;
+    padding: 0;
+    text-align: center;
+}
+/*有未返利订单*/
+#promise_money .hasUnfinishOrder > div{
+    text-align: center;
+    margin-bottom: 50px;
+}
+#promise_money .hasUnfinishOrder .form-actions{
+    padding-left: 60px;
+}
+
+/*
+三级分销--电子合同
+*/
+/*列表*/
+#td_sign_contract{
+    font-size: 14px;
+}
+#td_sign_contract .contractList > div > div{
+    margin-bottom: 10px;
+}
+#td_sign_contract .agreeLabelBox{
+    position: relative;
+}
+#td_sign_contract .agreeLabel{
+    position: absolute;
+    top: -5px;
+    left: 50px;
+    width: 55px;
+    height: 25px;
+    color: #FF4040;
+    border: 2px solid #FF4040;
+    border-radius: 4px;
+    text-align: center;
+    line-height: 25px;
+    font-size: 16px;
+    -webkit-transform: rotate(15deg);
+    -moz-transform: rotate(15deg);
+    -ms-transform: rotate(15deg);
+    -o-transform: rotate(15deg);
+    transform: rotate(15deg);
+}
+/*合同*/
+#td_sign_contract .agree-cont{
+    background-color: #DEEAF5;
+    padding: 10px 70px 50px;
+    /*font-weight: bold;*/
+    margin-top: 20px;
+    line-height: 23px;
+}
+.agree-head{
+    padding: 30px 0;
+    height: 20px;
+    line-height: 20px;
+    border-bottom: 1px solid #F2F7FB;
+    font-size: 18px;
+    text-align: center;
+    color: #2C4A69;
+    margin: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+.agree-body{
+    text-align: justify;
+    text-justify: distribute;
+    margin-bottom: 20px;
+}
+.agree-cont .wrap2{
+   text-indent: 1.8rem;
+}
+.agree-cont .atFirst{
+    margin-bottom: 60px;
+}
+.agree-cont .atItem{
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.agree-cont .atItem .atiTitle{
+    background-color: #A8BCCF;
+    padding: 5px 15px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.agree-cont .atItem .atiCont{
+    padding: 10px 15px 40px;
+}
+.agree-cont .atOther{
+    font-size: 18px;
+    color: #2C4A69;
+    margin: 30px 0;
+}
+.agree-cont .atOtherItem{
+    margin: 0 -40px;
+}
+.agree-cont .atOtherItem .atiTitle{
+    text-align: center;
+    background-color: #A8BCCF;
+}
+/*同意&按钮*/
+.agree-agree{
+    margin-bottom: 50px;
+}
+.agree-agree .cb_check{
+    background-position: -46px -95px;
+}
+.agree-agree .agree-txt{
+    position: relative;
+    top: -2px;
+    font-size: 15px;
+}
+.agree-btns{
+    text-align: center;
+}
+
+
+/*
+三级分销--返利设置
+*/
+#td_rebate_set .rateInfo{
+    margin-left: 50px;
+    color: #0081ef;
+}
+#td_rebate_set .rateExplain{
+    margin-top: 7px;
+    font-size: 14px;
+}
+
+/*
+三级分销--分销开启
+*/
+#td_open .openInfo{
+    line-height: 30px;
+}
+#td_open .openInfo .oiTitle{
+    font-size: 16px;
+}
+#td_open .openInfo > div{
+    margin-bottom: 15px;
+}
+#td_open .openInfo div.borderBottom{
+    border-bottom: 1px solid #E4E4E4;
+    padding-bottom: 15px;
+}
+#td_open .openInfo .oiTitleRed {
+    color: #F30D0D;
+}
+#td_open .openInfo .oiTitleBlue{
+    color: #0181EF;
+}
+#td_open .explainIcon,
+#td_open .flagIcon{
+    display:inline-block;
+    vertical-align: middle;
+    width: 23px;
+    height: 23px;
+    background: url("../image/icon/threeIcon.png") no-repeat 0 0;
+    margin-right: 5px;
+}
+#td_open .flagIcon{
+    width: 20px;
+    height: 20px;
+    background-position: -20px 0;
+}
+#td_open .meanBox .meanIcon{
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    background: url("../image/icon/threeIcon.png") no-repeat;
+}
+#td_open .meanIcon.meanIcon1{
+    background-position: 0 -28px;
+}
+#td_open .meanIcon.meanIcon2{
+    background-position: -112px -27px;
+}
+#td_open .meanIcon.meanIcon3{
+    background-position: 0 -136px;
+}
+#td_open .meanIcon.meanIcon4{
+    background-position: -112px -136px;
+}
+#td_open .meanBox > div{
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #B5BCC2;
+    min-height: 280px;
+    margin-top: 10px;
+}
+#td_open .meanBox h4{
+    font-weight: bold;
+}
+#td_open .meanBox .meanText{
+    line-height: 22px;
+    text-align: justify;
+}

@@ -1,0 +1,355 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{54AB231B-4C74-43CD-8DB4-F1CCD6CF8CB7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YRD.BLL</RootNamespace>
+    <AssemblyName>YRD.BLL</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.0.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.Caching.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Caching.Memory, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Caching.Memory.1.1.0\lib\net451\Microsoft.Extensions.Caching.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.1.1.0\lib\netstandard1.1\Microsoft.Extensions.DependencyInjection.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyInjection.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyInjection.Abstractions.1.1.0\lib\netstandard1.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.1.1.0\lib\netstandard1.1\Microsoft.Extensions.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Logging.Abstractions.1.1.0\lib\netstandard1.1\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Options, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Options.1.1.0\lib\netstandard1.0\Microsoft.Extensions.Options.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.Primitives, Version=1.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.Primitives.1.1.0\lib\netstandard1.0\Microsoft.Extensions.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Win32.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Win32.Primitives.4.3.0\lib\net46\Microsoft.Win32.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.6.9.9\lib\net45\MySql.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.9.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <HintPath>..\packages\MySql.Data.Entity.6.9.9\lib\net45\MySql.Data.Entity.EF6.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Remotion.Linq, Version=2.1.0.0, Culture=neutral, PublicKeyToken=fee00910d6e5f53b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Remotion.Linq.2.1.1\lib\net45\Remotion.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.AppContext, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.AppContext.4.3.0\lib\net46\System.AppContext.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Collections.Immutable, Version=1.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.3.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Console, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Console.4.3.0\lib\net46\System.Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Diagnostics.DiagnosticSource, Version=4.0.1.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.3.0\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Globalization.Calendars, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Globalization.Calendars.4.3.0\lib\net46\System.Globalization.Calendars.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Interactive.Async, Version=3.0.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Interactive.Async.3.0.0\lib\net45\System.Interactive.Async.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Compression.ZipFile, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.Compression.ZipFile.4.3.0\lib\net46\System.IO.Compression.ZipFile.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.4.3.0\lib\net46\System.IO.FileSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="System.IO.FileSystem.Primitives, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IO.FileSystem.Primitives.4.3.0\lib\net46\System.IO.FileSystem.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Http.4.3.0\lib\net46\System.Net.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.3.0\lib\netstandard1.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.3.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Algorithms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Algorithms.4.3.0\lib\net46\System.Security.Cryptography.Algorithms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Encoding, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Encoding.4.3.0\lib\net46\System.Security.Cryptography.Encoding.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.Primitives, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.Primitives.4.3.0\lib\net46\System.Security.Cryptography.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security.Cryptography.X509Certificates, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Security.Cryptography.X509Certificates.4.3.0\lib\net46\System.Security.Cryptography.X509Certificates.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.ReaderWriter, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.ReaderWriter.4.3.0\lib\net46\System.Xml.ReaderWriter.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DB.cs" />
+    <Compile Include="Implementation1\selfoodmakelistImp.cs" />
+    <Compile Include="Implementation1\selshopdiscountImp.cs" />
+    <Compile Include="Implementation1\selfreeshopidImp.cs" />
+    <Compile Include="Implementation1\selshopmoneyrechargeImp.cs" />
+    <Compile Include="Implementation1\selshopopenImp.cs" />
+    <Compile Include="Implementation\cusaddressImp.cs" />
+    <Compile Include="Implementation\cuscardtypeImp.cs" />
+    <Compile Include="Implementation\cuscritiqueImp.cs" />
+    <Compile Include="Implementation\cusfriendsImp.cs" />
+    <Compile Include="Implementation\cusintegralchangeImp.cs" />
+    <Compile Include="Implementation\cusintegraltypeImp.cs" />
+    <Compile Include="Implementation\cusloguserlevelchangeImp.cs" />
+    <Compile Include="Implementation\cusloguserloginImp.cs" />
+    <Compile Include="Implementation\cuslogusermoneychangeImp.cs" />
+    <Compile Include="Implementation\cusloguseroperationImp.cs" />
+    <Compile Include="Implementation\cusordercusImp.cs" />
+    <Compile Include="Implementation\cusorderdetailImp.cs" />
+    <Compile Include="Implementation\cusorderImp.cs" />
+    <Compile Include="Implementation\cusorderpaydetailImp.cs" />
+    <Compile Include="Implementation\cusorderpayImp.cs" />
+    <Compile Include="Implementation\cusorderrabateImp.cs" />
+    <Compile Include="Implementation\cusreserveImp.cs" />
+    <Compile Include="Implementation\cususerdetailImp.cs" />
+    <Compile Include="Implementation\cususerImp.cs" />
+    <Compile Include="Implementation\cususerleveltypeImp.cs" />
+    <Compile Include="Implementation\cususer_foodImp.cs" />
+    <Compile Include="Implementation\cususer_levelImp.cs" />
+    <Compile Include="Implementation\cususer_shopImp.cs" />
+    <Compile Include="Implementation\procompanyImp.cs" />
+    <Compile Include="Implementation\procompanyrabateImp.cs" />
+    <Compile Include="Implementation\procompany_areaImp.cs" />
+    <Compile Include="Implementation\prologmanagerloginImp.cs" />
+    <Compile Include="Implementation\prologmanageroperateImp.cs" />
+    <Compile Include="Implementation\promanagerdetailImp.cs" />
+    <Compile Include="Implementation\promanagerImp.cs" />
+    <Compile Include="Implementation\promanager_roleImp.cs" />
+    <Compile Include="Implementation\promanager_selshopImp.cs" />
+    <Compile Include="Implementation\propemitImp.cs" />
+    <Compile Include="Implementation\proroleImp.cs" />
+    <Compile Include="Implementation\prorole_pemitImp.cs" />
+    <Compile Include="Implementation1\seladvertisementImp.cs" />
+    <Compile Include="Implementation1\selcardImp.cs" />
+    <Compile Include="Implementation1\selcardoperationsellerImp.cs" />
+    <Compile Include="Implementation1\selcardoperationuserImp.cs" />
+    <Compile Include="Implementation1\selcardruleImp.cs" />
+    <Compile Include="Implementation1\selcardrule_foodtypeImp.cs" />
+    <Compile Include="Implementation1\selcashierImp.cs" />
+    <Compile Include="Implementation1\selcashier_departmentImp.cs" />
+    <Compile Include="Implementation1\selcontrolversionImp.cs" />
+    <Compile Include="Implementation1\selcouponImp.cs" />
+    <Compile Include="Implementation1\selcouponoperationsellerImp.cs" />
+    <Compile Include="Implementation1\selcouponoperationuserImp.cs" />
+    <Compile Include="Implementation1\selcouponruleImp.cs" />
+    <Compile Include="Implementation1\seldepartmentImp.cs" />
+    <Compile Include="Implementation1\selexpenditureImp.cs" />
+    <Compile Include="Implementation1\selfixedcostImp.cs" />
+    <Compile Include="Implementation1\selfoodattributeImp.cs" />
+    <Compile Include="Implementation1\selfoodimgImp.cs" />
+    <Compile Include="Implementation1\selfoodImp.cs" />
+    <Compile Include="Implementation1\selfoodspecificationsImp.cs" />
+    <Compile Include="Implementation1\selfoodtypeImp.cs" />
+    <Compile Include="Implementation1\selfoodunitImp.cs" />
+    <Compile Include="Implementation1\selfood_managerImp.cs" />
+    <Compile Include="Implementation1\sellevelImp.cs" />
+    <Compile Include="Implementation1\sellogmanagerloginImp.cs" />
+    <Compile Include="Implementation1\sellogmanageroperateImp.cs" />
+    <Compile Include="Implementation1\sellogshopmoneyImp.cs" />
+    <Compile Include="Implementation1\selmanagerdetailImp.cs" />
+    <Compile Include="Implementation1\selmanagerImp.cs" />
+    <Compile Include="Implementation1\selmanager_roleImp.cs" />
+    <Compile Include="Implementation1\selnatureImp.cs" />
+    <Compile Include="Implementation1\selpackageimgImp.cs" />
+    <Compile Include="Implementation1\selpackageImp.cs" />
+    <Compile Include="Implementation1\selpackage_foodImp.cs" />
+    <Compile Include="Implementation1\selpemitImp.cs" />
+    <Compile Include="Implementation1\selprinterImp.cs" />
+    <Compile Include="Implementation1\selprintertypeImp.cs" />
+    <Compile Include="Implementation1\selroleImp.cs" />
+    <Compile Include="Implementation1\selrole_pemitImp.cs" />
+    <Compile Include="Implementation1\selroomImp.cs" />
+    <Compile Include="Implementation1\selroomtypeImp.cs" />
+    <Compile Include="Implementation1\selscaleImp.cs" />
+    <Compile Include="Implementation1\selshiftImp.cs" />
+    <Compile Include="Implementation1\selshopimgImp.cs" />
+    <Compile Include="Implementation1\selshopImp.cs" />
+    <Compile Include="Implementation1\selshopsmschangeImp.cs" />
+    <Compile Include="Implementation1\selshoptypeImp.cs" />
+    <Compile Include="Implementation1\selshopversionImp.cs" />
+    <Compile Include="Implementation1\seltableImp.cs" />
+    <Compile Include="Implementation1\seltabletypeImp.cs" />
+    <Compile Include="Implementation1\seltable_managerImp.cs" />
+    <Compile Include="Implementation1\seluserextchangeImp.cs" />
+    <Compile Include="Implementation1\seluserextImp.cs" />
+    <Compile Include="Implementation1\seluserintegralchangeImp.cs" />
+    <Compile Include="Implementation1\seluserintegralImp.cs" />
+    <Compile Include="Implementation1\seluserlevelchangeImp.cs" />
+    <Compile Include="Implementation1\seluserlevelImp.cs" />
+    <Compile Include="Implementation\swhfood_materialImp.cs" />
+    <Compile Include="Implementation\swhmaterialbrandImp.cs" />
+    <Compile Include="Implementation\swhmaterialImp.cs" />
+    <Compile Include="Implementation\swhmaterialtypeImp.cs" />
+    <Compile Include="Implementation\swhmaterialunitImp.cs" />
+    <Compile Include="Implementation\swhorderautooutsideImp.cs" />
+    <Compile Include="Implementation\swhorderautooutsidematerialdetailImp.cs" />
+    <Compile Include="Implementation\swhorderautooutsidefooddetailImp.cs" />
+    <Compile Include="Implementation\swhorderapplydetailImp.cs" />
+    <Compile Include="Implementation\swhorderapplyImp.cs" />
+    <Compile Include="Implementation\swhordercheckdetailImp.cs" />
+    <Compile Include="Implementation\swhordercheckImp.cs" />
+    <Compile Include="Implementation\swhorderinsidedetailImp.cs" />
+    <Compile Include="Implementation\swhorderinsideImp.cs" />
+    <Compile Include="Implementation\swhorderlossratedetailImp.cs" />
+    <Compile Include="Implementation\swhorderlossrateImp.cs" />
+    <Compile Include="Implementation\swhorderrefundsdetailImp.cs" />
+    <Compile Include="Implementation\swhorderrefundsImp.cs" />
+    <Compile Include="Implementation\swhorderrequisitiondetailImp.cs" />
+    <Compile Include="Implementation\swhorderrequisitionImp.cs" />
+    <Compile Include="Implementation\swhsuppliertypeImp.cs" />
+    <Compile Include="Implementation\swhsupplierImp.cs" />
+    <Compile Include="Implementation\swhwarehouseImp.cs" />
+    <Compile Include="Implementation\syspaymentmodeImp.cs" />
+    <Compile Include="Implementation\syspayhistoryImp.cs" />
+    <Compile Include="Implementation\sysadImp.cs" />
+    <Compile Include="Implementation\sysbaseImp.cs" />
+    <Compile Include="Implementation\syschinaareaImp.cs" />
+    <Compile Include="Implementation\sysfunctiontypeImp.cs" />
+    <Compile Include="Implementation\syslogmanagerloginImp.cs" />
+    <Compile Include="Implementation\syslogmanageroperateImp.cs" />
+    <Compile Include="Implementation\sysmanagerdetailImp.cs" />
+    <Compile Include="Implementation\sysmanagerImp.cs" />
+    <Compile Include="Implementation\sysmanager_roleImp.cs" />
+    <Compile Include="Implementation\sysnoticereImp.cs" />
+    <Compile Include="Implementation\sysnoticesendImp.cs" />
+    <Compile Include="Implementation\syspemitImp.cs" />
+    <Compile Include="Implementation\sysproxyapplyImp.cs" />
+    <Compile Include="Implementation\sysproxyfeedbackImp.cs" />
+    <Compile Include="Implementation\sysroleImp.cs" />
+    <Compile Include="Implementation\sysrole_pemitImp.cs" />
+    <Compile Include="Implementation\sysshopfeedbackImp.cs" />
+    <Compile Include="Implementation\syssmstemplateImp.cs" />
+    <Compile Include="Implementation\syssmsImp.cs" />
+    <Compile Include="Implementation\sysuserfeedbackImp.cs" />
+    <Compile Include="Implementation\sysversionImp.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="selImp.cs" />
+    <Compile Include="Tools.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Repository\Repository.csproj">
+      <Project>{2d62d46c-d8b6-441e-9fe4-dc3409229ff6}</Project>
+      <Name>Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YRD.Common\YRD.Common.csproj">
+      <Project>{5df37c58-970e-4f7b-92a3-87f6aeb885c5}</Project>
+      <Name>YRD.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YRD.Dao\YRD.Dao.csproj">
+      <Project>{d2aa7587-7c7d-4a24-8e04-26f7ad8d85ac}</Project>
+      <Name>YRD.Dao</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YRD.Model\YRD.Model.csproj">
+      <Project>{776cbb6c-dda3-47d3-8594-b262393e60b7}</Project>
+      <Name>YRD.Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

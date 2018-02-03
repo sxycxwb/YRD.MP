@@ -1,0 +1,257 @@
+﻿
+@{
+    ViewBag.Title = "预订退订记录";
+}
+@section css{
+    <!--本页.css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/iconbg.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/common.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/operation_manage.css" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg txt"></b>
+                        <a>经营管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a>预订退订记录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid " id="om_subscribe_record">
+            <div class="span12">
+                <div class="pull-right">
+                    <form class="clearfix">
+                        <input id="keyword" type="text" class="m-wrap medium inputbutton" placeholder="输入名称或手机号" />
+                        <button type="button" class="btn blue inputbutton" onclick="SearchList()">搜索</button>
+                    </form>
+                </div>
+                <select name="" id="dllState" class="m-wrap small">
+                    <option value="0">选择状态</option>
+                    <option value="1">预定成功</option>
+                    <option value="2">预订中</option>
+                    <option value="3">取消预订</option>
+                    <option value="3">已开台</option>
+                </select>
+                <select name="" id="dllSrouce" class="m-wrap small">
+                    <option value="0">选择来源</option>
+                    <option value="1">电话</option>
+                    <option value="2">APP</option>
+                    <option value="3">到店</option>
+                </select>
+                <button class="btn littleblue"><i class="icon-external-link"></i> 导出表格</button>
+            </div>
+            <div class="span12">
+                <div class="selectime">
+                    时间选择
+                    <div>
+                        <span class="rd rd_check">
+                            <input data-time="day" type="radio" class="cbrd" name="selectime" checked="checked" />
+                        </span>
+                        <span>当天</span>
+                    </div>
+                    <div>
+                        <span class="rd">
+                            <input data-time="week" type="radio" class="cbrd" name="selectime" />
+                        </span>
+                        <span>最近一周</span>
+                    </div>
+                    <div>
+                        <span class="rd">
+                            <input data-time="month" type="radio" class="cbrd" name="selectime" />
+                        </span>
+                        <span>本月</span>
+                    </div>
+                    <div>
+                        <span class="rd">
+                            <input data-time="auto" type="radio" class="cbrd" name="selectime" />
+                        </span>
+                        <span>自定义</span>
+                    </div>
+                </div>
+                <div class="inline-block" style="display: none;">
+                    <input id="d1" class="m-wrap Wdate" type="text" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'d2\')}'})" />
+                    <span>至</span>
+                    <input id="d2" class="m-wrap Wdate" type="text" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'d1\')}'})" />
+                </div>
+                <input type="hidden" class="startTime" id="dt1" />
+                <input type="hidden" class="endTime" id="dt2" />
+            </div>
+            <!--表格区-->
+            <div>
+                <div class="span12 text-center">预订<span class="timePeriod">(<span id="ST"></span>至<span id="ET"></span>)</span></div>
+                <table id="datatable" class="table table-hover table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="w50">序号</th>
+                            <th>订单号</th>
+                            <th>餐桌</th>
+                            <th>添加时间</th>
+                            <th>收银员</th>
+                            <th>预订来源</th>
+                            <th>预订人</th>
+                            <th>手机号</th>
+                            <th>就餐人数</th>
+                            <th>预收订金</th>
+                            <th>收款方式</th>
+                            <th>状态</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*<tr>
+                                <td class="w50">1</td>
+                                <td><a href="om_sr_detail.html">111xxx222</a></td>
+                                <td></td>
+                                <td class="time">2016-10-25<br />12:35:10</td>
+                                <td></td>
+                                <td>网络</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><span>预订中</span></td>
+                            </tr>
+                            <tr>
+                                <td class="w50">2</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>电话</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><span>预订成功</span></td>
+                            </tr>
+                            <tr>
+                                <td class="w50">3</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td><span class="f00">取消预订</span></td>
+                            </tr>*@
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+    <script src="~/Content/JS/MyTable.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/common.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/operation-manage.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/inventory-manage.js"></script>
+    <script>
+        var isPage = true;
+        var dataSource = "/OmSubscribe/getOmSubscribeRecord";
+
+        var searchWhereData = function () {
+            return {
+                keyword: $("#keyword").val(),
+                state: $("#dllState").val(),
+                source: $("#dllSrouce").val(),
+                st: $("#dt1").val(),
+                et: $("#dt2").val(),
+            }
+        }
+
+        var searchData = function (e) {
+            var sd = {
+                start: e.start,
+                length: e.length,
+                draw: e.draw
+            };
+            var object = $.extend(sd, searchWhereData())
+            return object;
+        };
+        var columns = [//绑定数据
+
+            {
+                data: 'ID',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html(iRow + 1);
+                }
+            },
+            {
+                data: 'ID'
+            },
+            {
+                data: 'TableName'
+            },
+            { data: 'CreateDate' },
+            { data: 'SellerName' },
+            {
+                data: 'OrderSource',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    if (oData["OrderSource"] == 1) {
+                        $(nTd).html('<span>电话</span>');
+                    } else if (oData["OrderSource"] == 2) {
+                        $(nTd).html('<span>APP</span>');
+                    } else if (oData["OrderSource"] == 3) {
+                        $(nTd).html('<span>到店</span>');
+                    }
+                }
+            },
+            { data: 'CustomerName' },
+            { data: 'CustomerPhone' },
+            { data: 'ReserveCount' },
+            { data: 'DepositPrice' },
+            {
+                data: 'PayMode',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    if (oData["PayMode"] == 1) {
+                        $(nTd).html('<span>现金</span>');
+                    } else if (oData["PayMode"] == 2) {
+                        $(nTd).html('<span>支付宝</span>');
+                    } else if (oData["PayMode"] == 3) {
+                        $(nTd).html('<span>微信</span>');
+                    } else if (oData["PayMode"] == 4) {
+                        $(nTd).html('<span>银行卡</span>');
+                    } else if (oData["PayMode"] == 5) {
+                        $(nTd).html('<span>支票</span>');
+                    } else if (oData["PayMode"] == 6) {
+                        $(nTd).html('<span>转账</span>');
+                    }
+                }
+            },
+            {
+                data: 'ReserveState',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    if (oData["ReserveState"] == 1) {
+                        $(nTd).html('<span>预订成功</span>');
+                    } else if (oData["ReserveState"] == 2) {
+                        $(nTd).html('<span>预订中</span>');
+                    } else if (oData["ReserveState"] == 3) {
+                        $(nTd).html('<span class="f00">取消预定</span>');
+                    } else if (oData["ReserveState"] == 4) {
+                        $(nTd).html('<span>已开台</span>');
+                    }
+                }
+            },
+        ];
+        function exdata(Data) {
+            $("#ST").html(Data.ST);
+            $("#ET").html(Data.ET);
+        }
+       
+    </script>
+}

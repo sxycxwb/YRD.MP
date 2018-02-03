@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>美味云--微信支付成功</title>
+    <meta name="viewport" content="width=1280">
+    <link rel="icon" href="@ConfigHelper.GetCdnUrl/Content/image/favicon.ico" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/mwy_common.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/merchant_wechatpay.css" />
+</head>
+<body>
+    <!--顶部-->
+    <header>
+        <div id="header">
+            <div class="lf">
+                <a href="@ConfigHelper.GetHomeUrl" class="logo"><img src="@ConfigHelper.GetCdnUrl/Content/image/mwy-home/logo.png" /></a>
+                <span class="name">美味云 — 免费智能云餐饮管理系统</span>
+                <i>all in one</i>
+            </div>
+        </div>
+    </header>
+    <!--内容-->
+    <section>
+        <div class="wechat_cont">
+            <!-- 上-->
+            <div class="wc_top">
+                <div class="lf">
+                    <p class="wct_txt">您正在使用微信支付<b>账户充值</b></p>
+                    <p>
+                        <span class="wct_num">订单编号：<b>@ViewBag.batchid</b></span>
+                        <span class="wct_txt">收款方：山西友人岛电子商务有限公司</span>
+                    </p>
+                </div>
+                <div class="rt">
+                    <p class="wct_money">￥<span>@ViewBag.price</span></p>
+                </div>
+            </div>
+            <!-- 中-->
+            <div class="wc_bottom">
+                <!--成功内容-->
+                <div class="wcsucc_img"></div>
+                <div class="wcsucc_txt">支付已完成，<span class="second">5</span> 秒后返回账户中心</div>
+                <div class="wcsucc_btn">
+                    <a href="@ConfigHelper.GetHomeUrl/GoldBank/GoldBalance">关闭</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--底部-->
+    <footer>
+        <p>晋ICP备&nbsp;&nbsp;&nbsp;&nbsp;14001759号</p>
+    </footer>
+
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/jquery-1.11.3.js"></script>
+    <script>
+        var timing = function () {
+            var start = $('.wcsucc_txt>.second').text();
+            var end = start;
+            var backHtml = $('.wcsucc_btn>a').attr('href');
+            var timer = setInterval(function () {
+                end--;
+                $('.wcsucc_txt>.second').text(end);
+                if (end < 1) {
+                    clearInterval(timer);
+                    location.href = backHtml;
+                }
+            }, 1000)
+        };
+        timing();
+    </script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>MaterialName</code>
+    <name>名称</name>
+  </field>
+  <field>
+    <code>MaterialTypeMainName</code>
+    <name>材料主类型名称</name>
+  </field>
+  <field>
+    <code>MaterialTypeChildName</code>
+    <name>材料子类型名称</name>
+  </field>
+  <field>
+    <code>MaterialSpecName</code>
+    <name>规格</name>
+  </field>
+  <field>
+    <code>CountLoss</code>
+    <name>报损数量</name>
+  </field>
+  <field>
+    <code>MaterialUnitName</code>
+    <name>单位</name>
+  </field>
+  <field>
+    <code>MaxPrice</code>
+    <name>最高单价</name>
+  </field>
+  <field>
+    <code>MinPrice</code>
+    <name>最低单价</name>
+  </field>
+  <field>
+    <code>AveragePrice</code>
+    <name>均价</name>
+  </field>
+  <field>
+    <code>TotalPrice</code>
+    <name>报损总价</name>
+  </field>
+  <field>
+    <code>WareHouseName</code>
+    <name>库房</name>
+  </field>
+</fields>

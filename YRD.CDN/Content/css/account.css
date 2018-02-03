@@ -1,0 +1,52 @@
+.page-container{
+    background: #fff;
+}
+.breadcrumb{
+    font-size: 20px;
+    text-align: center;
+    padding: 11px 0 !important;
+}
+/*密码修改*/
+.change_pwd_content{
+    background: #CCEBF8;
+    padding-top: 30px;
+    padding-bottom: 300px;
+}
+.change_pwd_content>form{
+    width: 100%;
+    margin: 0 auto;
+    font-size: 16px;
+}
+.change_pwd_content>form .control-label{
+    width: 42%;
+}
+.change_pwd_content>form .controls{
+    margin-left: 45%;
+}
+.change_pwd_content>form .form-actions{
+    padding-left: 45%;
+}
+.change_pwd_content>.form-horizontal input{
+    background: #fff;
+    border: 1px solid #C9C9C9;
+    vertical-align: middle;
+}
+.change_pwd_content .login_name{
+    display: inline-block;
+    margin-top: 5px;
+    font-weight: bold;
+}
+.change_pwd_content .control-label,
+.feedback_content .control-label{
+    font-size: 16px;
+    color: #f60;
+}
+/*意见反馈*/
+.feedback_content>form{
+    width: 65%;
+    margin: 0 auto;
+}
+.feedback_content textarea.large{
+    text-align: center;
+    width: 80% !important;
+}

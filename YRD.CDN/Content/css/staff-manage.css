@@ -1,0 +1,64 @@
+.gt8{
+    color: #FC2A2A;
+}
+.lt8{
+    color: #0165CA;
+}
+/******员工列表*****/
+#staff_list>.btn-group>select{
+    margin-right:20px;
+}
+#staff_list>.btn-group{
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+/*添加员工*/
+form input.Wdate.small.m-wrap{
+    width: 120px !important;
+}
+/******员工绩效*****/
+#staff_perform .nav-tabs>li>a{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+#staff_perform .tab-pane>.span12{
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+#staff_perform input.m-wrap.Wdate{
+    width: 155px !important;
+    margin-right: 0;
+}
+#staff_perform input.m-wrap.Wdate + span{
+    margin-right: 0;
+}
+#staff_perform .select{
+    margin-right: 5px;
+}
+#staff_perform input.inputbutton{
+    width: 90px !important;
+}
+#staff_perform .calc-cont{
+    font-size: 14px;
+    margin: 10px 0;
+}
+#staff_perform .calc-cont>div{
+    margin-left: 0;
+}
+/*点餐绩效*/
+#diancan_perform th>i{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 10px solid transparent;
+    margin-left: 20px;
+}
+#diancan_perform th>i.triangle-up{
+    border-bottom: 10px solid #f60;
+}
+#diancan_perform th>i.triangle-down{
+    border-top: 10px solid #f60;
+    position: relative;
+    top: 10px;
+}
+

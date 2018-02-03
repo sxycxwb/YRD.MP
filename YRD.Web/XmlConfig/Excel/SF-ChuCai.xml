@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>LoginName</code>
+    <name>姓名</name>
+  </field>
+  <field>
+    <code>RoleName</code>
+    <name>角色</name>
+  </field>
+  <field>
+    <code>FoodCount</code>
+    <name>制作总数</name>
+  </field>
+  <field>
+    <code>MakeCount</code>
+    <name>已上总数</name>
+  </field>
+  <field>
+    <code>FoodName</code>
+    <name>菜名</name>
+  </field>
+  <field>
+    <code>CreateTime</code>
+    <name>下单时间</name>
+  </field>
+  <field>
+    <code>MakeCompleteTime</code>
+    <name>出菜时间</name>
+  </field>
+  <field>
+    <code>MakeMinute</code>
+    <name>出菜分钟数</name>
+  </field>
+  <field>
+    <code>Efficiency</code>
+    <name>出菜效率</name>
+  </field>
+</fields>

@@ -1,0 +1,137 @@
+/*八个引导项*/
+.homeguide{
+    margin-bottom: 40px;
+}
+.homeguide>.span3{
+    height:125px;
+    border: 1px solid #fff;
+    background:#fff;
+    border-radius: 7px !important;
+}
+.homeguide>.span3>a{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    color: #333;
+    position: relative;
+}
+.homeguide>.span3>a>.img-box{
+    width: 50%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.homeguide .img-box>img{
+    width:100%;
+    height: 93px;
+    margin: 16px auto;
+}
+.homeguide>.span3>a>.money-box{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 50%;
+}
+.homeguide .money-box>p{
+    text-align: center;
+}
+.homeguide .money-box>.money{
+    font-size: 17px;
+    margin-top: 10px;
+}
+.homeguide .money-box>.money>span{
+    font-size: 20px;
+    font-weight: bold;
+}
+.homeguide .money-box>.minfo{
+    font-size: 14px;
+    margin-top: 40px;
+}
+.homeguide .m-color .money-box{
+    color: #FF6501;
+}
+.homeguide .m-color{
+    border-color: #FF6501;
+}
+.homeguide .span3.m-color:hover{
+    box-shadow: 1px 1px 20px 5px #FFE9DB;
+}
+.homeguide .o-color .money-box{
+    color: #F8B90C;
+}
+.homeguide .o-color{
+    border-color:#F8B90C;
+}
+.homeguide .span3.o-color:hover{
+    box-shadow: 1px 1px 20px 5px #FEF5DD;
+}
+.homeguide .t-color .money-box{
+    color: #816CF7;
+}
+.homeguide .t-color{
+    border-color: #816CF7;
+}
+.homeguide .span3.t-color:hover{
+    box-shadow: 1px 1px 20px 5px #EDEAFE;
+}
+.homeguide .c-color .money-box{
+    color: #1BE0A8;
+}
+.homeguide .c-color{
+    border-color: #1BE0A8;
+}
+.homeguide .span3.c-color:hover{
+    box-shadow: 1px 1px 20px 5px #DFFBF3;
+}
+.homeguide .span3:hover{
+    border-color: transparent;
+}
+/*手势引导块*/
+.handguide{
+    margin-bottom: 25px;
+}
+.handguideImg{
+    display: inline-block;
+    margin-right: 30px;
+}
+.handguideImg > img{
+    vertical-align: middle;
+    width: 73px;
+    height: 73px;
+}
+.handguigeList{
+    display: inline-block;
+    list-style: none;
+    width: 80%;
+}
+.handguigeList > li{
+    width: 13%;
+    display: inline-block;
+    margin-right: 2%;
+}
+.handguigeList a{
+    display: inline-block;
+    width: 100%;
+    background: #fff ;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 10px;
+    color: #333;
+    font-size: 14px;
+    box-shadow: 1px 1px 10px 5px #EEF7FE;
+}
+.handguigeList a:hover{
+    color: #76C0FF;
+}
+
+/*营收统计框*/
+#indexStatistic{
+    background: #fff !important;
+}
+.statistic-box{
+    height: 400px;
+}

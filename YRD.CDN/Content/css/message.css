@@ -1,0 +1,33 @@
+.page-container{
+    background: #fff;
+}
+.breadcrumb{
+    font-size: 20px;
+    text-align: center;
+    padding: 11px 0 !important;
+}
+table td{
+    height: 38px;
+    box-sizing: border-box;
+}
+.message_content{
+    width: 80%;
+    margin: 0 auto;
+}
+.message_content .nav-tabs>li.active{
+    background: #f60;
+    border-bottom: 1px solid #f60;
+    font-size: 16px;
+}
+.message_content .nav-tabs>li.active>a{
+    background: #f60;
+    color: #fff;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.message_content .nav-tabs>li.active>a:hover{
+     background: #f60 !important;
+     color: #fff;
+     padding-left: 30px;
+     padding-right: 30px;
+ }

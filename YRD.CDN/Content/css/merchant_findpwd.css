@@ -1,0 +1,50 @@
+/*整体样式*/
+.banner_box{
+    width: 1200px;
+    margin: 0 auto;
+}
+/*清除浮动*/
+{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*********banner********/
+.banner{
+    height: 315px;
+    background: url(../image/register/register-bg.png) no-repeat center;
+}
+.banner_box{
+    height: 315px;
+}
+/*******内容**********/
+.password{
+    height: 700px;/*暂定*/
+    background: #F8F8F8;
+    padding-bottom: 100px;
+}
+.pwd_box{
+    height: 650px;/*暂定*/
+    padding: 60px 20px;
+    background: #fff;
+    box-shadow: 3px 5px 10px #E6E6E6;
+    position: relative;
+    top: -60px;
+}
+/*顶部*/
+.pwd_title{
+    padding-bottom: 45px;
+}
+.pwd_title>h1 {
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 35px;
+    color: #333;
+    padding-left: 25px;
+}
+/*注册内容*/
+.pwd_cont{
+    padding: 40px 0 70px;
+    border-top: 1px solid #DDDDDD;
+}

@@ -1,0 +1,96 @@
+﻿@model YRD.Model.ViewModels.ViewDistribution
+@{
+    ViewBag.Title = "分销账户转入";
+    ViewBag.menuid = 1119;
+}
+@section css    {
+    <!--本页css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+
+<!--右侧内容-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li class="backprev">
+                        <a href="/DistributionBank/DistributionBalance">返回上一级</a>
+                    </li>
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionBalance">三级分销</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionBalance">分销账户</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/AddDistributionTakeIn">转入</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#promise_money" data-toggle="tab">分销账户</a></li>
+                            <li><a href="/DistributionBank/JinbiDetail">账户明细</a></li>
+                            <li><a href="/DistributionBank/DistributionOrder">分销订单</a></li>
+                            <li><a href="/DistributionBank/DistributionContract">签署合同</a></li>
+                            <li><a href="/DistributionBank/DistributionPercentage">返利设置</a></li>
+                            <li><a href="/DistributionBank/DistributionOpen">分销开启</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--分销账户--转入-->
+                            <div class="active tab-pane" id="promise_money">
+                                @using (Ajax.BeginForm("SaveDistributionTakeIn", null, new AjaxOptions()
+                                {
+                                    HttpMethod = "Post",
+                                    OnBegin = "SubAjax.Loading",
+                                    OnComplete = "SubAjax.Complate",
+                                    OnFailure = "SubAjax.Failure",
+                                    OnSuccess = "SubAjax.Success"
+                                }, new { @class = "form-horizontal", @role = "form", @id = "commentForm" }))
+                                {
+                                    <div class="control-group">
+                                        <label class="control-label">从账户余额转入</label>
+                                        <div class="controls">
+                                            <input type="text" class="m-wrap small" name="Jinbi" value="@Model.Jinbi" />
+                                            <span class="text-inline">元</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label">支付密码</label>
+                                        <div class="controls">
+                                            <input type="password" class="m-wrap small" name="PayPassword" value="@Model.PayPassword" />
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn yellow">转入</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+
+    <!--本页js-->
+    <script src="~/Content/JS/MyForm.js"></script>
+}

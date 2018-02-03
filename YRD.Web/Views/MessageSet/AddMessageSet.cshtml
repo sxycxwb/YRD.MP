@@ -1,0 +1,244 @@
+﻿@model YRD.Model.ViewModels.ViewMessageSet
+@{
+    ViewBag.menuid = 1116;
+    ViewBag.Title = "短信设置";
+
+}
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/system-manage.css" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/MessageSet/AddMessageSet">短信设置</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <div class="tab-content">
+                            <!--短信设置-->
+                            <div class="active tab-pane" id="message_set">
+                                <div class="row-fluid">
+                                    <div class="span12 tips">提示：开通短信自动通知可以获得更好的客户体验，起到口碑营销的效果</div>
+                                    <div class="span12">
+                                        <form action="#" class="form-horizontal">
+                                            <div class="span12">当会员有以下变动时是否设置为短信通知：</div>
+
+                                            <div class="control-group">
+                                                <label class="control-label">生日提醒</label>
+                                                <div class="controls">
+                                                    <div class="switchButton">
+                                                        <input id="switchB-2" type="checkbox" value="1" name="SmsBirthdayAccept" @(Model.SmsBirthdayAccept == 1 ? "checked=\"checked\"" : "")>
+                                                        <label for="switchB-2"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--生日提醒弹窗-->
+                                            <div class="switchButton-dialog switchB-2">
+                                                <b class="iconbg up"></b>
+                                                <div class="control-group">
+                                                    <label class="control-label">提醒时间</label>
+                                                    <div class="controls">
+                                                        <select class="m-wrap small" name="Day" id="Day">
+                                                            <option value="0" @(Model.Day == 0 ? "selected=\"selected\"" : "")>当天</option>
+                                                            <option value="-1" @(Model.Day == -1 ? "selected=\"selected\"" : "")>前1天</option>
+                                                            <option value="-2" @(Model.Day == -2 ? "selected=\"selected\"" : "")>前2天</option>
+                                                            <option value="-3" @(Model.Day == -3 ? "selected=\"selected\"" : "")>前3天</option>
+                                                        </select>
+                                                        <select class="m-wrap small" name="Hour" id="Hour">
+                                                            <option value="0" @(Model.Hour == 0 ? "selected=\"selected\"" : "")>00:00</option>
+                                                            <option value="8" @(Model.Hour == 8 ? "selected=\"selected\"" : "")>08:00</option>
+                                                            <option value="9" @(Model.Hour == 9 ? "selected=\"selected\"" : "")>09:00</option>
+                                                            <option value="10" @(Model.Hour == 10 ? "selected=\"selected\"" : "")>10:00</option>
+                                                            <option value="11" @(Model.Hour == 11 ? "selected=\"selected\"" : "")>11:00</option>
+                                                            <option value="12" @(Model.Hour == 12 ? "selected=\"selected\"" : "")>12:00</option>
+                                                            <option value="13" @(Model.Hour == 13 ? "selected=\"selected\"" : "")>13:00</option>
+                                                            <option value="14" @(Model.Hour == 14 ? "selected=\"selected\"" : "")>14:00</option>
+                                                            <option value="15" @(Model.Hour == 15 ? "selected=\"selected\"" : "")>15:00</option>
+                                                            <option value="16" @(Model.Hour == 16 ? "selected=\"selected\"" : "")>16:00</option>
+                                                            <option value="17" @(Model.Hour == 17 ? "selected=\"selected\"" : "")>17:00</option>
+                                                            <option value="18" @(Model.Hour == 18 ? "selected=\"selected\"" : "")>18:00</option>
+                                                            <option value="19" @(Model.Hour == 19 ? "selected=\"selected\"" : "")>19:00</option>
+                                                            <option value="20" @(Model.Hour == 20 ? "selected=\"selected\"" : "")>20:00</option>
+                                                            <option value="21" @(Model.Hour == 21 ? "selected=\"selected\"" : "")>21:00</option>
+                                                            <option value="22" @(Model.Hour == 22 ? "selected=\"selected\"" : "")>22:00</option>
+                                                        </select>
+                                                        <select class="m-wrap small" name="Minute" id="Minute">
+                                                            <option value="0" @(Model.Minute == 0 ? "selected=\"selected\"" : "")>0分钟</option>
+                                                            <option value="5" @(Model.Minute == 5 ? "selected=\"selected\"" : "")>5分钟</option>
+                                                            <option value="10" @(Model.Minute == 10 ? "selected=\"selected\"" : "")>10分钟</option>
+                                                            <option value="15" @(Model.Minute == 15 ? "selected=\"selected\"" : "")>15分钟</option>
+                                                            <option value="20" @(Model.Minute == 20 ? "selected=\"selected\"" : "")>20分钟</option>
+                                                            <option value="25" @(Model.Minute == 25 ? "selected=\"selected\"" : "")>25分钟</option>
+                                                            <option value="30" @(Model.Minute == 30 ? "selected=\"selected\"" : "")>30分钟</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="span12">当收银端添加客户预订请求后是否自动给商家人员发送短信：</div>
+                                            <div class="control-group">
+                                                <label class="control-label">自动接收</label>
+                                                <div class="controls">
+                                                    <div class="switchButton">
+                                                        <input id="switchB-4" type="checkbox" value="1" name="SmsShopAccept" @(Model.SmsShopAccept == 1 ? "checked=\"checked\"" : "")>
+                                                        <label for="switchB-4"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--预定通知弹窗-->
+                                            <div class="switchButton-dialog switchB-4">
+                                                <b class="iconbg up"></b>
+                                                <div class="control-group">
+                                                    <label class="control-label">提醒时间</label>
+                                                    <div class="controls">
+                                                        <span class="help-inline">及时</span>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">短信格式</label>
+                                                    <div class="controls">
+                                                        <span class="help-inline">
+                                                            ***先生（女士），共5人，时间2017-10-05 12:24分预订，同意（不同意）大厅就餐
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="span12">当收银端添加客户预订请求后是否自动给用户发送短信：</div>
+                                            <div class="control-group">
+                                                <label class="control-label">自动发送</label>
+                                                <div class="controls">
+                                                    <div class="switchButton">
+                                                        <input id="switchB-5" type="checkbox" value="1" name="SmsUserAccept" @(Model.SmsUserAccept == 1 ? "checked=\"checked\"" : "")>
+                                                        <label for="switchB-5"></label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--预定通知弹窗-->
+                                            <div class="switchButton-dialog switchB-5">
+                                                <b class="iconbg up"></b>
+                                                <div class="control-group">
+                                                    <label class="control-label">提醒时间</label>
+                                                    <div class="controls">
+                                                        <span class="help-inline">及时</span>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                    <label class="control-label">短信格式</label>
+                                                    <div class="controls">
+                                                        <span class="help-inline">
+                                                            ***先生（女士）您好，您在我店***预订的餐桌位已成功，时间 2017-06-12  中午 12:15分，餐桌位 大厅-B03
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-actions">
+                                                <button class="btn yellow medium" id="BtnOK" onclick="DoEdit()">保存</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/system-manage.js"></script>
+    <script type="text/javascript">
+        function DoEdit() {
+
+        var btn = $("#BtnOK");
+        btn.attr("disabled", true);
+
+        var SmsBirthdayAccept = $("input[name='SmsBirthdayAccept']:checked").val()
+        var Day = $("#Day").val()
+        var Hour = $("#Hour").val()
+        var Minute = $("#Minute").val()
+        var SmsShopAccept = $("input[name='SmsShopAccept']:checked").val()
+        var SmsUserAccept = $("input[name='SmsUserAccept']:checked").val()
+        $.post("/MessageSet/SaveMessageSet",
+            {
+                SmsBirthdayAccept: SmsBirthdayAccept,
+                Day: Day,
+                Hour: Hour,
+                Minute: Minute,
+                SmsShopAccept: SmsShopAccept,
+                SmsUserAccept: SmsUserAccept
+            },
+            function (data) {
+                if (data.Code == 1) {
+                    $.jhNotifyBar({
+                        type: "success",
+                        close: true,
+                        mainMsg: data.Message,
+                        detailMsg: "",
+                        btnText: ['确定'],
+                        onClickOk: function () {
+                            window.location.reload();
+                            btn.attr("disabled", false)
+                        }
+                    });
+                }
+                else if (data.Code == -200) {
+
+                    $.jhNotifyBar({
+                        type: "warning",
+                        close: true,
+                        mainMsg: data.Message,
+                        detailMsg: "",
+                        btnText: ['确定'],
+                        onClickOk: function () {
+                            top.location.href = data.Url;
+                            btn.attr("disabled", false)
+                        }
+                    });
+                }
+                else {
+                    $.jhNotifyBar({
+                        type: "warning",
+                        close: true,
+                        mainMsg: data.Message,
+                        detailMsg: "",
+                        btnText: ['确定'],
+                        onClickOk: function () {
+                            btn.attr("disabled", false)
+                        }
+                    });
+                }
+                //关闭显示框
+                //刷新页面
+
+            }, "json").error(function () {
+
+                $.jhNotifyBar({
+                    type: "warning",
+                    close: true,
+                    mainMsg: '@ConstantHelper.ErrorPostDesc',
+                    detailMsg: "",
+                    btnText: ['确定'],
+                    onClickOk: function () {
+                        btn.attr("disabled", false)
+                    }
+                });
+            });
+    }
+
+    </script>
+}

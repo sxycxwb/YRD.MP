@@ -1,0 +1,83 @@
+﻿@{
+    Layout = null;
+    ViewBag.Title = "找回密码-" + YRD.BLL.DB.Config.SiteName;
+    ViewBag.Title1 = "找回密码";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>找回密码-今农网</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta name="Keywords" content="找回密码,今农网" />
+    <meta name="Description" content="找回密码,页面今农网" />
+    <link href="@ConfigHelper.GetCdnUrl/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="@ConfigHelper.GetCdnUrl/css/login_registration.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header" class="win1000">
+        <a id="logo" href="@ConfigHelper.GetWwwUrl">
+            <img alt="今农网" width="280" height="55" src="@ConfigHelper.GetCdnUrl/images/logo.gif" />
+        </a>
+        <div id="cityname" class="regname">
+            <span>找回密码</span>
+        </div>
+        <div id="logintext">
+            <a href="@ConfigHelper.GetWwwUrl">返回首页</a>|<a target="_blank" href="@ConfigHelper.GetWwwUrl/help">帮助</a>
+        </div>
+    </div>
+    <div class="cb win1000">
+        <div class="porleft" style="margin-top:50px">
+            <div style="text-align: left; height: 300px; padding-top: 80px; padding-left: 20px">
+                @if (ViewBag.IsOK == true)
+                {
+                    <h2 style="margin-bottom: 20px;">
+                        <span class="password-tip-icon">
+                            <img src="@ConfigHelper.GetCdnUrl/images/zccg.gif" alt="" />
+                            找回密码邮件发送成功！
+                        </span>
+                    </h2>
+                    <p>
+                        邮件已发送至您的邮箱 @ViewBag.Email，请您立即登录该邮箱并按信中提示修改密码。
+                    </p>
+                }
+                else
+                {
+                    <h2 style="margin-bottom: 20px;">
+                        <span class="password-tip-icon">
+                            <img src="/content/web/images/warn.gif" alt="Alternate Text" />
+                            @ViewBag.Message！
+                        </span>
+                    </h2>
+                    <p>
+                        请点击 <a href="javascript:history.go(-1);">后退</a> ，重新操作。
+                    </p>
+                }
+            </div>
+        </div>
+        <div class="porright" style="">
+            <h3>
+                您已经是会员，请<a href="/login">登录</a>
+            </h3>
+            <div class="tel-tip" style="padding-top: 20px; ">
+                <strong style="font-size: 20px;">服务宗旨？</strong> <span style="font-size: 14px; line-height: 30px;">为您提供绿色的，方便的快捷信息服务，我们竭诚为您打造身边的便捷的，精准的生活信息服务平台</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="win1000">
+        <p style="font-size: 14px;">
+            今农网 &copy; NChanPin.com
+        </p>
+    </div>
+    <script type="text/javascript" src="@ConfigHelper.GetCdnUrl/jquery/jquery.min.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/bootstrap/js/bootstrap.min.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/bootstrap/js/bootstrap3-validation.js"></script>
+     
+</body>
+</html>

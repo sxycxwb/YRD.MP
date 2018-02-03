@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D2AA7587-7C7D-4A24-8E04-26F7AD8D85AC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YRD.Dao</RootNamespace>
+    <AssemblyName>YRD.Dao</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Immutable, Version=1.2.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\portable-net45+win8+wp8+wpa81\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CusModel\cusaddress.cs" />
+    <Compile Include="CusModel\cuscardtype.cs" />
+    <Compile Include="CusModel\cuschainuser.cs" />
+    <Compile Include="CusModel\cuschainuserdetail.cs" />
+    <Compile Include="CusModel\cuscritique.cs" />
+    <Compile Include="CusModel\cusfreeuserid.cs" />
+    <Compile Include="CusModel\cusfriends.cs" />
+    <Compile Include="CusModel\cusintegralchange.cs" />
+    <Compile Include="CusModel\cusintegraltype.cs" />
+    <Compile Include="CusModel\cusloguserlevelchange.cs" />
+    <Compile Include="CusModel\cusloguserlogin.cs" />
+    <Compile Include="CusModel\cuslogusermoneychange.cs" />
+    <Compile Include="CusModel\cusloguseroperation.cs" />
+    <Compile Include="CusModel\cusorder.cs" />
+    <Compile Include="CusModel\cusordercus.cs" />
+    <Compile Include="CusModel\cusorderdebt.cs" />
+    <Compile Include="CusModel\cusorderdetail.cs" />
+    <Compile Include="CusModel\cusorderfooddetail.cs" />
+    <Compile Include="CusModel\cusorderpackagedetail.cs" />
+    <Compile Include="CusModel\cusorderpay.cs" />
+    <Compile Include="CusModel\cusorderpaydetail.cs" />
+    <Compile Include="CusModel\cusorderrabate.cs" />
+    <Compile Include="CusModel\cusorder_orderpay.cs" />
+    <Compile Include="CusModel\cuspayment.cs" />
+    <Compile Include="CusModel\cuspaymentassociatedorders.cs" />
+    <Compile Include="CusModel\cuspaymentdetail.cs" />
+    <Compile Include="CusModel\cuspaymenttype.cs" />
+    <Compile Include="CusModel\cusrepayment.cs" />
+    <Compile Include="CusModel\cusrepaymentdetail.cs" />
+    <Compile Include="CusModel\cusreserve.cs" />
+    <Compile Include="CusModel\cususer.cs" />
+    <Compile Include="CusModel\cususercollectfood.cs" />
+    <Compile Include="CusModel\cususercollectshop.cs" />
+    <Compile Include="CusModel\cususerdetail.cs" />
+    <Compile Include="CusModel\cususerjinbi.cs" />
+    <Compile Include="CusModel\cususerjinbidetail.cs" />
+    <Compile Include="CusModel\cususerleveltype.cs" />
+    <Compile Include="CusModel\cususerpaypassword.cs" />
+    <Compile Include="CusModel\cususerscore.cs" />
+    <Compile Include="CusModel\cususer_food.cs" />
+    <Compile Include="CusModel\cususer_level.cs" />
+    <Compile Include="CusModel\cususer_shop.cs" />
+    <Compile Include="CusModel\procompany.cs" />
+    <Compile Include="CusModel\procompanyrabate.cs" />
+    <Compile Include="CusModel\procompany_area.cs" />
+    <Compile Include="CusModel\prologmanagerlogin.cs" />
+    <Compile Include="CusModel\prologmanageroperate.cs" />
+    <Compile Include="CusModel\promanager.cs" />
+    <Compile Include="CusModel\promanagerdetail.cs" />
+    <Compile Include="CusModel\promanager_role.cs" />
+    <Compile Include="CusModel\promanager_selshop.cs" />
+    <Compile Include="CusModel\propemit.cs" />
+    <Compile Include="CusModel\prorole.cs" />
+    <Compile Include="CusModel\prorole_pemit.cs" />
+    <Compile Include="CusModel\selcardfreeid.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SelModel\selcardaccount.cs" />
+    <Compile Include="SelModel\selcardrecharge.cs" />
+    <Compile Include="SelModel\selcashiersetting.cs" />
+    <Compile Include="SelModel\selcouponimg.cs" />
+    <Compile Include="SelModel\selshopvoice.cs" />
+    <Compile Include="SelModel\seltablestateversion.cs" />
+    <Compile Include="SelModel\selshopdistributionaccount.cs" />
+    <Compile Include="SelModel\selshopdistributiondetail.cs" />
+    <Compile Include="SelModel\selshopdistributionopendetail.cs" />
+    <Compile Include="SelModel\selshopsmsset.cs" />
+    <Compile Include="SelModel\selshopsmsrecharge.cs" />
+    <Compile Include="SelModel\selshoppaypassword.cs" />
+    <Compile Include="SelModel\seladvertisement.cs" />
+    <Compile Include="SelModel\selcarddetail.cs" />
+    <Compile Include="SelModel\selcardrule.cs" />
+    <Compile Include="SelModel\selcardrule_foodtype.cs" />
+    <Compile Include="SelModel\selcardtype.cs" />
+    <Compile Include="SelModel\selcashier.cs" />
+    <Compile Include="SelModel\selcashier_department.cs" />
+    <Compile Include="SelModel\selcontrolversion.cs" />
+    <Compile Include="SelModel\selcoupon.cs" />
+    <Compile Include="SelModel\selcouponrule.cs" />
+    <Compile Include="SelModel\seldepartment.cs" />
+    <Compile Include="SelModel\selexpenditure.cs" />
+    <Compile Include="SelModel\selfixedcost.cs" />
+    <Compile Include="SelModel\selfoodmakelist.cs" />
+    <Compile Include="SelModel\selfood.cs" />
+    <Compile Include="SelModel\selfoodattribute.cs" />
+    <Compile Include="SelModel\selfoodimg.cs" />
+    <Compile Include="SelModel\selfoodspecifications.cs" />
+    <Compile Include="SelModel\selfoodtaste.cs" />
+    <Compile Include="SelModel\selfoodtype.cs" />
+    <Compile Include="SelModel\selfoodunit.cs" />
+    <Compile Include="SelModel\selfood_manager.cs" />
+    <Compile Include="SelModel\sellevel.cs" />
+    <Compile Include="SelModel\sellogmanagerlogin.cs" />
+    <Compile Include="SelModel\sellogmanageroperate.cs" />
+    <Compile Include="SelModel\sellogshopmoney.cs" />
+    <Compile Include="SelModel\selmanager.cs" />
+    <Compile Include="SelModel\selmanagerdetail.cs" />
+    <Compile Include="SelModel\selmanager_role.cs" />
+    <Compile Include="SelModel\selnature.cs" />
+    <Compile Include="SelModel\selpackage.cs" />
+    <Compile Include="SelModel\selpackageimg.cs" />
+    <Compile Include="SelModel\selpackage_food.cs" />
+    <Compile Include="SelModel\selpemit.cs" />
+    <Compile Include="SelModel\selprinter.cs" />
+    <Compile Include="SelModel\selprintertype.cs" />
+    <Compile Include="SelModel\selrefundpaylog.cs" />
+    <Compile Include="SelModel\selrepaymentlog.cs" />
+    <Compile Include="SelModel\selrole.cs" />
+    <Compile Include="SelModel\selrole_pemit.cs" />
+    <Compile Include="SelModel\selroom.cs" />
+    <Compile Include="SelModel\selroomtype.cs" />
+    <Compile Include="SelModel\selscale.cs" />
+    <Compile Include="SelModel\selshift.cs" />
+    <Compile Include="SelModel\selfreeshopid.cs" />
+    <Compile Include="SelModel\selshop.cs" />
+    <Compile Include="SelModel\selshopdiscount.cs" />
+    <Compile Include="SelModel\selshopdistribution.cs" />
+    <Compile Include="SelModel\selshopimg.cs" />
+    <Compile Include="SelModel\selshopjinbiaccount.cs" />
+    <Compile Include="SelModel\selshopjinbidetail.cs" />
+    <Compile Include="SelModel\selshopjinbirecharge.cs" />
+    <Compile Include="SelModel\selshopsmsaccount.cs" />
+    <Compile Include="SelModel\selshopsmschange.cs" />
+    <Compile Include="SelModel\selshopsmsdetail.cs" />
+    <Compile Include="SelModel\selshoptype.cs" />
+    <Compile Include="SelModel\selshopopen.cs" />
+    <Compile Include="SelModel\selshopversion.cs" />
+    <Compile Include="SelModel\seltable.cs" />
+    <Compile Include="SelModel\seltablestate.cs" />
+    <Compile Include="SelModel\seltabletype.cs" />
+    <Compile Include="SelModel\seltable_manager.cs" />
+    <Compile Include="SelModel\seluserext.cs" />
+    <Compile Include="SelModel\seluserextchange.cs" />
+    <Compile Include="SelModel\seluserintegral.cs" />
+    <Compile Include="SelModel\seluserintegralchange.cs" />
+    <Compile Include="SelModel\seluserlevel.cs" />
+    <Compile Include="SelModel\seluserlevelchange.cs" />
+    <Compile Include="SelModel\selflavor .cs" />
+    <Compile Include="SelModel\seltaboos.cs" />
+    <Compile Include="StaModel\statisticscoupons.cs" />
+    <Compile Include="StaModel\statisticscard.cs" />
+    <Compile Include="StaModel\statisticspeople.cs" />
+    <Compile Include="StaModel\statisticsfoodtype.cs" />
+    <Compile Include="StaModel\statisticsfood.cs" />
+    <Compile Include="StaModel\statisticstable.cs" />
+    <Compile Include="SwhModel\swhmaterialmainunit.cs" />
+    <Compile Include="SwhModel\swhfood_material.cs" />
+    <Compile Include="SwhModel\swhmaterial.cs" />
+    <Compile Include="SwhModel\swhmaterialbrand.cs" />
+    <Compile Include="SwhModel\swhmaterialtype.cs" />
+    <Compile Include="SwhModel\swhmaterialunit.cs" />
+    <Compile Include="SwhModel\swhorderapply.cs" />
+    <Compile Include="SwhModel\swhorderautooutsidematerialdetail.cs" />
+    <Compile Include="SwhModel\swhorderautooutsidefooddetail.cs" />
+    <Compile Include="SwhModel\swhorderautooutside.cs" />
+    <Compile Include="SwhModel\swhorderinitialstock.cs" />
+    <Compile Include="SwhModel\swhorderstoragedetail.cs" />
+    <Compile Include="SwhModel\swhorderapplydetail.cs" />
+    <Compile Include="SwhModel\swhordercheck.cs" />
+    <Compile Include="SwhModel\swhordercheckdetail.cs" />
+    <Compile Include="SwhModel\swhorderinside.cs" />
+    <Compile Include="SwhModel\swhorderinsidedetail.cs" />
+    <Compile Include="SwhModel\swhorderlossrate.cs" />
+    <Compile Include="SwhModel\swhorderlossratedetail.cs" />
+    <Compile Include="SwhModel\swhorderrefunds.cs" />
+    <Compile Include="SwhModel\swhorderrefundsdetail.cs" />
+    <Compile Include="SwhModel\swhorderrequisition.cs" />
+    <Compile Include="SwhModel\swhorderrequisitiondetail.cs" />
+    <Compile Include="SwhModel\swhorderstorage.cs" />
+    <Compile Include="SwhModel\swhshopstock.cs" />
+    <Compile Include="SwhModel\swhstockaccount.cs" />
+    <Compile Include="SwhModel\swhstockdetail.cs" />
+    <Compile Include="SwhModel\swhsupplier.cs" />
+    <Compile Include="SwhModel\swhsuppliermoneydetail.cs" />
+    <Compile Include="SwhModel\swhsupplierpayment.cs" />
+    <Compile Include="SwhModel\swhsuppliertype.cs" />
+    <Compile Include="SwhModel\swhwarehouse.cs" />
+    <Compile Include="Sys\sysad.cs" />
+    <Compile Include="Sys\sysareabusiness.cs" />
+    <Compile Include="Sys\sysareacity.cs" />
+    <Compile Include="Sys\sysareacounty.cs" />
+    <Compile Include="Sys\sysareaprovince.cs" />
+    <Compile Include="Sys\sysbase.cs" />
+    <Compile Include="Sys\sysbasemoneychange.cs" />
+    <Compile Include="Sys\syschinaarea.cs" />
+    <Compile Include="Sys\sysfunctiontype.cs" />
+    <Compile Include="Sys\syslogmanagerlogin.cs" />
+    <Compile Include="Sys\syslogmanageroperate.cs" />
+    <Compile Include="Sys\sysmanager.cs" />
+    <Compile Include="Sys\sysmanagerdetail.cs" />
+    <Compile Include="Sys\sysmanager_role.cs" />
+    <Compile Include="Sys\sysnoticere.cs" />
+    <Compile Include="Sys\sysnoticesend.cs" />
+    <Compile Include="Sys\syspayhistory.cs" />
+    <Compile Include="Sys\syspaymentmode.cs" />
+    <Compile Include="Sys\syspemit.cs" />
+    <Compile Include="Sys\sysproxyapply.cs" />
+    <Compile Include="Sys\sysproxyfeedback.cs" />
+    <Compile Include="Sys\sysrole.cs" />
+    <Compile Include="Sys\sysrole_pemit.cs" />
+    <Compile Include="Sys\sysshopfeedback.cs" />
+    <Compile Include="Sys\syssms.cs" />
+    <Compile Include="Sys\syssmsall.cs" />
+    <Compile Include="Sys\syssmspackageprice.cs" />
+    <Compile Include="Sys\syssmstemplate.cs" />
+    <Compile Include="Sys\syssmstype.cs" />
+    <Compile Include="Sys\sysuserfeedback.cs" />
+    <Compile Include="Sys\sysverificationcode.cs" />
+    <Compile Include="Sys\sysversion.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="数据库连接.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extent\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -1,0 +1,99 @@
+﻿@model YRD.Model.ViewModels.ViewAddJinbiRecharge
+@{
+    ViewBag.Title = "账户余额";
+    ViewBag.menuid = 1113;
+}
+@section css    {
+    <!--本页css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li class="backprev">
+                        <a href="/GoldBank/GoldBalance">返回上一级</a>
+                    </li>
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/GoldBank/GoldBalance">账户余额</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/GoldBank/AddJinbiRecharge">充值</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="/GoldBank/GoldBalance" data-toggle="tab">账户余额</a></li>
+                            <li><a href="/GoldBank/RechargeDetail">充值列表</a></li>
+                            <li><a href="/GoldBank/JinbiDetail">账户明细</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--账户余额充值-->
+                            <div class="active tab-pane" id="account_balance">
+                                @using (Ajax.BeginForm("SaveJinbiRecharge", null, new AjaxOptions()
+                                {
+                                    HttpMethod = "Post",
+                                    OnBegin = "SubAjax.Loading",
+                                    OnComplete = "SubAjax.Complate",
+                                    OnFailure = "SubAjax.Failure",
+                                    OnSuccess = "SubAjax.Success"
+                                }, new { @class = "form-horizontal", @role = "form", @id = "commentForm" }))
+                                {
+                                    <div class="control-group">
+                                        <label class="control-label">充值金额</label>
+                                        <div class="controls">
+                                            <input type="text" class="m-wrap small" name="Data" value="@Model.Data" />
+                                            <span class="text-inline">元</span>
+                                        </div>
+                                    </div>
+                                    <div class="control-group rechargeStyle">
+                                        <label class="control-label">充值方式</label>
+                                        <div class="controls">
+
+                                            <div class="inline-block">
+                                                <span class="rd">
+                                                    <input type="radio" class="cbrd" name="Mode" value="2" checked="checked" />
+                                                </span>
+                                                <b class="rsIcon alipayIcon"></b>
+                                            </div>
+                                            <div class="inline-block">
+                                                <span class="rd rd_check">
+                                                    <input type="radio" class="cbrd" name="Mode" value="3" />
+                                                </span>
+                                                <b class="rsIcon wxIcon"></b>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-actions">
+                                        <button type="submit" class="btn blue medium">立即支付</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+
+    <!--本页js-->
+    <script src="~/Content/JS/MyForm.js"></script>
+}

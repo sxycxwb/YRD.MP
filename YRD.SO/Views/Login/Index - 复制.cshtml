@@ -1,0 +1,196 @@
+﻿@{
+    Layout = null;
+    var cdn = @ConfigHelper.GetCdnUrl;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <meta charset="UTF-8">
+    <title>后台登录</title>
+    <!--模板css-->
+    <link rel="stylesheet" href="@cdn/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="@cdn/Content/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="@cdn/Content/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="@cdn/Content/css/style-metro.css" />
+    <link rel="stylesheet" href="@cdn/Content/css/style.css" />
+    <link rel="stylesheet" href="@cdn/Content/css/style-responsive.css" />
+    <link rel="stylesheet" href="@cdn/Content/css/default.css" />
+    <link rel="stylesheet" href="@cdn/Content/css/uniform.default.css" />
+    <!--login.css-->
+    <link rel="stylesheet" href="@cdn/Content/css/login.css" />
+</head>
+<body class="login">
+    <input type="hidden" id="Lytip" value="@ViewBag.tip">
+    <!--logo-->
+    <div class="logo">
+        <img src="@cdn/Content/image/avatar1.jpg" />
+        <span>美味云 — 免费智能云餐饮管理系统</span>
+    </div>
+    <!--内容-->
+    <div class="content">
+        <!--登录表单-->
+
+        <form class="form-vertical login-form" id="submitForm" method="post">
+            <h3 class="form-title  text-center">
+                登录云后台
+            </h3>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">用户名：</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <b class="iconbg user"></b>
+                        <input class="m-wrap placeholder-no-fix" type="text" id="txtUserName" name="txtUserName"
+                               size="20" value="请输入用户名" onfocus="if($(this).val()=='请输入用户名'){$(this).val('')}" onblur="if($(this).val()==''){$(this).val('请输入用户名')}" />
+                        @*@Html.TextBoxFor(model => model.LoginName, new { @class = "m-wrap placeholder-no-fix", placeholder = "用户名" })*@
+                    </div>
+
+
+                    <span style="color:red" id="txtUserNameTip"></span>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">密码：</label>
+                <div class="controls">
+                    <div class="input-icon left">
+                        <b class="iconbg key"></b>
+                        <input class="m-wrap placeholder-no-fix" id="txtPassWord" type="password" style="margin-bottom: 7px;"
+                               name="txtPassWord" value="" size="20" maxlength="20" />
+                        @*@Html.TextBoxFor(model => model.LoginPwd, new { @class = "m-wrap placeholder-no-fix", placeholder = "密码" })*@
+
+                    </div>
+                    <span style="color:red" id="txtPassWordTip"></span>
+
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label visible-ie8 visible-ie9">验证码：</label>
+                <div class="controls">
+                    <div class="input-icon left yzm-div">
+                        <b class="iconbg yz"></b>
+
+                        @*@Html.TextBoxFor(model => model.VCode, new { @class = "m-wrap placeholder-no-fix yzm-input", placeholder = "验证码" })*@
+
+                        <input class="m-wrap placeholder-no-fix yzm-input" id="txtVailCode" type="text" style="margin-bottom: 7px;"
+                               name="txtVailCode" value="请输入验证码" onfocus="if ($(this).val() == '请输入验证码') { $(this).val('') }" onblur="if ($(this).val() == '') { $(this).val('请输入验证码') }" />
+
+                    </div>
+                    <img data-ma="NIC" src="/login/GetValidateCode" class="yzm-img" title="点击刷新验证码" onclick="this.src = '/login/GetValidateCode?time=' + new Date()" />
+                    <br />
+                    <span style="color:red" id="txtVailCodeTip"></span>
+
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="button" name="btnSubmit" class="btn logingreen" accesskey="l" id="btnSubmit">登录</button>
+                @*<button type="submit" class="btn logingreen">登录</button>*@
+            </div>
+            <div class="forget-password">
+                <p>
+                    <a href="javascript:;" class="" id="forget_pwd_btn">找回密码</a>
+                    <a href="register.html" class="pull-right">免费使用</a>
+                </p>
+            </div>
+        </form>
+        <!--找回密码表单-->
+
+    </div>
+
+
+    <!--模板js-->
+
+    <script src="@cdn/Content/js/jquery-1.10.1.min.js"></script>
+    <script src="@cdn/Content/js/bootstrap.min.js"></script>
+    <script src="@cdn/Content/js/app.js"></script>
+    <!--本页js-->
+
+    <script src="@cdn/Scripts/jquery.validate.min.js"></script>
+    <script src="@cdn/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <script src="@cdn/Content/layer.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            var tip = $("#Lytip").val();
+            if (tip != "") {
+                //layer.alert(tip, {
+                //       skin: 'layui-layer-lan'
+                //   ,closeBtn: 0
+                //   ,anim: 4 //动画类型
+                // });
+                layer.msg(tip);
+            }
+        });
+
+    </script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            $("#txtUserName").blur(function () {
+                var userName = $.trim($("#txtUserName").val());
+                if (userName == "" || userName == "请输入用户名") {
+                    //$(".dmsg").html("*请输入用户名");
+                    $("#txtUserNameTip").html("请输入用户名");
+                } else {
+                    $("#txtUserNameTip").html("");
+                }
+            });
+            $("#txtPassWord").blur(function () {
+                var passWord = $.trim($("#txtPassWord").val());
+                if (passWord == "") {
+                    // $(".dmsg").html("*请输入密码");
+                    $("#txtPassWordTip").html("请输入密码");
+                } else {
+                    $("#txtPassWordTip").html("");
+                }
+            });
+            $("#txt").blur(function () {
+                var vailcode = $.trim($("#txtVailCode").val());
+                if (vailcode == "" || vailcode == "请输入验证码") {
+                    $("#txtVailCodeTip").html("请输入验证码");
+                } else {
+                    $("#txtVailCodeTip").html("");
+                }
+            });
+
+            //点击我要登录按钮，触发提交登录表单事件
+            $("#btnSubmit").click(function () { submitLogin(); });
+        });
+
+        // 回车键事件
+        // 绑定键盘按下事件 ，触发提交登录表单事件
+        $(document).keypress(function (e) {
+            // 回车键事件
+            if (e.which == 13) {
+                submitLogin();
+            }
+        });
+
+        //提交登录表单事件
+        function submitLogin() {
+            var userName = $.trim($("#txtUserName").val());
+            var passWord = $.trim($("#txtPassWord").val());
+            var vailcode = $.trim($("#txtVailCode").val());
+            if (userName == "" || userName == "请输入用户名" || passWord == "" || vailcode == "" || vailcode == "请输入验证码") {
+                return;
+            } else {
+                $.post("/login/UserLogin", $("#submitForm").serialize(), function (result) {
+                    if (result.Code == 1) {
+                        window.location.href = result.Url;
+                    }
+                    else {
+                        layer.msg(result.Message);
+                    }
+                }, "json");
+            }
+        };
+        //提交状态
+        function mySubmit(flag) {
+            return flag;
+        };
+
+    </script>
+</body>
+</html>

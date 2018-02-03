@@ -1,0 +1,826 @@
+a:hover{
+    text-decoration: none;
+}
+a.f60{
+    color: #f60;
+}
+.f60{
+    color: #f60;
+}
+.ff0{
+    color: #ff0;
+}
+a.ff0{
+    color: #ff0;
+}
+a.c333{
+    color: #333;
+}
+a.c860{
+    color: #860000;
+}
+.f00{
+    color:#f00;
+}
+a.f00:hover,
+a.f00:focus{
+    color: #f00;
+}
+.tips{
+    color:#396;
+}
+.tips>a{
+    color: #f60;
+}
+.t-lock{
+    color: #06c;
+}
+.notbind{
+    color: #5db3ff;
+}
+a.notbind:hover{
+    color: #5AADF7;
+}
+/********上下小三角**********/
+i.tringle-up{
+    display: inline-block;
+    border: 8px solid transparent;
+    border-bottom-color: #f60;
+}
+i.tringle-down{
+    display: inline-block;
+    border: 8px solid transparent;
+    border-top-color: #F60;
+    position: relative;
+    top: 8px;
+}
+/*******固定面包屑***********/
+.container-fluid .breadcrumb{
+    position: fixed;
+    z-index: 100;
+    box-shadow: 1px 1px 3px #899BA2;
+}
+.page-content>.container-fluid>.row-fluid:nth-child(2){
+    margin-top: 20px;
+}
+/**********面包屑下的返回上一级********/
+.breadcrumb>.backprev{
+    position: absolute;
+    left: 70%;
+}
+.breadcrumb>.backprev>a{
+    color: #f60 !important;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+/**********顶部 导航************/
+.header .nav>li{
+    color: #fff;
+    line-height: 40px;
+    margin-right: 50px;
+    font-size: 16px;
+}
+.header .nav ul.notification>li span.f60{
+    margin-left: 10px;
+}
+.header .nav>li.user{
+    margin-right: 0;
+}
+.header .logoImg{
+    display: inline-block;
+    width: 41px;
+    height: 30px;
+    background: url("../image/logo.png") no-repeat center;
+    margin-left: 10px;
+}
+/*顶部用户下拉单*/
+.header .dropdown.user>.dropdown-menu{
+    min-width: 120px;
+}
+.footer div[class^=span]{
+    margin-left: 0;
+}
+/*@media screen and (max-width: 1200px) and (min-width: 992px) {
+    .nav .server-phone{
+        display: none;
+    }
+}
+@media screen and (max-width: 992px) {
+    .nav .business{
+        display: none;
+    }
+    .header .nav li{
+        margin-right: 10px;
+    }
+}
+@media screen and (max-width: 768px){
+    .nav .server-phone{
+        display: none;
+    }
+}*/
+.header .nav .dropdown>.dropdown-toggle{
+    height: 40px;
+    line-height: 40px;
+    box-sizing: border-box;
+}
+.header .btn-navbar.collapsed img{
+    margin-right: 10px;
+}
+/************表格****************/
+.table td{
+    text-align: center;
+}
+.table tbody tr.xiajia_row>td{
+    background: #E6E6E6;
+}
+.table tbody tr>td a>b{
+    margin-right: 5px;
+}
+table>tbody td{
+    box-sizing: border-box;
+    height: 38px;
+}
+/*******表格中缩略图的显示******/
+table>tbody td>img{
+    width: 20px;
+    height: 20px;
+}
+table>tbody td>img:hover{
+    cursor: pointer;
+}
+table>tbody .modal-backdrop{
+    display: none;
+}
+table>tbody .showImg{
+    background: #fff;
+    width: 500px;
+    height: 500px;
+    /*margin: 10% auto;*/
+    box-sizing: border-box;
+    padding: 20px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+}
+table>tbody .showImg>img{
+    width: 460px;
+    height: 460px;
+}
+table>tbody .showImg>a.closed{
+    position: absolute;
+    top: -19px;
+    right: -19px;
+    width: 38px;
+    height: 39px;
+    background:url(../image/icon/closeimg.png) no-repeat;
+}
+
+/*********按钮组************/
+.btn-group a{
+    margin-right: 20px;
+    width: 110px;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.btn-group button{
+    margin-right: 20px;
+}
+.btn.yellow{
+    padding: 7px 10px;
+}
+/********取消下外边距********/
+.pull-right form{
+    margin-bottom: 0;
+}
+.pull-right form>div{
+    vertical-align: top;
+}
+/**********提示**********/
+.row-fluid .span12{
+    margin-left: 0 !important;
+    margin-bottom: 15px;
+}
+.span12.tips{
+    padding-left: 8px;
+}
+.lineh34{
+    line-height: 34px;
+}
+/***********导出表格变成小按钮*********/
+button.btn.littleblue.small{
+    padding: 7px 5px;
+}
+button.btn.medium{
+    height: 35px;
+    line-height: 35px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+/**********带搜索框的input***********/
+.pull-right form select{
+    margin-right:10px;
+}
+input.m-wrap.inputbutton{
+    border: 1px solid rgba(0,102,204,.5);
+    border-right:0;
+    border-top-right-radius: 0 !important;
+    border-bottom-right-radius: 0 !important;
+    margin-right: 0;
+    float: left;
+}
+button.inputbutton{
+    border-top-left-radius: 0 !important;
+    border-bottom-left-radius: 0 !important;
+    float: left;
+    margin-right: 0;
+}
+/***********日期时间的表单大小**********/
+input.m-wrap.Wdate{
+    width: 170px !important;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+input.m-wrap.Wdate + span{
+    margin-right: 5px;
+}
+input.m-wrap.Wdate.small{
+    width: 155px !important;
+}
+input.m-wrap.Wdate.onlydate{
+    width: 95px !important;
+    margin-right: 1px \9;
+}
+input.m-wrap.Wdate.onlydate + span{
+    margin-right: 1px \9;
+}
+/**********块->行内块**********/
+.inline-block{
+    display: inline-block;
+}
+input,select{
+    vertical-align: middle !important;
+}
+/**********分页区**********/
+.pagination ul>li>a{
+    color: #06c;
+}
+.pagination ul>li.active>a{
+    color: #fff;
+    background: #06c;
+}
+/*********遮罩层->弹出框*********/
+.modal-backdrop{
+    background: rgba(51,51,51,.8) !important;
+    opacity: 1;
+}
+.modal-backdrop .portlet.blue{
+    background-color: transparent !important;
+}
+.modal-backdrop .portlet.box.blue .portlet-title{
+    background-color: #0081ef;
+}
+.modal-backdrop .portlet.box.blue{
+    border: 0;
+}
+.modal-backdrop .portlet.box .portlet-title{
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+.modal-backdrop .portlet-body{
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+/*工具条上的关闭按钮
+.btn_dialog .portlet-title .tools>.closed{
+    width: 11px;
+    background: url(../image/portlet-remove-icon-white.png) no-repeat ;
+}*/
+/*******点击按钮有弹框********/
+/*批量删除，单个删除，批量绑定打印机，单个绑定打印机，绑定员工，批量下载的提示框*/
+.container-fluid{
+    position: relative;
+}
+.btn_dialog{
+    position: absolute;
+    display: none;
+}
+.btn_dialog>.modal-backdrop>.portlet{
+    width: 45%;
+    margin: 15% auto;
+}
+.btn_dialog .portlet.box .portlet-body{
+    padding: 10px 20px 30px 50px;
+    font-size: 14px;
+}
+.btn_dialog .portlet-body>.clearfix{
+    margin-top: 10px;
+}
+.btn_dialog .portlet-body .haselect{
+    width: 18%;
+    margin-right: 10px;
+}
+.btn_dialog .portlet-body .haselect-item{
+    width: 78%;
+    line-height: 40px;
+    margin-top: -10px;
+}
+.btn_dialog .portlet-body .haselect-item span{
+    display: inline-block;
+    width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    word-break: normal;
+}
+.btn_dialog .portlet-body .haselect-item b{
+    font-weight: normal;
+}
+.btn_dialog b{
+    font-weight: normal;
+}
+.btn_dialog .portlet-body .btns{
+    margin-left: 100px;
+    margin-top: 15px;
+}
+.btn_dialog .portlet-body .btns>button{
+    margin-right: 20px;
+}
+.pl_delete_dialog .tips,
+.dg_delete_dialog .tips{
+    font-size: 12px;
+    margin-top: 5px;
+}
+.btn_dialog .span3{
+    width: 18%;
+    line-height: 34px;
+    margin-bottom: 10px;
+}
+.btn_dialog .span9{
+    margin-left: 2%;
+}
+/***********水平表单中的样式：宽、左外边距、左内边距***********/
+.form-horizontal{
+    margin-top: 20px;
+}
+.form-horizontal .control-label{
+    width: 80px;
+}
+.form-horizontal .controls{
+    margin-left: 120px;
+}
+/*有提示时*/
+.form-horizontal .controls.Validform_controls{
+    display: inline-block;
+    margin-left: 40px;
+}
+.form-horizontal .controls.Validform_controls + span{
+    position: relative;
+    top: 7px;
+}
+
+.form-horizontal .form-actions{
+    padding-left: 120px;
+    background: transparent;
+    border-top: 0;
+}
+.form-horizontal .form-actions button{
+    margin-right: 10px;
+}
+.form-horizontal .controls>.inline-block{
+    margin-right: 30px;
+}
+.form-horizontal .inline-block>.text-inline{
+    font-size: 14px;
+    vertical-align: middle;
+    margin-top: -12px;
+}
+.form-horizontal .controls>.text-inline{
+    margin-right: 10px;
+}
+/*圆角的input,textarea样式*/
+form.form-horizontal input,
+form.form-horizontal textarea{
+    border: 1px solid #a7a7a7;
+    border-radius: 4px !important;
+    margin-right: 10px;
+    background: #fff !important;
+}
+/*******选择时间行（会员卡、电子券、订单统计）*******/
+.selectime{
+    display: inline-block;
+    height: 35px;
+    line-height: 34px;
+    margin-bottom: 2px;
+    margin-right: 20px;
+}
+.selectime>div{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.selectime input {
+    margin-top: -15px;
+}
+.selectime .rd{
+    vertical-align: middle;
+    margin-top: 0;
+}
+
+/*******table中的固定宽度*********/
+/*备注列宽度*/
+table th.reason,
+table td.reason{
+    width: 110px;
+    box-sizing: border-box;
+    padding-left: 0;
+    padding-right: 0;
+}
+table th.time,
+table td.time{
+    width: 100px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+table th.w40,
+table td.w40{
+    width: 40px;
+    box-sizing: border-box;
+}
+table th.w50,
+table td.w50{
+    width: 50px;
+    box-sizing: border-box;
+}
+table th.w60,
+table td.w60{
+    width: 60px;
+    box-sizing: border-box;
+}
+table th.w70,
+table td.w70{
+    width: 70px;
+    box-sizing: border-box;
+}
+table th.w80,
+table td.w80{
+    width: 80px;
+    box-sizing: border-box;
+}
+table th.w90,
+table td.w90{
+    width: 90px;
+    box-sizing: border-box;
+}
+table th.w100,
+table td.w100{
+    width: 100px;
+    box-sizing: border-box;
+}
+table th.w110,
+table td.w110{
+    width: 110px;
+    box-sizing: border-box;
+}
+table th.w120,
+table td.w120{
+    width: 120px;
+    box-sizing: border-box;
+}
+table th.w130,
+table td.w130{
+    width: 130px;
+    box-sizing: border-box;
+}
+table th.w150,
+table td.w150{
+    width: 150px;
+    box-sizing: border-box;
+}
+table th.w170,
+table td.w170{
+    width: 170px;
+    box-sizing: border-box;
+}
+table th.w200,
+table td.w200{
+    width: 200px;
+    box-sizing: border-box;
+}
+table th.w250,
+table td.w250{
+    width: 250px;
+    box-sizing: border-box;
+}
+table th.w300,
+table td.w300{
+    width: 300px;
+    box-sizing: border-box;
+}
+table th.wp7{
+    width: 7%;
+    box-sizing: border-box;
+}
+table th.wp10{
+    width: 10%;
+    box-sizing: border-box;
+}
+table th.wp15{
+    width: 15%;
+    box-sizing: border-box;
+}
+table th.wp20{
+    width: 20%;
+    box-sizing: border-box;
+}
+/*操作列宽度*/
+table th.woperate,
+table td.woperate{
+    width: 135px;
+    box-sizing: border-box;
+}
+
+/**********显示，不显示*********/
+.hide{
+    display: none !important;
+}
+.show{
+    display: block !important;
+}
+
+/**********单选/复选的新样式***********/
+.cb {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 8px;
+    background: url(../image/icon/icons.png) no-repeat 0 -95px;
+}
+.cb_check{
+    background-position: -23px -95px;
+}
+.table .cb{
+    margin-top: 0;
+}
+.rd {
+     width: 20px;
+     height: 17px;
+     display: inline-block;
+     padding-top: 3px;
+     cursor: pointer;
+     text-align: center;
+     margin:8px 5px 0 0;
+     background: url(../image/icon/icons.png) no-repeat -104px -95px;
+}
+.rd_check{
+    background-position: -125px -95px;
+}
+.cbrd {
+    opacity: 0;
+    cursor: pointer;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter: alpha(opacity=0);
+}
+input[type="radio"],
+input[type="checkbox"]{
+    width: 20px;
+    height: 20px;
+    position: relative;
+    top: -4px;
+}
+/*********原生的select*********/
+select.m-wrap{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url('../image/icon/selectmedium-down.png') no-repeat scroll center center #fff !important;
+    padding-right: 14px;
+    text-indent:0.01px;
+    text-overflow:"";
+    padding:0 \9;
+    border: 1px solid #E5E5E5;
+    line-height: 24px;
+}
+select.m-wrap.small{
+    background-image: url('../image/icon/select-down.png') !important;
+}
+select.m-wrap.medium{
+    background-image: url('../image/icon/selectmedium-down.png') !important;
+    padding-left: 6px;
+}
+select.m-wrap.little{
+    width: 90px;
+    background-image: url(../image/icon/selectsmall-down.png) !important;
+}
+select.m-wrap.province{
+    width: 160px;
+    background-image: url(../image/icon/selectprovince-down.png) !important;
+}
+select.m-wrap:focus{
+    border-color: #06c;
+}
+form.form-horizontal select.m-wrap{
+    border: 1px solid #a7a7a7;
+    margin-right: 10px;
+}
+form.form-horizontal select.m-wrap:focus{
+    border-color: #06c;
+}
+
+/************切换开关样式***********/
+.switchButton input[type="checkbox"]{
+    visibility: hidden;
+}
+.switchButton{
+    display: inline-block;
+    position: relative;
+    width: 44px;
+    height: 30px;
+}
+.switchButton label{
+    position: absolute;
+    top: 11px;
+    left: 5px;
+    width: 44px;
+    height: 8px;
+    background: #dedede;
+    border-radius: 8px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.switchButton label:before{
+    content: "";
+    position:absolute;
+    top: -7px;
+    left: -3px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    border: 1px solid #d0d0d0;
+    cursor: pointer;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+.switchButton input:checked + label{
+    background: rgba(255,102,0,.8);
+}
+.switchButton input:checked + label:before{
+    left: 25px;
+    background: #f60;
+    border: 1px solid #f60;
+}
+
+/******上传图片框 & 按钮*********/
+.upload-box{
+    margin-bottom: 10px;
+}
+.upload-box .upload-list{
+    margin-top: 20px;
+}
+.upload-box .upload-list>img{
+    width: 120px;
+    height: 120px;
+}
+/*多张图片*/
+.upload-box .upload-list .upload-item{
+    width: 120px;
+    height: 120px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    display: inline-block;
+    position: relative;
+}
+.upload-box .upload-item .upload{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+.upload-box .upload-item .upload-file{
+    width: 100%;
+    height: 100%;
+    border: 0;
+    margin: 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 2;
+}
+.upload-box .upload-item .upload-delete{
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    width: 25px;
+    height: 25px;
+    background:transparent url(../image/upload-delete.png) no-repeat center;
+    z-index: 5;
+    display: none;
+}
+/*图片上传--按钮*/
+.upload-box .upload-btns{
+    margin-top: 15px;
+    height: 35px;
+    position: relative;
+}
+.upload-box .upload-btns .upload-btn{
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.upload-box .upload-btns .upload-btn + input[type='file']{
+    width: 84px;
+    height: 34px;
+    margin-right: 0 !important;
+    border: 0 !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+/*查看上传图片的大图*/
+.upload-box .upload-list img:hover {
+    cursor: pointer;
+}
+.upload-box .upload-list .modal-backdrop{
+    display: none;
+}
+.upload-box .upload-list .showImg{
+    background: #fff;
+    width: 500px;
+    height: 500px;
+    margin: 10% auto;
+    box-sizing: border-box;
+    padding: 20px;
+    position: relative;
+}
+.upload-box .upload-list .showImg>img{
+    width: 460px;
+    height: 460px;
+}
+.upload-box .upload-list .showImg>a.closed{
+    position: absolute;
+    top: -19px;
+    right: -19px;
+    width: 38px;
+    height: 39px;
+    background:url(../image/icon/closeimg.png) no-repeat;
+}
+/********无权限操作页面**********/
+.error-img{
+    text-align: center;
+    margin-top: 150px;
+}
+.error-img>img{
+    width: 197px;
+    height: 186px;
+}
+.error-img>img.inner404{
+    width: 353px;
+    height: 268px;
+}
+.error-txt{
+    margin: 70px 0;
+    text-align: center;
+}
+.error-btn{
+    text-align: center;
+}
+.error-btn .btn{
+   width: 220px;
+    height: 60px;
+    line-height: 60px;
+    font-size: 28px;
+    padding: 0;
+}
+/******验证价格格式*******/
+.regTip{
+    margin-left: 8px;
+    line-height: 20px;
+    height: 20px;
+    overflow: hidden;
+    font-size: 12px;
+}
+.regWrong{
+    color: red;
+    padding-left: 20px;
+    white-space: nowrap;
+    background: url(../image/error.png) no-repeat left center;
+}
+.regRight{
+    color: #71b83d;
+    padding-left: 20px;
+    background: url(../image/right.png) no-repeat left center;
+}

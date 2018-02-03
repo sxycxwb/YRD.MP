@@ -1,0 +1,226 @@
+/********全部会员*********/
+#mm_all_members .nav-tabs>li>a,
+#cardetail_content .nav-tabs>li>a{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+/*会员列表*/
+#mm_all_members>.form-line>button{
+  margin-right: 10px;
+}
+/*更多条件弹窗*/
+#mm_all_members{
+    position: relative;
+    min-height: 600px;
+    margin-top: 30px;
+}
+.more_conditions_dialog{
+    width: 600px;
+    height: 440px;
+    position: absolute;
+    top: calc(50% - 220px );
+    left: calc(50% - 300px );
+    display: none;
+}
+.more_conditions_dialog .portlet.box.blue{
+    border-color: #68ADF0;
+    margin-bottom: 0;
+    height: 100%;
+    background-color: #fff !important;
+}
+.more_conditions_dialog .portlet.box.blue .portlet-title{
+    background-color: #68ADF0;
+}
+.more_conditions_dialog .tools>a.closed{
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    background: url(../image/icon/closed.png) no-repeat -11px -9px;
+}
+.more_conditions_dialog .caption{
+    line-height: 30px;
+    margin-left: 20px;
+}
+.more_conditions_dialog form input{
+    background-color: #fff !important;
+}
+.more_conditions_dialog input.m-wrap.balanceInput{
+    width: 139px !important;
+    vertical-align: middle;
+    margin-right: 5px;
+    padding-right: 38px !important;
+}
+.more_conditions_dialog .balanceRow{
+    position: relative;
+}
+.more_conditions_dialog .balanceRow .left{
+    position: absolute;
+    color: #999;
+    line-height: 34px;
+}
+.more_conditions_dialog .balanceRow .left1{
+    left: 145px;
+}
+.more_conditions_dialog .balanceRow .left2{
+    left: 375px;
+}
+.more_conditions_dialog .portlet.box .form .row-fluid{
+    margin-top: 10px;
+}
+.more_conditions_dialog .portlet.box .form .form-actions{
+    margin-left: 0 !important;
+}
+.more_conditions_dialog .form-actions>button{
+    margin-right: 60px;
+    margin-top: 20px;
+}
+.more_conditions_dialog .dao{
+    color: #CECECE;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+/*卡详情内容*/
+#cardetail_content .card-detail>.span12{
+    font-size: 14px;
+}
+#cardetail_content .card-detail>table{
+    border: 0;
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    margin-bottom: 30px;
+}
+#cardetail_content .card-detail>table th,
+#cardetail_content .card-detail>table td{
+    border: 0;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+/*消费记录的详情页*/
+.expendcard-detail .btn-block{
+    margin-bottom: 13px;
+    outline: none;
+}
+.expendcard-detail .btn-block>.sanjiao{
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border: 6px solid transparent;
+    border-top-color: #fff;
+    position: relative;
+    top: 5px;
+    left: 10px;
+}
+.expendcard-detail table tr.combo-bg{
+    background: #f8f8f8;
+}
+.dishes-detail>.row-fluid>div{
+    text-align: center;
+}
+.dishes-print{
+    border: 1px solid #84BEE1;
+    background: transparent;
+    color: #84BEE1;
+    font-size: 13px;
+    border-radius: 5px;
+}
+.dishes-print:hover{
+    background: #84BEE1;
+    color: #fff;
+}
+.dishes-detail{
+    display: none;
+}
+
+/********积分设置*******/
+#mm_integral_set{
+    padding-left: 20px;
+}
+#mm_integral_set .controls>div{
+    margin-top: 10px;
+}
+#mm_integral_set .controls input{
+    vertical-align: middle;
+}
+#mm_integral_set .controls .help-inline{
+    margin-top: -2px;
+    margin-left: 30px;
+}
+#mm_integral_set .switchButton{
+    top: -7px;
+    left: -5px;
+}
+/*********规则设置***********/
+#mm_rule_set>form{
+    margin-top: 10px;
+}
+#mm_rule_set>form .form-actions>button{
+    width: 130px;
+    margin-right: 20px;
+}
+#mm_rule_set input{
+    vertical-align: middle;
+}
+#mm_rule_set div.checkbox{
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 20px;
+}
+#mm_rule_set div.checkbox input[type=checkbox]{
+    left: 20px;
+}
+#mm_rule_set div.checkbox>span.text-inline{
+    font-size: 13px;
+    position: relative;
+    top: -5px;
+}
+#mm_rule_set .controls ul.item-caipin:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+#mm_rule_set .controls ul.item-caipin{
+    margin: 10px 0;
+}
+#mm_rule_set .controls ul.item-caipin>li{
+    float: left;
+    list-style: none;
+    margin: 0 20px 10px 0;
+}
+#mm_rule_set .controls ul.item-caipin>li>span.cb{
+    margin-right: 5px;
+    position: relative;
+    top: 0;
+    top: 3px \9;
+}
+/*规则行的表单*/
+#mm_rule_set .ruleInputBox{
+    position: relative;
+}
+#mm_rule_set .ruleInput{
+    padding-right: 20px !important;
+    margin: 0 10px;
+}
+#mm_rule_set .ruleInputBox .ruleInput:nth-child(1){
+    margin-left: 0;
+}
+#mm_rule_set .ruleInput ~ b{
+    font-weight: normal;
+    position: absolute;
+    top: 6px;
+}
+#mm_rule_set .ruleInputBox b.left1{
+    left: 145px;
+}
+#mm_rule_set .ruleInputBox b.left2{
+    left: 335px;
+}
+#mm_rule_set .ruleInputBox b.left3{
+    left: 130px;
+}
+#mm_rule_set .ruleInputBox b.left4{
+    left: 320px;
+}
+#mm_rule_set .ruleInputBox b.left5{
+    left: 507px;
+}
+

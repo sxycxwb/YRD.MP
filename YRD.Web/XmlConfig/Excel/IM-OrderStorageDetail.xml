@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>Title</code>
+    <name>材料名称</name>
+  </field>
+  <field>
+    <code>MaterialSpecName</code>
+    <name>规格</name>
+  </field>
+  <field>
+    <code>MaterialUnitName</code>
+    <name>单位</name>
+  </field>
+  <field>
+    <code>CountReal</code>
+    <name>入库数量</name>
+  </field>
+  <field>
+    <code>PriceReal</code>
+    <name>入库单价</name>
+  </field>
+  <field>
+    <code>LastPrice</code>
+    <name>上次入库单价</name>
+  </field>
+  <field>
+    <code>TotalPriceReal</code>
+    <name>小计</name>
+  </field> 
+</fields>

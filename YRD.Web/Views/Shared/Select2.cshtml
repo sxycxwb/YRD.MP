@@ -1,0 +1,9 @@
+﻿<select id="Area1" name="Aear1" onchange="changeArea(1)" class="select2">
+    <option value="">请选择省...</option>
+    @{
+        foreach (var item in ViewData["Area1"] as List<SelectListItem>)
+        {
+            <option value="@item.Value">@item.Text</option>
+        }
+    }
+</select>

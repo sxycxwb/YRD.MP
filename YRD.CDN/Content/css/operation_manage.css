@@ -1,0 +1,104 @@
+.page-content>.container-fluid>.row-fluid:nth-child(2){
+    margin-top: 15px;
+}
+.row-fluid>.span12{
+    margin-left: 0;
+    margin-bottom: 20px;
+}
+.row-fluid>.span12>div{
+    display: inline-block;
+}
+.text-center{
+    font-size: 16px;
+    margin: 20px 0 10px 0;
+}
+input{
+    vertical-align: middle !important;
+    margin-right: 10px;
+}
+/*前昨今*/
+div.selectime>a{
+    margin-right: 15px;
+    text-decoration: none;
+}
+div.selectime{
+    margin-right: 10px;
+}
+/********营业收入********/
+.oi-datalist{
+    background: #6699FF;
+    color: #fff;
+}
+.oi-datalist>.span6:first-child{
+    border-right: 1px solid #fff;
+}
+.oi-datalist span{
+    display: inline-block;
+    width: 70px;
+    margin-left: 10px;
+}
+.oi-datalist input{
+    width: 75px;
+    margin: 0 10px 0 20px;
+}
+.oi-datalist .span12,
+.oi-datalist .span6{
+    margin-left: 0;
+}
+.oi-datalist .row-fluid{
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+/*数据图标显示*/
+.oi-dataicon .span5{
+    text-align: center;
+}
+.oi-dataicon .rd + span{
+    position: relative;
+    top: -5px;
+    margin-right: 20px;
+}
+.oi-dataicon .rd{
+    margin-top: 0;
+}
+#oi-dataicon{
+    height: 400px;
+}
+/*******营业记录*******/
+#om_operation_record .total-line>span{
+    font-size: 13px;
+    position: relative;
+    top: -11px;
+    top:-12px \9;
+}
+#om_operation_record .total-line>ul{
+    display: inline-block;
+    margin: 0;
+}
+#om_operation_record .total-line>ul:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+#om_operation_record .total-line>ul>li{
+    float: left;
+    display: inline-block;
+    border: 1px solid #797979;
+    border-right: 0;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+#om_operation_record .total-line>ul>li:last-child{
+    border-right: 1px solid #797979;
+}
+#om_operation_record .table th,
+#om_operation_record .table td{
+    padding-left: 0;
+    padding-right: 0;
+}
+/*详情内容*/
+.btn-block{
+    margin-bottom: 13px;
+}

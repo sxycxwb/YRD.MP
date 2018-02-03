@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>NickName</code>
+    <name>姓名</name>
+  </field>
+  <field>
+    <code>ManagerNo</code>
+    <name>编号</name>
+  </field>
+  <field>
+    <code>GenderText</code>
+    <name>性别</name>
+  </field>
+  <field>
+    <code>Birthday</code>
+    <name>生日</name>
+  </field>
+  <field>
+    <code>SelRoleIDText</code>
+    <name>角色</name>
+  </field>
+  <field>
+    <code>Phone</code>
+    <name>手机</name>
+  </field>
+  <field>
+    <code>InductionTime</code>
+    <name>入职时间</name>
+  </field>
+  <field>
+    <code>LoginName</code>
+    <name>登录账号</name>
+  </field>
+
+</fields>

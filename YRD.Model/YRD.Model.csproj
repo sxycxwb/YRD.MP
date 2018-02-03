@@ -1,0 +1,386 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{776CBB6C-DDA3-47D3-8594-B262393E60B7}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>YRD.Model</RootNamespace>
+    <AssemblyName>YRD.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\YRD.Model.xml</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base.cs" />
+    <Compile Include="DataModels\ExCardoperationuser.cs" />
+    <Compile Include="DataModels\ExIDName.cs" />
+    <Compile Include="DataModels\Ex.cs" />
+    <Compile Include="DataModels\ExCusorderdetail.cs" />
+    <Compile Include="DataModels\ExCusorderpay.cs" />
+    <Compile Include="DataModels\ExCusorderpaydetail.cs" />
+    <Compile Include="DataModels\ExIndex_cusreserve.cs" />
+    <Compile Include="DataModels\ExIndex_department.cs" />
+    <Compile Include="DataModels\ExIndex_room.cs" />
+    <Compile Include="DataModels\ExIndex_roomtype.cs" />
+    <Compile Include="DataModels\ExIndex_table.cs" />
+    <Compile Include="DataModels\Exmanager.cs" />
+    <Compile Include="DataModels\ExMyCard.cs" />
+    <Compile Include="DataModels\ExMyCarddetail.cs" />
+    <Compile Include="DataModels\ExOrder.cs" />
+    <Compile Include="DataModels\ExPayList.cs" />
+    <Compile Include="DataModels\ExSelcardoperationuser.cs" />
+    <Compile Include="DataModels\EXSelcardrule.cs" />
+    <Compile Include="DataModels\ExSelfixedcost.cs" />
+    <Compile Include="DataModels\ExSelfood.cs" />
+    <Compile Include="DataModels\ExSelFoodtaste.cs" />
+    <Compile Include="DataModels\ExSelfoodtype.cs" />
+    <Compile Include="DataModels\ExStockMaterial.cs" />
+    <Compile Include="DataModels\Ex_cusorderdetail.cs" />
+    <Compile Include="DataModels\ExSelcard.cs" />
+    <Compile Include="DataModels\PageExSecard.cs" />
+    <Compile Include="DataModels\PageExSelcardoperationuser.cs" />
+    <Compile Include="DataModels\ExTypeAndList.cs" />
+    <Compile Include="DataModels\Xml_Field.cs" />
+    <Compile Include="DataModels\ExArticle.cs" />
+    <Compile Include="DataModels\ExChannel.cs" />
+    <Compile Include="DataModels\ExCity.cs" />
+    <Compile Include="DataModels\ExConfig.cs" />
+    <Compile Include="DataModels\ExDBList.cs" />
+    <Compile Include="DataModels\ExEgg.cs" />
+    <Compile Include="DataModels\ExFriendLink.cs" />
+    <Compile Include="DataModels\ExFruit.cs" />
+    <Compile Include="DataModels\ExGrade.cs" />
+    <Compile Include="DataModels\ExImage.cs" />
+    <Compile Include="DataModels\ExJoinUs.cs" />
+    <Compile Include="DataModels\ExMessage.cs" />
+    <Compile Include="DataModels\ExMType.cs" />
+    <Compile Include="DataModels\ExRedPacket.cs" />
+    <Compile Include="DataModels\ExScoreDetail.cs" />
+    <Compile Include="DataModels\ExToTop.cs" />
+    <Compile Include="DataModels\ExUser.cs" />
+    <Compile Include="DomainModels\ExCheckSearch.cs" />
+    <Compile Include="DomainModels\ExLossRateSearch.cs" />
+    <Compile Include="DomainModels\ExMaterialUnit.cs" />
+    <Compile Include="DomainModels\ExMyOrder.cs" />
+    <Compile Include="DomainModels\ExApplyAutoSideSearch.cs" />
+    <Compile Include="DomainModels\ExStockSearch.cs" />
+    <Compile Include="DomainModels\HomeSwh\ExProduct.cs" />
+    <Compile Include="EnumModels\LogEnabled.cs" />
+    <Compile Include="ParamModels\PaBackFood.cs" />
+    <Compile Include="ParamModels\PaFood.cs" />
+    <Compile Include="ParamModels\PaIndexApplyAutoSideSearch.cs" />
+    <Compile Include="ParamModels\PaIndexStockSearch.cs" />
+    <Compile Include="ParamModels\PaMain.cs" />
+    <Compile Include="ParamModels\PaMyOrder.cs" />
+    <Compile Include="ParamModels\paMyTable.cs" />
+    <Compile Include="ParamModels\paOpenTable.cs" />
+    <Compile Include="ParamModels\PaOrderApplyShopCart.cs" />
+    <Compile Include="DomainModels\ExRefundsSearch.cs" />
+    <Compile Include="DomainModels\ExInsideSearch.cs" />
+    <Compile Include="DomainModels\ExAutoOutSideSearch.cs" />
+    <Compile Include="DomainModels\ExAutoOutside.cs" />
+    <Compile Include="DomainModels\ExApplySearch.cs" />
+    <Compile Include="DomainModels\ExCode.cs" />
+    <Compile Include="DomainModels\ExCountMoney.cs" />
+    <Compile Include="DomainModels\ExIDNumber.cs" />
+    <Compile Include="DomainModels\ExIndexOrderCheck.cs" />
+    <Compile Include="DomainModels\ExIndexOrderLossRate.cs" />
+    <Compile Include="DomainModels\ExIndexOrderInside.cs" />
+    <Compile Include="DomainModels\ExIndex_Search.cs" />
+    <Compile Include="DomainModels\ExLogin.cs" />
+    <Compile Include="DomainModels\ExMaterialOver.cs" />
+    <Compile Include="DomainModels\ExOrderAutoOutSideFood.cs" />
+    <Compile Include="DomainModels\ExOrderApply.cs" />
+    <Compile Include="DomainModels\ExOrderApplyDetailMore.cs" />
+    <Compile Include="DomainModels\ExOrderAutoOutsideDetail.cs" />
+    <Compile Include="DomainModels\ExOrderCheckDetail.cs" />
+    <Compile Include="DomainModels\ExOrderCheck.cs" />
+    <Compile Include="DomainModels\ExOrderCheckList.cs" />
+    <Compile Include="DomainModels\ExOrderInside.cs" />
+    <Compile Include="DomainModels\ExOrderListSimple.cs" />
+    <Compile Include="DomainModels\ExOrderLossRate.cs" />
+    <Compile Include="DomainModels\ExOrderLossRateDetail.cs" />
+    <Compile Include="DomainModels\ExOrderNoCheck.cs" />
+    <Compile Include="DomainModels\ExOrderStorage.cs" />
+    <Compile Include="DomainModels\ExPremit.cs" />
+    <Compile Include="DomainModels\ExProgress.cs" />
+    <Compile Include="DomainModels\ExSelprinter.cs" />
+    <Compile Include="DomainModels\ExShop.cs" />
+    <Compile Include="DomainModels\ExSupplierMoneyDetail.cs" />
+    <Compile Include="DomainModels\ExSupplierOrder.cs" />
+    <Compile Include="DomainModels\ExSupplierPayment.cs" />
+    <Compile Include="DomainModels\ExSupplierPaymode.cs" />
+    <Compile Include="DomainModels\ExSupplierSimple.cs" />
+    <Compile Include="DomainModels\ExSupplierTotal.cs" />
+    <Compile Include="DomainModels\ExSwhmaterialPrice.cs" />
+    <Compile Include="DomainModels\ExSwhmaterial.cs" />
+    <Compile Include="DomainModels\ExSwhcheckList.cs" />
+    <Compile Include="DomainModels\ExSwhOrdercheck.cs" />
+    <Compile Include="DomainModels\ExSwhorderinsidedetail.cs" />
+    <Compile Include="DomainModels\ExSwhOrdercheckList.cs" />
+    <Compile Include="DomainModels\ExOrderApplyDetail.cs" />
+    <Compile Include="DomainModels\ExSwhOrderrefundsdetail.cs" />
+    <Compile Include="DomainModels\ExSwhOrderstorage.cs" />
+    <Compile Include="DomainModels\ExSwhOrderrefunds.cs" />
+    <Compile Include="DomainModels\ExSwhorderstorageList.cs" />
+    <Compile Include="DomainModels\ExSwhswhsupplierList.cs" />
+    <Compile Include="DomainModels\ExSwhWarehouseList.cs" />
+    <Compile Include="DomainModels\ExTestUser.cs" />
+    <Compile Include="DomainModels\ExTodayMoney.cs" />
+    <Compile Include="DomainModels\HomeSwh\ExOrderCheck.cs" />
+    <Compile Include="DomainModels\HomeSwh\ExOrderRefunds.cs" />
+    <Compile Include="DomainModels\HomeSwh\ExOrderLossRate.cs" />
+    <Compile Include="DomainModels\HomeSwh\ExOrderApply.cs" />
+    <Compile Include="DomainModels\RegisterModel.cs" />
+    <Compile Include="DomainModels\AccountInfo.cs" />
+    <Compile Include="DomainModels\AccountSafeInfo.cs" />
+    <Compile Include="DomainModels\BuyWebSite.cs" />
+    <Compile Include="DomainModels\CertificateUser.cs" />
+    <Compile Include="DomainModels\Contract.cs" />
+    <Compile Include="DomainModels\Contract4sModel.cs" />
+    <Compile Include="DomainModels\ExBankCard.cs" />
+    <Compile Include="DomainModels\ExMessage.cs" />
+    <Compile Include="DomainModels\ExOrderModel.cs" />
+    <Compile Include="DomainModels\ExUserJinbi.cs" />
+    <Compile Include="DomainModels\GoldCash.cs" />
+    <Compile Include="DomainModels\MoneyCharge.cs" />
+    <Compile Include="DomainModels\GoldDetail.cs" />
+    <Compile Include="DomainModels\HeadPhoto.cs" />
+    <Compile Include="DomainModels\jinbiPwd.cs" />
+    <Compile Include="DomainModels\PowerViewModel.cs" />
+    <Compile Include="DomainModels\RealCheckInfo.cs" />
+    <Compile Include="DomainModels\ScoreDetail.cs" />
+    <Compile Include="DomainModels\UserAddressCacheModel.cs" />
+    <Compile Include="DomainModels\UserBasicInfo.cs" />
+    <Compile Include="EnumModels\EnumController.cs" />
+    <Compile Include="EnumModels\EnumPrinterType.cs" />
+    <Compile Include="EnumModels\EnumJinbiType.cs" />
+    <Compile Include="EnumModels\EnumMessageAuditStatus.cs" />
+    <Compile Include="EnumModels\EnumPayWay.cs" />
+    <Compile Include="EnumModels\EnumRedPacketType.cs" />
+    <Compile Include="EnumModels\EnumSpreadType.cs" />
+    <Compile Include="EnumModels\EnumToTop.cs" />
+    <Compile Include="EnumModels\MyEnum.cs" />
+    <Compile Include="ExShift.cs" />
+    <Compile Include="ParamModels\HomeSwh\PaModelID.cs" />
+    <Compile Include="ParamModels\HomeSwh\PaOrderCheck.cs" />
+    <Compile Include="ParamModels\HomeSwh\PaOrderRefunds.cs" />
+    <Compile Include="ParamModels\HomeSwh\PaOrderLossRate.cs" />
+    <Compile Include="ParamModels\HomeSwh\PaOrderInside.cs" />
+    <Compile Include="ParamModels\HomeSwh\PaOrderApply.cs" />
+    <Compile Include="ParamModels\OderParm.cs" />
+    <Compile Include="ParamModels\PaBase.cs" />
+    <Compile Include="ParamModels\PaBaseModelLossRateList.cs" />
+    <Compile Include="ParamModels\paCard.cs" />
+    <Compile Include="ParamModels\PaChangeUnit.cs" />
+    <Compile Include="ParamModels\PaCheckSearch.cs" />
+    <Compile Include="ParamModels\PaOrderInsideWhole.cs" />
+    <Compile Include="ParamModels\PaOrderLossRateWhole.cs" />
+    <Compile Include="ParamModels\PaOrderRefundsWhole.cs" />
+    <Compile Include="ParamModels\PaOrderStorageWhole.cs" />
+    <Compile Include="ParamModels\paMemCharge.cs" />
+    <Compile Include="ParamModels\paReserve.cs" />
+    <Compile Include="ParamModels\PaVerification.cs" />
+    <Compile Include="ParamModels\PaSms.cs" />
+    <Compile Include="ParamModels\PaIndexCheckSearch.cs" />
+    <Compile Include="ParamModels\PaIndexLossRateSearch.cs" />
+    <Compile Include="ParamModels\PaIndexRefundsSearch.cs" />
+    <Compile Include="ParamModels\PaIndexInsideSearch.cs" />
+    <Compile Include="ParamModels\PaIndexAutoOutsideSearch.cs" />
+    <Compile Include="ParamModels\PaIndexApplySearch.cs" />
+    <Compile Include="ParamModels\PaPageListTime.cs" />
+    <Compile Include="ParamModels\PaPayment.cs" />
+    <Compile Include="ParamModels\PaCopyTable.cs" />
+    <Compile Include="ParamModels\PaContent.cs" />
+    <Compile Include="ParamModels\PaInsideSign.cs" />
+    <Compile Include="ParamModels\PaNamePhone.cs" />
+    <Compile Include="ParamModels\PaOrderLoss.cs" />
+    <Compile Include="ParamModels\PaRefund.cs" />
+    <Compile Include="ParamModels\PaDate.cs" />
+    <Compile Include="ParamModels\PaTimeSearch.cs" />
+    <Compile Include="ParamModels\PaWarehouseID.cs" />
+    <Compile Include="ParamModels\PaPay.cs" />
+    <Compile Include="ParamModels\paCusreserve.cs" />
+    <Compile Include="ParamModels\PaList_ID.cs" />
+    <Compile Include="ParamModels\PaList_Key.cs" />
+    <Compile Include="ParamModels\PaLossRate.cs" />
+    <Compile Include="ParamModels\PaMaIDHouseID.cs" />
+    <Compile Include="ParamModels\PaMember.cs" />
+    <Compile Include="ParamModels\PaPrice.cs" />
+    <Compile Include="ParamModels\PaIntroduction.cs" />
+    <Compile Include="ParamModels\PaIDTime.cs" />
+    <Compile Include="ParamModels\PaOrderStorage.cs" />
+    <Compile Include="ParamModels\PaOrderType.cs" />
+    <Compile Include="ParamModels\PaIDcheck.cs" />
+    <Compile Include="ParamModels\PaKey.cs" />
+    <Compile Include="ParamModels\Pacode.cs" />
+    <Compile Include="ParamModels\PaChildID.cs" />
+    <Compile Include="ParamModels\PapageIDNumber.cs" />
+    <Compile Include="ParamModels\PaIDNumber.cs" />
+    <Compile Include="ParamModels\PaIDImg.cs" />
+    <Compile Include="ParamModels\PaID.cs" />
+    <Compile Include="ParamModels\PaIDName.cs" />
+    <Compile Include="ParamModels\PaIndex.cs" />
+    <Compile Include="ParamModels\PaLogin.cs" />
+    <Compile Include="ParamModels\PaList.cs" />
+    <Compile Include="ParamModels\PaPageList_ID.cs" />
+    <Compile Include="ParamModels\PaPwd.cs" />
+    <Compile Include="ParamModels\PaSelSpotInfo.cs" />
+    <Compile Include="ParamModels\PaShop.cs" />
+    <Compile Include="ParamModels\PaTranTable.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DomainModels\ExList.cs" />
+    <Compile Include="DomainModels\ExBaseModel.cs" />
+    <Compile Include="DomainModels\ExSwhList.cs" />
+    <Compile Include="DomainModels\ExSwhStockList.cs" />
+    <Compile Include="ParamModels\PaBaseModelStorageList.cs" />
+    <Compile Include="DomainModels\ExSwhStorageList.cs" />
+    <Compile Include="DomainModels\ExSwhOrderList.cs" />
+    <Compile Include="DomainModels\ExSwhMList.cs" />
+    <Compile Include="DomainModels\ExRefundAll.cs" />
+    <Compile Include="ViewModels\AM\ViewAddJinbiRecharge.cs" />
+    <Compile Include="ViewModels\AM\ViewDistribution.cs" />
+    <Compile Include="ViewModels\AM\ViewPayPassword.cs" />
+    <Compile Include="ViewModels\AM\ViewBank.cs" />
+    <Compile Include="ViewModels\member\ViewRule.cs" />
+    <Compile Include="ViewModels\member\ViewAddRule.cs" />
+    <Compile Include="ViewModels\SM\ViewOrderFood.cs" />
+    <Compile Include="ViewModels\swh\ViewOrderAutoOutside.cs" />
+    <Compile Include="ViewModels\swh\ViewAddOrderInitialStock.cs" />
+    <Compile Include="ViewModels\swh\ViewOrderRefunds.cs" />
+    <Compile Include="ViewModels\swh\ViewOrderLossrate.cs" />
+    <Compile Include="ViewModels\swh\ViewOrderInside.cs" />
+    <Compile Include="ViewModels\swh\ViewOrderStorage.cs" />
+    <Compile Include="ViewModels\swh\ViewOrderApply.cs" />
+    <Compile Include="ViewModels\swh\ViewOrderInitialStockSelectWareHouse.cs" />
+    <Compile Include="ViewModels\swh\ViewSupplierPayment.cs" />
+    <Compile Include="ViewModels\swh\ViewSupplier.cs" />
+    <Compile Include="ViewModels\swh\ViewSupplierType.cs" />
+    <Compile Include="ViewModels\swh\ViewMaterialType.cs" />
+    <Compile Include="ViewModels\swh\ViewMaterial.cs" />
+    <Compile Include="ViewModels\swh\ViewAddCaiPinCost.cs" />
+    <Compile Include="ViewModels\swh\ViewtCaiPinCost.cs" />
+    <Compile Include="ViewModels\swh\ViewShopStock.cs" />
+    <Compile Include="ViewModels\swh\ViewOrderCheck.cs" />
+    <Compile Include="ViewModels\swh\ViewSupplierPaymentDetail.cs" />
+    <Compile Include="ViewModels\swh\ViewWareHouse.cs" />
+    <Compile Include="ViewModels\ViewVaildCode.cs" />
+    <Compile Include="ViewModels\ViewMaterialUnit.cs" />
+    <Compile Include="ViewModels\ViewEx.cs" />
+    <Compile Include="ViewModels\ViewRole.cs" />
+    <Compile Include="ViewModels\ViewChangePassword.cs" />
+    <Compile Include="ViewModels\ViewAgentJoin.cs" />
+    <Compile Include="ViewModels\ViewPermit.cs" />
+    <Compile Include="ViewModels\ViewFindpwd.cs" />
+    <Compile Include="ViewModels\ViewRegister.cs" />
+    <Compile Include="ViewModels\UpFileModel.cs" />
+    <Compile Include="ViewModels\ViewFood.cs" />
+    <Compile Include="ViewModels\ViewRecharge.cs" />
+    <Compile Include="ViewModels\ViewRoom.cs" />
+    <Compile Include="ViewModels\ViewTable.cs" />
+    <Compile Include="ViewModels\ViewMessageDetail.cs" />
+    <Compile Include="ViewModels\ViewRechargeDetail.cs" />
+    <Compile Include="ViewModels\ViewAccountBalance.cs" />
+    <Compile Include="ViewModels\ViewActivitysaleadd.cs" />
+    <Compile Include="ViewModels\ViewBase.cs" />
+    <Compile Include="ViewModels\ViewBasicInfo.cs" />
+    <Compile Include="ViewModels\ViewAccountCenter.cs" />
+    <Compile Include="ViewModels\AM\ViewOnlineUpGrade.cs" />
+    <Compile Include="ViewModels\ViewRebaterateSet.cs" />
+    <Compile Include="ViewModels\ViewMessageSet.cs" />
+    <Compile Include="ViewModels\ViewConditionset.cs" />
+    <Compile Include="ViewModels\ViewETAddTicket.cs" />
+    <Compile Include="ViewModels\ViewSF.cs" />
+    <Compile Include="ViewModels\ViewSelect.cs" />
+    <Compile Include="ViewModels\ViewStaff.cs" />
+    <Compile Include="ViewModels\ViewSelCost.cs" />
+    <Compile Include="ViewModels\ViewSelPrinter.cs" />
+    <Compile Include="ViewModels\ViewCashs.cs" />
+    <Compile Include="ViewModels\ViewFruit.cs" />
+    <Compile Include="ViewModels\ViewGoldBank.cs" />
+    <Compile Include="ViewModels\ViewHot.cs" />
+    <Compile Include="ViewModels\ViewJoinUs.cs" />
+    <Compile Include="ViewModels\ViewMessage.cs" />
+    <Compile Include="ViewModels\ViewTopBar.cs" />
+    <Compile Include="ViewModels\ViewUserLogin.cs" />
+    <Compile Include="ViewModels\ViewUserModel.cs" />
+    <Compile Include="ViewModels\ViewCashierSet.cs" />
+    <Compile Include="ViewModels\ViewUserReg.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\YRD.Dao\YRD.Dao.csproj">
+      <Project>{d2aa7587-7c7d-4a24-8e04-26f7ad8d85ac}</Project>
+      <Name>YRD.Dao</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

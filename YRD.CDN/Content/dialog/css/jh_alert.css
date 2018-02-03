@@ -1,0 +1,211 @@
+/* 信息弹窗 */
+.jh_tips_form {
+
+    background-color: white;
+    border-radius: 5px;
+    display: none;
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    left: 50%;
+    margin-left: -256px;
+    margin-top: -200px;
+    overflow: hidden;
+    padding: 17px;
+    position: fixed;
+    text-align: center;
+    top: 50%;
+    width: 478px;
+    z-index: 99999;
+
+}
+
+.jh_tips_form .circle_box{
+
+    font-size: 100px;
+
+    position:relative;
+
+}
+
+.jh_tips_form .circle_box > span{
+
+    font-size: 50px;
+    
+    display: block;
+}
+
+
+.jh_tips_form .circle_wraning{
+
+    color: #f8bb86;
+}
+
+.jh_tips_form .circle_error{
+
+    color: #f27474
+
+}
+
+.jh_tips_form .circle_success{
+
+    color: #a5dc86
+
+}
+
+
+.jh_tips_form .fa-exclamation{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -25%;
+    margin-left:  -10%;
+
+}
+
+.jh_tips_form .fa-close{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -30%;
+    margin-left:  -22%;
+
+}
+
+.jh_tips_form .fa-check{
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -28%;
+    margin-left:  -27%;
+
+}
+
+
+
+.jh_tips_form h2{
+
+    color: #575757;
+    display: block;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 40px;
+    margin: 25px 0 20px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-transform: none;
+    font-weight: normal;
+
+}
+
+.jh_tips_form p {
+    color: #797979;
+    float: none;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: normal;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    text-align: inherit;
+}
+
+.jh_tips_form .jh_button_container{
+
+    display: inline-block;
+    position: relative;
+
+}
+
+.jh_tips_form .jh_button_container button {
+    background-color: #8cd4f5;
+    border: medium none;
+    border-radius: 5px;
+    box-shadow: none;
+    color: white;
+    cursor: pointer;
+    font-size: 17px;
+    font-weight: 500;
+    margin: 26px 5px 0;
+    padding: 10px 32px;
+}
+
+.jh_tips_form .jh_button_container button:hover {
+    background-color: #7ecff4;
+}
+
+.jh_tips_form .jh_button_container .cancle{
+
+    background: #c1c1c1
+
+}
+
+.jh_tips_form .jh_button_container .cancle:hover{
+
+    background: #c1c1c1
+
+}
+
+.jh_tips_form .jh_bar_close{
+
+    display: none;
+
+}
+
+.mask{
+
+    background: rgba(0,0,0,0.5);
+    width: 100%;
+    opacity: 0.5;
+    display: block;
+
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    z-index: 9998;
+
+}
+
+/* 表单弹窗 */
+
+.modal-dialog {
+    margin-top: 80px;
+    margin-left: -300px;
+    left: 50%;
+    z-index: 9999;
+    position: fixed;
+
+}
+
+.modal-content {
+    border: medium none;
+    border-radius: 5px;
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0.1), 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    background: #f7f9fa none repeat scroll 0 0;
+    padding: 10px 30px;
+}
+
+.modal-title {
+    font-size: 20px;
+    font-weight: 300;
+}
+
+.modal-header small {
+    color: #9d9fa2;
+}
+
+.modal-body {
+    padding: 20px 30px;
+    background: #fff;
+}
+
+.modal-footer {
+    background: #f7f9fa none repeat scroll 0 0;
+}

@@ -1,0 +1,71 @@
+﻿@model YRD.Model.ViewModels.ViewShopJinbi
+@{
+    ViewBag.Title = "账户余额";
+    ViewBag.menuid = 1113;
+}
+@section css    {
+    <!--本页css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/GoldBank/GoldBalance">账户余额</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#account_balance" data-toggle="tab">账户余额</a></li>
+                            <li><a href="/GoldBank/RechargeDetail">充值列表</a></li>
+                            <li><a href="/GoldBank/JinbiDetail">账户明细</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--账户余额-->
+                            <div class="active tab-pane" id="account_balance">
+                                <div class="numBox">
+                                    <div>账户余额（元）：</div>
+                                    <div>
+                                        <span class="balanceBox"><b>@Model.Jinbi</b></span>
+                                        <a href="/GoldBank/AddJinbiRecharge" class="btn blue">我要充值</a>
+                                    </div>
+                                </div>
+                                <div class="balanceInfo">
+                                    <p>说明：</p>
+                                    <p>一、商家充值仅且只能充值到账户余额</p>
+                                    <p>二、余额用来支付美味云平台任何费用</p>
+                                    <p>三、充值后的余额可以购买短信，支付版本费用，支付云库存费用，以及开通三级返佣等</p>
+                                    <p>四、余额允许提现，时间为24小时之内，提现金额自动打到商家设定的微信和支付宝账户</p>
+                                    <p>五、三级返佣的保证金不显示在账户余额中，账户余额只显示可用余额</p>
+                                    <p>六、商家开通三级分销后返利支出和返利收入（用户余额支付）在账户明细中查看</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+
+    <!--本页js-->
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/account-manage.js"></script>
+
+}

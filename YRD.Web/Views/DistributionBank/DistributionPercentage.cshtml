@@ -1,0 +1,139 @@
+﻿@model YRD.Model.ViewModels.ViewDistributionPercentage
+@{
+    ViewBag.Title = "返利设置";
+    ViewBag.menuid = 1119;
+}
+@section css    {
+    <!--本页css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+
+<!--右侧内容-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionBalance">三级分销</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionPercentage">返利设置</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li><a href="/DistributionBank/DistributionBalance">分销账户</a></li>
+                            <li><a href="/DistributionBank/JinbiDetail">账户明细</a></li>
+                            <li><a href="/DistributionBank/DistributionOrder">分销订单</a></li>
+                            <li><a href="/DistributionBank/DistributionContract">签署合同</a></li>
+                            <li class="active"><a href="#td_rebate_set" data-toggle="tab">返利设置</a></li>
+                            <li><a href="/DistributionBank/DistributionOpen">分销开启</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--返利设置-->
+                            <div class="active tab-pane" id="td_rebate_set">
+                                <div class="tips">提示：请提前签署电子协议并充值一定金额到<span class="f00">分销账户</span>，商家返利比例不低于8%</div>
+                                @using (Ajax.BeginForm("SaveDistributionPercentage", null, new AjaxOptions()
+                                {
+                                    HttpMethod = "Post",
+                                    OnBegin = "SubAjax.Loading",
+                                    OnComplete = "SubAjax.Complate",
+                                    OnFailure = "SubAjax.Failure",
+                                    OnSuccess = "SubAjax.Success"
+                                }, new { @class = "form-horizontal", @role = "form", @id = "commentForm" }))
+                                {
+                                    <div class="control-group">
+                                        <label class="control-label">返利比例</label>
+                                        <div class="controls">
+                                            @if (Model.IsAllowSet)
+                                            {
+                                                <input type="text" class="m-wrap small setRate" name="Percentage" value="@Model.Percentage" />
+                                            }
+                                            else
+                                            {
+                                                <span>@Model.Percentage</span>
+                                            }
+
+
+                                            <span>%</span>
+                                            @if (Model.IsAllowSet)
+                                            {
+                                                <span class="text-inline rateInfo">返佣比例提交后一个季度才可修改一次，下次可设置的时间为<span>@Model.SetPercentageTimeEndFormat</span></span>
+                                            }
+                                            else
+                                            {
+                                                <span class="text-inline rateInfo">距下次修改时间还有<span>@Model.Days.ToString()</span>天</span>
+                                            }
+
+
+                                        </div>
+                                    </div>
+                                    if (Model.IsSetPercentage)
+                                    {
+                                        <div class="control-group">
+                                            <label class="control-label">提交时间</label>
+                                            <div class="controls">
+                                                <span class="text-inline">@Model.SetPercentageTimeFormat</span>
+                                            </div>
+                                        </div>
+                                    }
+
+                                    <div class="control-group">
+                                        <label class="control-label">返利说明</label>
+                                        <div class="controls">
+                                            <div class="rateExplain">
+                                                <p>
+                                                    <span class="reLabel">一、</span>
+                                                    <span class="reContent">返佣比例提交后一个月才可修改一次</span>
+                                                </p>
+                                                <p>
+                                                    <span class="reLabel">二、</span>
+                                                    <span class="reContent">您可根据菜品价格和利润返还一定比例的金额给点餐用户，达到提高品牌知名度，带来更多新客户的效果，还可以提高员工的积极性</span>
+                                                </p>
+                                                <p>
+                                                    <span class="reLabel">三、</span>
+                                                    <span class="reContent">美味云抽取的服务费为返佣总比例的1.8%</span>
+                                                </p>
+                                                <p>
+                                                    <span class="reLabel">四、</span>
+                                                    <span class="reContent">消费者获取的一级返佣比例为返佣总比例的70%，消费者的上级推荐人获取的二级返佣比例为返佣总比例的22%，再上级的推荐人获取的三级返佣比例为返佣总比例的8%</span>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    if (Model.IsAllowSet)
+                                    {
+                                        <div class="form-actions">
+                                            <button type="submit" class="btn blue medium">提交</button>
+                                        </div>
+                                    }
+
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+
+    <!--本页js-->
+    <script src="~/Content/JS/MyForm.js"></script>
+}

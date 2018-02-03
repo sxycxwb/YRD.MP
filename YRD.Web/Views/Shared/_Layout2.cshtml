@@ -1,0 +1,170 @@
+﻿<!DOCTYPE html>
+<!--[if IE 8]><html lang="en" class="ie8 no-js"><![endif]-->
+<!--[if IE 9]><html lang="en" class="ie9 no-js"><![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <title>@ViewBag.Title</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <!--模板css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/bootstrap-responsive.min.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/font-awesome.min.css" />
+
+    <link href="@ConfigHelper.GetCdnUrl/Content/dialog/css/font-awesome.min.css" rel="stylesheet" />
+    <link href="@ConfigHelper.GetCdnUrl/Content/dialog/css/jh_alert.css" rel="stylesheet" />
+    <link href="@ConfigHelper.GetCdnUrl/Content/dialog/css/jh_tips.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/style-metro.css" />
+
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/style.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/style-responsive.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/default.css" />
+    <!--插件css-->
+    <link href="~/Content/DataTables/DT_bootstrap.css" rel="stylesheet" />
+    <link href="~/Content/Validform/css/style.css" rel="stylesheet" />
+    <!--本页css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/iconbg.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/common.css" />
+
+    @RenderSection("css", required: false)
+</head>
+<body class="page-header-fixed">
+    <!--页头-->
+    <div class="header navbar navbar-fixed-top navbar-inverse">
+        <div class="navbar-inner">
+            <div class="container-fluid">
+                <a class="brand" href="http://www.meiweiyun.cn">
+                    <img src="@ConfigHelper.GetCdnUrl/Content/image/logo.png" alt="logo" />
+                </a>
+                <ul class="nav">
+                    <li class="business">
+                        <span>美味云商家后台</span>
+                    </li>
+                    <li>
+                        <span>@ViewBag.ShopName</span>(<span>@ViewBag.VersionName</span>)
+                    </li>
+                </ul>
+                <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                    <img src="@ConfigHelper.GetCdnUrl/Content/image/menu-toggler.png" alt="" />
+                </a>
+                <ul class="nav pull-right">
+                    <!--
+                    <li class="dropdown" id="header_notification_bar">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <b class="iconbg message"></b>
+                            <span class="badge">9</span>
+                        </a>
+                        <ul class="dropdown-menu extended notification">
+                            <li>
+                                <p>You have 9 new notifications</p>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b class="iconbg head-messicon"></b>
+                                    系统通知
+                                    <span class="time">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b class="iconbg head-messicon"></b>
+                                    交易通知
+                                    <span class="time">1</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    <b class="iconbg head-messicon"></b>
+                                    服务通知
+                                    <span class="time">1</span>
+                                </a>
+                            </li>
+                            <li class="external">
+                                <a href="message.html">查看所有消息 <b class="iconbg head-toright"></b></a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="server-phone">
+                        <span>服务专线：18603121212</span>
+                    </li>
+                    -->
+                    <li class="dropdown user">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img alt="" src="@ConfigHelper.GetCdnUrl/Content/image/avatar1_small.jpg" />
+                            <span class="username">@ViewBag.UserName</span>
+                            <b class="iconbg angle-down"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/AccountSafe/ChangePassword"><b class="iconbg head-changePwd"></b> 修改密码</a></li>
+                            <!--<li><a href="account_feedback.html"><b class="iconbg head-messFeed"></b> 意见反馈</a></li>-->
+                            <!--<li class="divider"></li>-->
+                            <!--<li><a href="index.html"><b class="iconbg head-lockScreen"></b> 锁定屏幕</a></li>-->
+                            <li><a href="@ConfigHelper.GetSoUrl/Login/LoginOut"><b class="iconbg head-exit"></b> 退出</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--页面主体-->
+    <div class="page-container row-fluid">
+        @RenderBody()
+    </div>
+
+
+    <!--页尾-->
+    <div class="footer">
+        <div class="footer-tools">
+            <span class="go-top">
+                <b class="iconbg angle-up"></b>
+            </span>
+        </div>
+        <div class="footer-inner">
+            <div class="span4">山西友人岛电子商务有限公司版权所有</div>
+            <div class="span3 ">电话：400-000-0001</div>
+            <div class="span4">地址：太原市小店区晋阳街联合大厦B座</div>
+        </div>
+    </div>
+
+    <!--模板js-->
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/jquery-1.10.1.min.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/jquery-ui-1.10.1.custom.min.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/bootstrap.min.js"></script>
+    <!--插件js-->
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/highcharts/highcharts.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/highcharts/exporting.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/highcharts/grid-light.js"></script>
+
+    <script src="~/Content/DataTables/js/jquery.dataTables.min.js"></script>
+    <script src="~/Content/DataTables/js/dataTables.bootstrap.js"></script>
+    <script src="~/Content/Validform/Validform_v5.3.2_min.js"></script>
+    <script src="~/Content/My97DatePicker/WdatePicker.js"></script>
+
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/app.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/index.js"></script>
+    <!--本页js-->
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/common.js"></script>
+
+
+    <script src="@ConfigHelper.GetCdnUrl/Content/dialog/js/jh_alert_tips.js"></script>
+
+    <script src="~/Content/JS/jquery.unobtrusive-ajax.min.js"></script>
+    <script src="~/Content/JS/Message.js"></script>
+
+    @RenderSection("script", required: false)
+    <script>
+
+
+        $(document).ready(function () {
+            App.init();
+            Index.init();
+
+        });
+
+    </script>
+</body>
+</html>

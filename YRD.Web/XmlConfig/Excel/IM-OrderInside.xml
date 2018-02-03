@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>ID</code>
+    <name>出库单号</name>
+  </field>
+  <field>
+    <code>Title</code>
+    <name>标题</name>
+  </field>
+  <field>
+    <code>CreateTime</code>
+    <name>下单时间</name>
+  </field>
+  <field>
+    <code>InsideTime</code>
+    <name>出库时间</name>
+  </field>
+  <field>
+    <code>InsideMoney</code>
+    <name>金额</name>
+  </field>
+  <field>
+    <code>FromWareHouseName</code>
+    <name>出库库房</name>
+  </field>
+  <field>
+    <code>ToWareHouseName</code>
+    <name>入库库房</name>
+  </field>
+  <field>
+    <code>OrderStateName</code>
+    <name>状态</name>
+  </field>
+  <field>
+    <code>OperationSellerName</code>
+    <name>领料人</name>
+  </field>
+</fields>

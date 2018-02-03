@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>CreateTime</code>
+    <name>充值时间</name>
+  </field>
+  <field>
+    <code>TypeText</code>
+    <name>充值类型</name>
+  </field>
+  <field>
+    <code>Money</code>
+    <name>金额</name>
+  </field>
+  <field>
+    <code>PayTypeText</code>
+    <name>支付方式</name>
+  </field>
+  <field>
+    <code>Contents,</code>
+    <name>备注</name>
+  </field>
+</fields>

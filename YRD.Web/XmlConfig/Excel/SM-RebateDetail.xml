@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>UserName</code>
+    <name>消费用户</name>
+  </field>
+  <field>
+    <code>TableID</code>
+    <name>餐桌</name>
+  </field>
+  <field>
+    <code>CreateTime</code>
+    <name>开台时间</name>
+  </field>
+  <field>
+    <code>PayFinishTime</code>
+    <name>结账时间</name>
+  </field>
+  <field>
+    <code>OrderPrice</code>
+    <name>消费总额</name>
+  </field>
+  <field>
+    <code>In</code>
+    <name>返佣支付</name>
+  </field>
+  <field>
+    <code>Out</code>
+    <name>返佣收入</name>
+  </field>
+  <field>
+    <code>Remain</code>
+    <name>小计</name>
+  </field>
+  <field>
+    <code>PayTypeText</code>
+    <name>余额</name>
+  </field>
+</fields>

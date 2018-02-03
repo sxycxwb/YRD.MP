@@ -1,0 +1,111 @@
+﻿@model YRD.Model.ViewModels.ViewDistributionJinbi
+@{
+    ViewBag.Title = "分销账户";
+    ViewBag.menuid = 1119;
+}
+@section css    {
+    <!--本页css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+<!--右侧内容-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionBalance">三级分销</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionBalance">分销账户</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li class="active"><a href="#promise_money" data-toggle="tab">分销账户</a></li>
+                            <li><a href="/DistributionBank/JinbiDetail">账户明细</a></li>
+                            <li><a href="/DistributionBank/DistributionOrder">分销订单</a></li>
+                            <li><a href="/DistributionBank/DistributionContract">签署合同</a></li>
+                            <li><a href="/DistributionBank/DistributionPercentage">返利设置</a></li>
+                            <li><a href="/DistributionBank/DistributionOpen">分销开启</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--分销账户-->
+                            <div class="active tab-pane" id="promise_money">
+                                <div class="numBox">
+                                    <div>分销余额（元）：</div>
+                                    <div>
+                                        <span class="balanceBox"><b>@Model.Jinbi</b></span>
+                                        <a href="/DistributionBank/AddDistributionTakeIn" class="btn yellow rollInBtn rollBtn">转入</a>
+                                        <a href="/DistributionBank/AddDistributionTakeOut" class="btn yellow rollOutBtn rollBtn">转出</a>
+                                    </div>
+                                    <div class="t-lock">
+                                        （含保证金<span>@Model.Deposit</span>元，可用返利金额<span>@Model.Usable</span>元）
+                                    </div>
+                                </div>
+                                <div class="promiseInfo">
+                                    <div>关于账户</div>
+                                    <div>
+                                        <span class="piLabel">一、</span>
+                                        <span class="piContent">为便于商家在参与分销过程中的金额控制，特设立本分销账户</span>
+                                    </div>
+                                    <div>
+                                        <span class="piLabel">二、</span>
+                                        <span class="piContent">
+                                            分销账户的资金有一部分会根据商家版本的不同作为保证金被冻结，所以充值金额必须达到保证金的150%才允许开通。
+                                            <br />
+                                            分销账户只能从账户余额转入或转出到账户余额
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="piLabel">三、</span>
+                                        <span class="piContent">您当前系统版本为<span>@Model.VersionText</span>，所以转入金额需不低于<span>@Model.Deposit</span>元</span>
+                                    </div>
+                                    <div>关于保证金</div>
+                                    <div>
+                                        <span class="piLabel">一、</span>
+                                        <span class="piContent">保证金支付后该笔金额将被冻结，仅且用于分销账户余额不足时为用户返利</span>
+                                    </div>
+                                    <div>
+                                        <span class="piLabel">二、</span>
+                                        <span class="piContent">
+                                            商家分销账户余额不足时，系统自动启动保证金为用户进行返佣，当保证金金额低于100元时，分销系统自动关闭。
+                                            <br />
+                                            当任何一笔返佣金额使用到保证金并超出保证金余额，美味云会立即停止当前返佣，并自动关闭分销系统。
+                                            <br />
+                                            同时，商家分销账户在十二个小时内未能正常给用户提供返佣，美味云有权停止对商家的一切服务
+                                        </span>
+                                    </div>
+                                    <div>
+                                        <span class="piLabel">三、</span>
+                                        <span class="piContent">当分销金额大于保证金的情况下可以在三级分销正常关闭后转出到账户余额</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+
+    <!--本页js-->
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/account-manage.js"></script>
+
+}

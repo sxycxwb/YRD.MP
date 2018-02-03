@@ -1,0 +1,103 @@
+.tab-pane>div{
+    margin-bottom: 15px;
+}
+.time-select{
+    height: 34px;
+}
+.time-select .rd{
+    margin-left: 10px;
+    margin-top: 0;
+    position: relative;
+    top: 6px;
+}
+.rd + .text-inline{
+    margin-right: 7px;
+}
+.time-select span.text-inline{
+    position: relative;
+    top: 2px;
+}
+.sale-select span.text-inline{
+    position: relative;
+    top: -4px;
+}
+/*统计框*/
+.statistic-box{
+    height: 400px;
+}
+/*
+餐桌开台统计
+*/
+/*综合统计*/
+.tfs_cs_content{
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+.tfs_cs_content .tfs_cs_title{
+    width: 11%;
+    padding: 10px;
+    border: 1px solid #06c;
+    border-bottom: 2px solid #fff;
+    color: #06c;
+    position: relative;
+    top: 2px;
+}
+.tfs_cs_item{
+    box-sizing: border-box;
+    border: 1px solid #0066CC;
+    padding: 15px 10px 20px;
+}
+.tfs_cs_item span{
+    display: inline-block;
+    width: 91px;
+}
+.tfs_cs_item input{
+    margin: 0 20px;
+    border: 1px solid #333;
+    vertical-align: middle !important;
+}
+.tfs_cs_item .row-fluid{
+    margin-bottom: 15px;
+}
+/*开台记录*/
+#founding_record .select{
+    margin-right: 3px;
+    margin-right: 5px \9;
+}
+/*
+订单分类统计
+*/
+/*综合统计*/
+.ocs_cs_content{
+    background: #69f;
+    padding: 20px 10px 20px;
+    color: #fff;
+    font-size: 14px;
+}
+.ocs_cs_content .row-fluid{
+    margin-bottom: 10px;
+}
+.ocs_cs_content .span3>input{
+    vertical-align: middle;
+    width: 90px !important;
+    border: 0;
+    margin: 0 10px;
+    background: #fff;
+}
+.ocs_cs_content .span3>span{
+    display: inline-block;
+    width: 70px;
+    text-align: right;
+}
+/*
+会员卡数据统计
+*/
+/*前昨今*/
+div.selectime{
+    display: inline-block;
+    margin-right: 10px;
+}
+div.selectime>a{
+    margin-right: 15px;
+    text-decoration: none;
+}

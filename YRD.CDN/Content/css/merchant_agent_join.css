@@ -1,0 +1,364 @@
+/*整体样式*/
+.banner_box,
+.coop_title,
+.advan_list,
+.supp_list,
+.join_list{
+    width: 1200px;
+    margin: 0 auto;
+}
+/*清除浮动*/
+.advan_list:after,
+.supp_list:after,.supp_item:after,
+.join_list:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*********banner********/
+.banner{
+    width: 100%;
+    height: 626px;
+    background: url(../image/agent/agent-bg.png) no-repeat center;
+}
+.banner_box{
+    height: 626px;
+}
+/*******内容框 & 标题**********/
+.cooperate{
+    width: 100%;
+    padding: 50px 0;
+}
+.coop_title{
+    position: relative;
+}
+.coop_head{
+    font-size: 26px;
+    color: #ff6600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.coop_english{
+    font-size: 20px;
+    color: #757575;
+    text-align: center;
+    margin-bottom: 30px;
+}
+.coop_title>b{
+    display: inline-block;
+    width: 100px;
+    height: 0;
+    border: 1px solid #ff6600;
+    position: absolute;
+    top: 16px;
+}
+.coop_title>b.left{
+    left: 405px;
+}
+.coop_title>b.right{
+    right: 405px;
+}
+/**********合作优势**********/
+/*82*56*/
+.advan_item{
+    float: left;
+    width: 258px;
+    height: 298px;
+    border: 1px solid #FF9E5D;
+    margin-top: 20px;
+    margin-right: 52px;
+}
+.advan_cont{
+    width: 258px;
+    height: 298px;
+    border: 1px solid #FF6E0D;
+    text-align: center;
+    position: relative;
+    top: -4px;
+    left: 3px;
+    color: #262524;
+}
+.advan_list>.advan_item:nth-child(2){
+    border-color: #FFB141;
+}
+.advan_list>.advan_item:nth-child(2)>.advan_cont{
+    border-color: #FFA423;
+}
+.advan_list>.advan_item:nth-child(3){
+    border-color: #FFE776;
+}
+.advan_list>.advan_item:nth-child(3)>.advan_cont{
+    border-color: #FFD511;
+}
+.advan_list>.advan_item:nth-child(4){
+    border-color: #D2E47D;
+}
+.advan_list>.advan_item:nth-child(4)>.advan_cont{
+    border-color: #B2D121;
+}
+.advan_list>.advan_item:nth-child(5){
+    border-color: #97D55F;
+}
+.advan_list>.advan_item:nth-child(5)>.advan_cont{
+    border-color: #81CC3F;
+}
+.advan_list>.advan_item:nth-child(6){
+    border-color: #6EE8A2;
+}
+.advan_list>.advan_item:nth-child(6)>.advan_cont{
+    border-color: #58E494;
+}
+.advan_list>.advan_item:nth-child(7){
+    border-color: #9AB8F5;
+}
+.advan_list>.advan_item:nth-child(7)>.advan_cont{
+    border-color: #5084EE;
+}
+.advan_list>.advan_item:nth-child(8){
+    border-color: #FB91CA;
+}
+.advan_list>.advan_item:nth-child(8)>.advan_cont{
+    border-color: #F742A4;
+}
+.advan_list>.advan_item:nth-child(4n){
+    margin-right: 0;
+}
+.advan_img{
+    width: 82px;
+    height: 56px;
+    margin: 25px auto 20px;
+    background: url(../image/agent/agenticons.png) no-repeat -10px -9px;
+}
+.advan_list>.advan_item:nth-child(2) .advan_img{
+    width: 65px;
+    background-position: -95px -9px;
+}
+.advan_list>.advan_item:nth-child(3) .advan_img{
+    background-position: -160px -9px;
+}
+.advan_list>.advan_item:nth-child(4) .advan_img{
+    background-position: -240px -9px;
+}
+.advan_list>.advan_item:nth-child(5) .advan_img{
+    background-position: -10px -80px;
+}
+.advan_list>.advan_item:nth-child(6) .advan_img{
+    background-position: -85px -80px;
+}
+.advan_list>.advan_item:nth-child(7) .advan_img{
+    background-position: -160px -80px;
+}
+.advan_list>.advan_item:nth-child(8) .advan_img{
+    height: 60px;
+    background-position: -240px -80px;
+    margin-bottom: 17px;
+}
+
+.advan_head{
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+.advan_info{
+    font-size: 15px;
+    line-height: 25px;
+    padding: 0 20px;
+    text-align: justify;
+    text-justify: distribute;
+}
+/******合作支持************/
+.coop_support{
+    height: 711px;
+    background: url(../image/agent/agent-bg1.png) no-repeat center;
+}
+.coop_support>.coop_title>.coop_head,
+.coop_support>.coop_title>.coop_english{
+    color: #fff;
+}
+.coop_support>.coop_title>b{
+    border-color: #fff;
+}
+.supp_item{
+    float: left;
+    width: 500px;
+    min-height: 165px;
+    padding-right: 100px;
+}
+.supp_list>.supp_item:nth-child(even){
+    padding-right: 0;
+    padding-left: 100px;
+}
+.supp_img{
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 30px;
+    background: url(../image/agent/agenticons.png) no-repeat -8px -158px;
+}
+.supp_list>.supp_item:nth-child(2)>.supp_img{
+    background-position: -63px -158px;
+}
+.supp_list>.supp_item:nth-child(3)>.supp_img{
+    background-position: -118px -158px;
+}
+.supp_list>.supp_item:nth-child(4)>.supp_img{
+    background-position: -172px -158px;
+}
+.supp_list>.supp_item:nth-child(5)>.supp_img{
+    background-position: -8px -222px;
+}
+.supp_list>.supp_item:nth-child(6)>.supp_img{
+    background-position: -63px -222px;
+}
+.supp_list>.supp_item:nth-child(7)>.supp_img{
+    background-position: -118px -222px;
+}
+.supp_list>.supp_item:nth-child(8)>.supp_img{
+    background-position: -172px -222px;
+}
+.supp_cont{
+    float: left;
+    width: 420px;
+}
+.supp_head{
+    font-size: 26px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+.supp_info{
+    font-size: 20px;
+    color: #fff;
+    line-height: 30px;
+}
+/**********如何加盟**********/
+.coop_join{
+    background: #F8F8F8;
+}
+.join_item{
+    float: left;
+    width: 570px;
+    height: 540px;
+    background: #fff;
+    -webkit-box-shadow: 3px 3px 10px #F8EBE2 ;
+       -moz-box-shadow: 3px 3px 10px #F8EBE2 ;
+            box-shadow: 3px 3px 10px #F8EBE2 ;
+}
+.join_item:first-child{
+    margin-right: 60px;
+}
+.join_cont{
+    width: 554px;
+    height: 524px;
+    border: 1px solid #ff6600;
+    position: relative;
+    top: 8px;
+    left: 8px;
+}
+.join_head{
+    font-size: 30px;
+    color: #211f1d;
+    font-weight: normal;
+    width: 100%;
+    height: 95px;
+    line-height: 95px;
+    text-align: center;
+    border-bottom: 1px dashed #D9D7D7;
+    margin-bottom: 40px;
+}
+.join_info{
+    padding: 0 80px 0 35px;
+    font-size: 20px;
+    line-height: 35px;
+    color: #211f1d;
+    text-align: justify;
+    text-justify: distribute;
+}
+/*在线申请*/
+.join_apply{
+    padding: 0 10px 0 15px;/*暂定*/
+}
+.apply_cont{
+    margin-bottom: 25px;
+}
+.apply_tip{
+    display: inline-block;
+    width: 84px;
+    font-size: 20px;
+    color: #211f1d;
+    padding-left: 17px;
+    padding-right: 10px;
+    background: url(../image/agent/agenticons.png) no-repeat -17px -278px;
+    vertical-align: middle;
+}
+.apply_cont>input{
+    width: 255px;/*暂定*/
+    height: 31px;
+    border: 1px solid #ff6600;
+    vertical-align: middle;
+    padding: 0 5px;
+    border-radius: 4px;
+    outline: none;
+}
+.apply_cont>select{
+    width: 130px;/*暂定*/
+    height: 31px;
+    border: 1px solid #ff6600;
+    border-radius: 4px;
+    outline: none;
+    margin-right: 5px;
+    vertical-align: middle;
+    font-size: 12px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    background:url(../image/agent/agenticons.png) no-repeat 98px -302px;
+    text-indent:0.01px;
+    text-overflow:"";
+}
+.apply_cont>select::-ms-expand{display: none;}
+.apply_num>input{
+    width: 120px;/*暂定*/
+}
+.apply_num>.yzm-btn{
+    /*width: 90px;*/
+    /*height: 31px;*/
+    margin-left: 10px;
+    font-size: 16px;
+    border: none;
+    background: transparent;
+    color: #211f1d;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.apply_num>.yzm-btn.active{
+    color: #FF6600;
+    background: transparent;
+    border-color: transparent;
+}
+.apply_num>.reget-yzm{
+    background: transparent;
+    border-color: transparent;
+    color: #FF6600;
+}
+.apply_num>.reget-yzm>.second{
+    color: #FF6600;
+}
+.apply_submit{
+    margin-top: 50px;
+}
+.apply_submit>button{
+    width: 145px;
+    height: 45px;
+    font-size: 22px;
+    color: #fff;
+    background: #ff6600;
+    border-radius: 4px;
+    border: 0;
+    margin-left: 191px;/*暂定*/
+    cursor: pointer;
+    opacity: .8;
+}
+.apply_submit>button:hover{
+    opacity: 1;
+}

@@ -1,0 +1,218 @@
+﻿
+@{
+    ViewBag.Title = "权限设置";
+    ViewBag.menuid = 1115;
+}
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/system-manage.css" />
+    <link href="~/Content/DataTables/DT_bootstrap.css" rel="stylesheet" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/Permission/RoleSet">权限设置</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <div class="tab-content">
+                            <!--权限设置-->
+                            <div class="active tab-pane" id="permission_set">
+                                <div class="row-fluid permission_set_content">
+                                    <div class="span12">
+                                        <div class="portlet">
+                                            <div class="portlet-body">
+                                                <!--按钮组-->
+                                                <div class="row-fluid">
+                                                    <div class="span6 btn-group">
+                                                        <a class="btn yellow" href="/Permission/AddRole">
+                                                            <b class="iconbg plus"></b>
+                                                            添加新角色
+                                                        </a>
+                                                        @*<button class="btn grey pl_delete" data-table="@ViewBag.Table">批量删除</button>*@
+                                                    </div>
+                                                    <div class="span6">
+                                                        <label class="pull-right">
+                                                            @*<form class="clearfix">*@
+                                                            <input type="text" id="keyword" class="m-wrap medium inputbutton no-placeholder" placeholder="输入名称" />
+                                                            <button class="btn blue inputbutton" onclick="SearchList()">搜索</button>
+                                                            @*</form>*@
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div>
+                                                    <!--表格组-->
+                                                    <table id="datatable" class="table table-bordered table-striped table-hover margin-top-10" @*class="table table-striped table-hover table-bordered"*@ cellspacing="0" width="100%">
+                                                        <thead>
+                                                            <tr>
+                                                                <th class="w40">
+                                                                    <span class="cb">
+                                                                        <input type="checkbox" class="cbrd" />
+                                                                    </span>
+                                                                </th>
+                                                                <th class="w50">序号</th>
+                                                                <th>角色名称</th>
+                                                                <th>添加时间</th>
+                                                                <th>描述</th>
+                                                                <th>说明</th>
+                                                                <th>操作</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            @*<tr>
+                                                                    <td class="w40">
+                                                                        <span class="cb">
+                                                                            <input type="checkbox" class="cbrd" />
+                                                                        </span>
+                                                                    </td>
+                                                                    <td class="w50">1</td>
+                                                                    <td class="fl_name">系统管理</td>
+                                                                    <td>2015-05-20</td>
+                                                                    <td>全部店面权限</td>
+                                                                    <td>
+                                                                        <a href="" class="edit" title="编辑"><b class="iconbg edit"></b></a>
+                                                                        <a href="" class="delete" title="删除"><b class="iconbg trash"></b></a>
+                                                                    </td>
+                                                                </tr>*@
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--批量删除的提示框-->
+        <div class="pl_delete_dialog btn_dialog">
+            <div class="modal-backdrop">
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            批量删除数据
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="remove"></a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="tips">小提示：确定要删除选中的数据吗？</div>
+                        <div class="clearfix">
+                            <p class="pull-left haselect">已选数据：</p>
+                            <p class="pull-left haselect-item"><span>系统管理，门店管理，系统管理，门店管理，系统管理，门店管理，系统管理，门店管理，</span><br />共<b>20</b>种</p>
+                        </div>
+                        <div class="btns">
+                            <button class="btn purple dialen check_btn">删除</button>
+                            <button class="btn grey dialen cancel_btn">不删除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--单个删除的提示框-->
+        <div class="dg_delete_dialog btn_dialog">
+            <div class="modal-backdrop">
+                <div class="portlet box blue">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            删除数据
+                        </div>
+                        <div class="tools">
+                            <a href="javascript:;" class="remove"></a>
+                        </div>
+                    </div>
+                    <div class="portlet-body">
+                        <div class="tips ">小提示：确定要删除选中的数据吗？</div>
+                        <div class="clearfix">
+                            <p class="pull-left haselect">已选数据：</p>
+                            <p class="pull-left haselect-item">系统管理</p>
+                        </div>
+                        <div class="btns">
+                            <button class="btn purple dialen check_btn">删除</button>
+                            <button class="btn grey dialen cancel_btn">不删除</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/system-manage.js"></script>
+    <script src="~/Content/JS/MyTable.js"></script>
+    <script>
+        var isPage = true;
+        var dataSource = "/Permission/getRole";
+        var searchData = function (e) {
+            return {
+                key: $("#keyword").val(),
+                start: e.start,
+                length: e.length,
+                draw: e.draw
+            }
+        };
+        var columns = [//绑定数据
+            {
+                data: 'ID',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html("<span class='cb'><input type='checkbox' class='cbrd' name='checkList' value='" + sData + "'></span>");
+                }
+            },
+            {
+                data: 'ID',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html(iRow + 1);
+                }
+            },
+            {
+                data: 'Title',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html("<span class='fl_name'>" + sData + "</span>");
+                }
+            },
+            { data: 'CreateTime' },
+            { data: 'Introduction' },
+            {
+                data: 'IsDefault',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    if (sData == 1) {
+                        $(nTd).html('默认角色');
+                    } else {
+                        $(nTd).html('新增角色');
+                    }
+
+                }
+            },
+            {
+                data: 'ID',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    if (oData["IsDefault"] == 1) {
+                        $(nTd).html('');
+                    } else {
+                        $(nTd).html('<a href="/Permission/AddRole/' + oData.ID + '" class="edit" title="编辑"><b class="iconbg edit"></b></a>')
+                            .append('<a href="/Permission/DeleteRole/' + oData.ID + '" class="delete"  data-title=' + oData.Title + ' title="删除"><b class="iconbg trash"></b></a>');
+                    }
+
+                }
+            }
+        ];
+    </script>
+}

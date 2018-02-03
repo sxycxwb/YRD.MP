@@ -1,0 +1,162 @@
+﻿
+@{
+    ViewBag.menuid = 1113;
+    ViewBag.Title = "充值列表";
+}
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/GoldBank/GoldBalance">账户余额</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/GoldBank/RechargeDetail">充值列表</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li><a href="/GoldBank/GoldBalance">账户余额</a></li>
+                            <li class="active"><a href="#rechargeList" data-toggle="tab">充值列表</a></li>
+                            <li><a href="/GoldBank/JinbiDetail">账户明细</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--充值列表-->
+                            <div class="active tab-pane" id="rechargeList">
+                                <table id="datatable" class="table table-hover table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="w50">序号</th>
+                                            <th>充值时间</th>
+                                            <th>到账时间</th>
+                                            <th>充值类型</th>
+                                            <th>金额</th>
+                                            <th>支付方式</th>
+                                            <th>充值状态</th>
+                                            <th>操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @*<tr>
+                                                <td class="w50">1</td>
+                                                <td class="time">2017-12-12 <br />12:12:12</td>
+                                                <td>短信充值</td>
+                                                <td></td>
+                                                <td>支付宝支付等</td>
+                                                <td>成功</td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w50">2</td>
+                                                <td></td>
+                                                <td>返佣</td>
+                                                <td></td>
+                                                <td></td>
+                                                <td>失败</td>
+                                                <td><button type="button" class="repayBtn">重新支付</button></td>
+                                                <td></td>
+                                            </tr>*@
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="~/Content/JS/MyTable.js"></script>
+    <script>
+        var isPage = true;
+        var dataSource = "/GoldBank/getRechargeDetail";
+
+        var searchWhereData = function () {
+            return {
+                keyword: $("#keyword").val(),
+                st: $("#dt1").val(),
+                et: $("#dt2").val()
+            }
+        }
+
+        var searchData = function (e) {
+            var sd = {
+                start: e.start,
+                length: e.length,
+                draw: e.draw
+            };
+            var object = $.extend(sd, searchWhereData())
+            return object;
+        };
+        var columns = [//绑定数据
+            //{
+            //    data: 'ID',
+            //    createdCell: function (nTd, sData, oData, iRow, iCol) {
+            //        $(nTd).html("<input type='checkbox' name='checkList' value='" + sData + "'>");
+            //    }
+            //},
+            {
+                data: 'ID',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html(iRow + 1);
+                }
+            },
+
+            {
+                data: 'CreateTime'
+            },
+            {
+                data: 'ConfirmDT'
+            },
+            { data: 'TypeText' },
+            { data: 'Money' },
+            { data: 'PayTypeText' },
+
+            {
+                data: 'Status',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    if (oData["Status"] == 0) {
+                        $(nTd).html('<a href="" class="repayBtn">未成功</a>');
+                    } else {
+                        $(nTd).html('<a href="" class="repayBtn">成功</a>');
+                    }
+                }
+
+            },
+            {
+                data: 'BatchId',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    if (oData["Status"] == 0) {
+                        $(nTd).html('<a href="/GoldBank/OnceAgainJinbiRecharge?batchid=' + sData + '" class="repayBtn">重新支付</a>');
+                    } else {
+                        $(nTd).html('');
+                    }
+                }
+            }
+        ];
+        function ToExcel() {
+            var url = "/GoldBank/ToExcelRechargeDetail";
+            var searchdata = searchWhereData();
+            ToExcelFile(url, searchdata);
+        }
+    </script>
+}

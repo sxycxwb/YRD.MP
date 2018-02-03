@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>Phone</code>
+    <name>发送用户</name>
+  </field>
+  <field>
+    <code>TemplateName</code>
+    <name>发送类型</name>
+  </field>
+  <field>
+    <code>CountNum</code>
+    <name>扣款条数</name>
+  </field>
+  <field>
+    <code>CreateTime</code>
+    <name>发送时间</name>
+  </field>
+  <field>
+    <code>SendStateText</code>
+    <name>状态</name>
+  </field>
+  <field>
+    <code>Contonts</code>
+    <name>内容</name>
+  </field>
+</fields>

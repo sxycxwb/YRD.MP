@@ -1,0 +1,250 @@
+/*小图标*/
+b.iconbg{
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: -5px;
+    width: 25px;
+    height: 25px;
+    background: url(../image/icon/icons.png) no-repeat 0 0;
+}
+b.message{
+    background-position: -151px -38px;
+}
+b.plus{
+    width: 20px;
+    height: 20px;
+    background-position: -130px -40px;
+    margin-right: 1px;
+}
+b.edit{
+    background-position: -42px -39px;
+}
+b.trash{
+    background-position: -64px -39px;
+}
+b.toup{
+    background-position: 0 -39px;
+}
+b.todown{
+    background-position: -21px -39px;
+}
+b.up-shelf{
+    background-position: -108px -39px;
+}
+b.down-shelf{
+    background-position: -86px -39px;
+}
+b.key{
+    background: url(../image/icon/key.png) no-repeat center;
+}
+b.shield{
+    background: url(../image/icon/shield.png) no-repeat center;
+}
+b.cashier{
+    background-position: -174px -37px;
+}
+b.check{
+    width: 20px;
+    height: 14px;
+    background: url(../image/icon/check.png) no-repeat center;
+}
+b.up{
+    width: 28px;
+    height: 15px;
+    background-position: -14px -80px;
+}
+b.up.yellow{
+    background-position: -48px -80px;
+}
+b.angle-down{
+    background: url(../image/icon/angle-down.png) no-repeat center;
+}
+b.angle-up{
+    background: url(../image/icon/angle-down.png) no-repeat center;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+b.angle-left{
+    background: url(../image/icon/angle-left.png) no-repeat center;
+}
+b.angle-right{
+    background: url(../image/icon/angle-left.png) no-repeat center;
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+b.user-empty{
+    background-position: -61px -20px;
+}
+b.user{
+    background-position: -57px 0;
+}
+b.home-empty{
+    background-position: 0 -20px;
+}
+b.home{
+    background-position: 0 0;
+}
+b.account-manage-empty{
+    background-position: -20px -20px;
+}
+b.account-manage{
+    background-position: -18px 0;
+}
+b.pro-manage-empty{
+    background-position: -40px -20px;
+}
+b.pro-manage{
+    background-position: -38px 0;
+}
+b.sale-empty{
+    background-position: -82px -20px;
+}
+b.sale{
+    background-position: -76px 0;
+}
+b.comment-empty{
+    background-position: -104px -20px;
+}
+b.comment{
+    background-position: -95px 0;
+}
+b.txt-empty{
+    background-position: -126px -20px;
+}
+b.txt{
+    background-position: -115px 0;
+}
+b.polygon-chart-empty{
+    background-position: -147px -20px;
+}
+b.polygon-chart{
+    background-position: -135px 0;
+}
+b.staff-empty{
+    background-position: -168px -20px;
+}
+b.staff{
+    background-position: -153px 0;
+}
+b.config-empty{
+    background-position: -189px -20px;
+}
+b.config{
+    background-position: -171px 0;
+}
+b.operation-income{
+    background-position: -198px -36px;
+}
+b.inventory-empty{
+    background-position: -209px -20px;
+}
+b.inventory{
+    background-position: -189px 0;
+}
+b.daochu{
+    width: 16px;
+    height: 16px;
+    margin-right: 5px;
+    background-position: -228px -20px;
+}
+b.angle-right-solid{
+    width: 12px !important;
+    height: 14px !important;
+    background-position: 0 -80px;
+}
+b.multi-pass{
+    width: 46px;
+    height: 30px;
+    background: url(../image/icon/multi-pass.png) no-repeat center;
+}
+.header .user > .dropdown-menu b{
+    background: url("../image/icon/headicon.png") no-repeat 2px 0;
+    margin-right: 3px;
+}
+.header .user > .dropdown-menu b.head-changePwd{
+    background-position-y: 1px;
+}
+.header .user > .dropdown-menu b.head-messFeed{
+    background-position-y: -25px;
+}
+.header .user > .dropdown-menu b.head-lockScreen{
+    background-position-y: -50px;
+}
+.header .user > .dropdown-menu b.head-exit{
+    background-position-y: -75px;
+}
+b.head-messicon{
+    height: 20px;
+    background: url(../image/icon/messicon.png) no-repeat center;
+}
+b.head-toright{
+    background: url(../image/syncfusion-icons.png) no-repeat -24px -9px;
+    width: 20px;
+    height: 16px;
+    float: right;
+    margin-top: 3px;
+}
+/*面包屑上的图标大小*/
+.breadcrumb>li>b{
+    width: 14px;
+    height: 14px;
+    position: relative;
+    top: 2px;
+}
+.breadcrumb>li>b.angle-right-solid{
+    margin-right: 0;
+    margin-left: 5px;
+}
+.breadcrumb>li>a{
+    margin-left: 5px;
+}
+/*左侧导航的图标大小*/
+.page-sidebar-menu>li>a>b{
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+}
+/*表格中操作列的图标大小*/
+.table tr>td a>b{
+    width: 20px;
+    height: 20px;
+}
+/*菜品管理->添加套餐，上移、下移、删除*/
+b.comboup,
+b.combodown,
+b.combotrash{
+    width: 16px;
+    height: 16px;
+    background-position: 0 -61px;
+}
+b.combodown{
+    background-position: -19px -61px;
+}
+b.combotrash{
+    background-position: -38px -61px;
+}
+/*结算图标*/
+b.settleIcon{
+    width: 20px;
+    height: 20px;
+    background: url(../image/icon/settleicon.png) no-repeat 0 0;
+    margin-right: 5px;
+}
+b.settleIcon.zhuan{
+    background-position-y: -25px;
+}
+b.settleIcon.alipay{
+    background-position-y: -51px;
+}
+b.settleIcon.weixin{
+    background-position-y: -76px;
+}
+b.settleIcon.xian{
+    background-position-y: -101px;
+}

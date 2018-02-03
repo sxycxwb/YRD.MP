@@ -1,0 +1,12 @@
+.Wdate{
+	border:#999 1px solid;
+	height:20px;
+	background:#fff url(datePicker.png) no-repeat 95% !important;
+}
+input[type='text'].m-wrap.Wdate{
+	background:#fff url(datePicker.png) no-repeat 95% !important;
+}
+.WdateFmtErr{
+	font-weight:bold;
+	color:red;
+}

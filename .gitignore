@@ -3,3 +3,27 @@
 ################################################################################
 
 /packages
+/Repository/bin/Debug
+/Repository/obj/Debug
+/YRD.BLL/bin/Debug
+/YRD.BLL/obj/Debug
+/YRD.CDN/bin
+/YRD.CDN/obj/Debug
+/YRD.Common/bin/Debug
+/YRD.Common/obj/Debug
+/YRD.Dao/bin/Debug
+/YRD.Dao/obj/Debug
+/YRD.Model/bin/Debug
+/YRD.Model/obj/Debug
+/YRD.MP/bin
+/YRD.MP/obj/Debug
+/YRD.MP.CommonService/bin/Debug
+/YRD.MP.CommonService/obj/Debug
+/YRD.SO/bin
+/YRD.SO/obj/Debug
+/YRD.SOLib/bin/Debug
+/YRD.SOLib/obj/Debug
+/YRD.Test/obj/Debug
+/YRD.Web/bin
+/YRD.Web/Log
+/YRD.Web/obj/Debug

@@ -1,0 +1,104 @@
+﻿@{
+    ViewBag.Title = "美味云智能餐饮管理系统商家后台";
+}
+@section css{
+    <link href="@ConfigHelper.GetCdnUrl/Content/css/home.css" rel="stylesheet" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg home"></b>
+                        <a href="/">首页</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <!--导航块-->
+        <div class="row-fluid">
+            <!--导航块-->
+            <div class="row-fluid homeguide">
+                <div class="span3 m-color">
+                    <a href="">
+                        <div class="img-box"><img src="@ConfigHelper.GetCdnUrl/Content/image/icon/money.png"></div>
+                        <div class="money-box ">
+                            <p class="minfo">今日收入</p>
+                            <p class="money ">¥<span>1800.50</span></p>
+                        </div>
+                    </a>
+                </div>
+                <div class="span3 o-color">
+                    <a href="">
+                        <div class="img-box"><img src="@ConfigHelper.GetCdnUrl/Content/image/icon/order.png"></div>
+                        <div class="money-box ">
+                            <p class="minfo">今日订单</p>
+                            <p class="money "><span>350</span>单</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="span3 t-color">
+                    <a href="">
+                        <div class="img-box"><img src="@ConfigHelper.GetCdnUrl/Content/image/icon/table.png"></div>
+                        <div class="money-box ">
+                            <p class="minfo">今日开台</p>
+                            <p class="money "><span>350</span>台</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="span3 c-color">
+                    <a href="">
+                        <div class="img-box"><img src="@ConfigHelper.GetCdnUrl/Content/image/icon/card.png"></div>
+                        <div class="money-box ">
+                            <p class="minfo">今日开卡</p>
+                            <p class="money ">¥<span>1800.50</span></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <!--手势引导块-->
+            <div class="row-fluid handguide">
+                <div class="handguideImg">
+                    <img src="@ConfigHelper.GetCdnUrl/Content/image/icon/handGuide.png"/>
+                </div>
+                <ul class="handguigeList">
+                    <li class="">
+                        <a href="">余额充值</a>
+                    </li>
+                    <li class="">
+                        <a href="">短信充值</a>
+                    </li>
+                    <li class="">
+                        <a href="">版本续费</a>
+                    </li>
+                    <li class="">
+                        <a href="">分销开启</a>
+                    </li>
+                    <li class="">
+                        <a href="">收银设置</a>
+                    </li>
+                </ul>
+            </div>
+            <!--营收统计框-->
+            <div class="row-fluid">
+                <div class="portlet box yellow margin-bottom-10">
+                    <div class="portlet-title">
+                        <div class="caption">
+                            <b class="iconbg operation-income"></b>
+                            营收统计
+                        </div>
+                    </div>
+                    <div id="indexStatistic" class="portlet-body statistic-box">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/echarts/echarts.min.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/home.js"></script>
+}

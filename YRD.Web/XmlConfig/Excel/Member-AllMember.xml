@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>CardName</code>
+    <name>卡号</name>
+  </field>
+  <field>
+    <code>CardUserName</code>
+    <name>姓名</name>
+  </field>
+  <field>
+    <code>Sex</code>
+    <name>性别</name>
+  </field>
+  <field>
+    <code>CardUserPhone</code>
+    <name>手机号</name>
+  </field>
+  <field>
+    <code>CardTypeID</code>
+    <name>类型</name>
+  </field>
+  <field>
+    <code>Money1</code>
+    <name>余额</name>
+  </field>
+  <field>
+    <code>Integral</code>
+    <name>积分</name>
+  </field>
+  <field>
+    <code>ShopName</code>
+    <name>开卡店面</name>
+  </field>
+  <field>
+    <code>CreateTime</code>
+    <name>开卡时间</name>
+  </field>
+  <field>
+    <code>SellerID</code>
+    <name>收银员</name>
+  </field>
+
+</fields>

@@ -1,0 +1,134 @@
+﻿
+@{
+    ViewBag.menuid = 1117;
+    ViewBag.Title = "短信明细";
+}
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/MessageBank/MessageBalance">短信余额</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/MessageBank/MessageDetail">短信明细</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li><a href="/MessageBank/MessageBalance">短信余额</a></li>
+                            <li><a href="/MessageBank/RechargeDetail">购买列表</a></li>
+                            <li class="active"><a href="#messageList" data-toggle="tab">短信明细</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--短信明细-->
+                            <div class="active tab-pane" id="messageList">
+                                <table id="datatable" class="table table-hover table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="w50">序号</th>
+                                            <th>时间</th>
+                                            <th>条数</th>
+                                            <th>类型</th>
+                                            <th>手机号</th>
+                                            <th>备注</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @*<tr>
+                                                <td class="w50">1</td>
+                                                <td>12345458585</td>
+                                                <td class="time">2017-12-12 <br />12:12:12</td>
+                                                <td>生日提醒</td>
+                                                <td>成功</td>
+                                                <td></td>
+                                            </tr>
+                                            <tr>
+                                                <td class="w50">2</td>
+                                                <td>12345458585</td>
+                                                <td class="time">2017-12-12 <br />12:12:12</td>
+                                                <td>预订回复</td>
+                                                <td class="f00">不成功</td>
+                                                <td></td>
+                                            </tr>*@
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/system-manage.js"></script>
+    <script src="~/Content/JS/MyTable.js"></script>
+    <script>
+        var isPage = true;
+        var dataSource = "/MessageBank/getMessageDetail";
+
+        var searchWhereData = function () {
+            return {
+                //keyword: $("#keyword").val(),
+                //st: $("#dt1").val(),
+                //et: $("#dt2").val()
+            }
+        }
+
+        var searchData = function (e) {
+            var sd = {
+                start: e.start,
+                length: e.length,
+                draw: e.draw
+            };
+            var object = $.extend(sd, searchWhereData())
+            return object;
+        };
+        var columns = [//绑定数据
+
+            {
+                data: 'CreateTime',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html(iRow + 1);
+                }
+            },
+
+            {
+                data: 'CreateTime'
+            },
+            {
+                data: 'SmsCount'
+            },
+            {
+                data: 'TypeName'
+            },
+            {
+                data: 'Phone'
+            },
+            { data: 'Remark' },
+        ];
+        function ToExcel() {
+            var url = "/GoldBank/ToExcelRechargeDetail";
+            var searchdata = searchWhereData();
+            ToExcelFile(url, searchdata);
+        }
+    </script>
+}

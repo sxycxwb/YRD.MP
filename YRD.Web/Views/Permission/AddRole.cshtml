@@ -1,0 +1,185 @@
+﻿@model YRD.Model.ViewModels.ViewRole
+@{
+    ViewBag.Title = "添加角色";
+    ViewBag.menuid = 1115;
+}
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/system-manage.css" />
+}
+
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li class="backprev">
+                        <a href="/Permission/RoleSet">返回上一级</a>
+                    </li>
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/Permission/RoleSet">权限设置</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/Permission/AddRole">添加角色</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <div class="tab-content">
+                            @using (Ajax.BeginForm("SelRoleSave", null, new AjaxOptions()
+                            {
+                                HttpMethod = "Post",
+                                OnBegin = "SubAjax.Loading",
+                                OnComplete = "SubAjax.Complate",
+                                OnFailure = "SubAjax.Failure",
+                                OnSuccess = "SubAjax.Success"
+                            }, new { @class = "form-horizontal", @role = "form", @id = "commentForm" }))
+                            {
+                            <!--权限设置-->
+                                <div class="active tab-pane" id="permission_set">
+                                    <!--添加新角色内容-->
+                                    <div class="add_newrole_content">
+                                        <div class="row-fluid">
+                                            <div class="span12 title">
+                                                添加角色
+                                            </div>
+                                            <div class="span12 role_cont">
+                                                <form action="#" class="form-horizontal">
+                                                    <div class="control-group">
+                                                        <label class="control-label">角色名称</label>
+                                                        <div class="controls">
+                                                            <input type="hidden" name="ID" value="@Model.ID" />
+                                                            <input name="Title" type="text" value="@Model.Title" datatype="*2-50" class="m-wrap medium" />
+                                                        </div>
+                                                        <span></span>
+                                                    </div>
+                                                    <div class="control-group">
+                                                        <label class="control-label">角色备注</label>
+                                                        <div class="controls">
+                                                            <input name="Introduction" value="@Model.Introduction" type="text" class="m-wrap medium" datatype="*2-50" />
+                                                        </div>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid perm_bind_content">
+                                            <div class="span12 title">权限绑定</div>
+                                            <div class="span12 anr_bg">
+                                                @{
+                                                    List<YRD.Dao.selrole_pemit> pemits = new List<YRD.Dao.selrole_pemit>();
+                                                    if (Model.ID.IsNull() == false)
+                                                    {
+                                                        pemits = DB.selrole_pemit.Value.Where(a => a.SelRoleID == Model.ID).ToList();
+                                                    }
+                                                    var list = Model.ListPemit;
+                                                    var list1 = list.Where(a => a.PemitType == 1);
+                                                    var flag1 = "0";
+                                                    var menu1 = list1.Where(a => a.ParentID == flag1 || string.IsNullOrEmpty(a.ParentID)).OrderBy(a => a.Sort);
+                                                    foreach (var item in menu1)
+                                                    {
+                                                        var any = pemits.Any(a => a.SelPemitID == item.ID);
+                                                        <div class="row-fluid">
+                                                            <div class="span2 perm_title">
+                                                                <span class="cb">
+                                                                    <input type="checkbox" name="cbPemit" class="cbrd" value="@item.ID" @(any ? "checked = checked" : "") />
+                                                                </span>
+                                                                <span>@item.Title</span>
+                                                            </div>
+                                                            @{ var childs = list1.Where(a => a.ParentID == item.ID).OrderBy(a => a.Sort);
+                                                                var i = 0;
+                                                                foreach (var item2 in childs)
+                                                                {
+                                                                    var any2 = pemits.Any(a => a.SelPemitID == item2.ID);
+                                                                    <div class="span2">
+                                                                        <span class="cb">
+                                                                            <input type="checkbox" name="cbPemit" class="cbrd" value="@item2.ID" @(any2 ? "checked = checked" : "") />
+                                                                        </span>
+                                                                        <span>@item2.Title</span>
+                                                                    </div>
+                                                                    i++;
+                                                                    if (i == 5)
+                                                                    {
+                                                                        i = 0;
+                                                                        <div class="span2"> </div>
+                                                                    }
+                                                                }
+                                                            }
+                                                        </div>
+                                                                }
+                                                }
+                                                @*<div class="row-fluid">
+                                                        <div class="span2 perm_title notbuy">
+                                                            <span class="cb">
+                                                                <input type="checkbox" class="cbrd" value="1" />
+                                                            </span>
+                                                            <span>掌柜app</span>
+                                                        </div>
+                                                        <div class="span2 notbuy">
+                                                            <span>允许使用全部功能</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row-fluid">
+                                                        <div class="span2 perm_title">
+                                                            <span class="cb">
+                                                                <input type="checkbox" class="cbrd" value="1" />
+                                                            </span>
+                                                            <span>店小二app</span>
+                                                        </div>
+                                                        <div class="span2">
+                                                            <span>允许使用全部功能</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row-fluid">
+                                                        <div class="span2 perm_title">
+                                                            <span class="cb">
+                                                                <input type="checkbox" class="cbrd" value="1" />
+                                                            </span>
+                                                            <span>收银端</span>
+                                                        </div>
+                                                        <div class="span2">
+                                                            <span>允许使用全部功能</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row-fluid">
+                                                        <div class="span2 perm_title">
+                                                            <span class="cb">
+                                                                <input type="checkbox" class="cbrd" value="1" />
+                                                            </span>
+                                                            <span>划菜app</span>
+                                                        </div>
+                                                        <div class="span2">
+                                                            <span>允许使用全部功能</span>
+                                                        </div>
+                                                    </div>*@
+                                            </div>
+                                        </div>
+                                        <div class="row-fluid">
+                                            <div class="span10 margin-top-20">
+                                                <button type="submit" id="SubSave" class="btn blue medium">保 存</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                                                }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/system-manage.js"></script>
+    <script src="~/Content/JS/MyForm.js"></script>
+}

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>ID</code>
+    <name>单号</name>
+  </field>
+  <field>
+    <code>PriceReal</code>
+    <name>金额</name>
+  </field>
+  <field>
+    <code>CreateTime</code>
+    <name>下单时间</name>
+  </field>
+  <field>
+    <code>WareHourseName</code>
+    <name>库房</name>
+  </field>
+  <field>
+    <code>ApplySellerName</code>
+    <name>负责人</name>
+  </field>
+  <field>
+    <code>ApproveTime</code>
+    <name>审核时间</name>
+  </field>
+  <field>
+    <code>ApproveSellerName</code>
+    <name>审核人</name>
+  </field>
+  <field>
+    <code>Introduction</code>
+    <name>报损原因</name>
+  </field>
+  <field>
+    <code>OrderStateName</code>
+    <name>状态</name>
+  </field>
+</fields>

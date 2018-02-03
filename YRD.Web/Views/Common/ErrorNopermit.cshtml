@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "无操作权限";
+}
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/iconbg.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/common.css" />
+}
+
+<!--右侧内容-->
+<div class="page-content">
+    <div class="container-fluid">
+        <div class="error-img">
+            <img src="@ConfigHelper.GetCdnUrl/Content/image/error/nopermit.png" />
+        </div>
+        <h3 class="error-txt">很遗憾您还没有操作权限</h3>
+        <div class="error-btn">
+            @*<button class="btn yellow">立即开通</button>*@
+            <a class="btn yellow" href="/sm/onlineupgrade">立即开通</a>
+        </div>
+    </div>
+</div>

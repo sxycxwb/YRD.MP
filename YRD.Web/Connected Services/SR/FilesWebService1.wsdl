@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://www.yrd.com/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://www.yrd.com/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://www.yrd.com/">
+      <s:element name="ImgFilesUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rootpath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="ThumbPath" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="width" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="height" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImgFilesUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImgFilesUpResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImgFileUp">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rootpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ImgFileUpResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ImgFileUpResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilesUpload_Thumb">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="data" type="s:base64Binary" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rootpath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thumbpath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="thumbsize" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfInt">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="int" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="FilesUpload_ThumbResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FilesUpload_ThumbResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilesDelete">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rootpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilesDeleteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FilesDeleteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilesDeleteByPath">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rootpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilesDeleteByPathResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FilesDeleteByPathResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilesDeleteByPaths">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rootpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilesDeleteByPathsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FilesDeleteByPathsResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilesExist">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rootpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="FilesExistResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="FilesExistResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageSize">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="strkey" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="rootpath" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetImageSizeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetImageSizeResult" type="tns:ArrayOfInt" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ZipFileFromDirectory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="rootpath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="targetpath" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="filename" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="compressLevel" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ZipFileFromDirectoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="ZipFileFromDirectoryResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ImgFilesUpSoapIn">
+    <wsdl:part name="parameters" element="tns:ImgFilesUp" />
+  </wsdl:message>
+  <wsdl:message name="ImgFilesUpSoapOut">
+    <wsdl:part name="parameters" element="tns:ImgFilesUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="ImgFileUpSoapIn">
+    <wsdl:part name="parameters" element="tns:ImgFileUp" />
+  </wsdl:message>
+  <wsdl:message name="ImgFileUpSoapOut">
+    <wsdl:part name="parameters" element="tns:ImgFileUpResponse" />
+  </wsdl:message>
+  <wsdl:message name="FilesUpload_ThumbSoapIn">
+    <wsdl:part name="parameters" element="tns:FilesUpload_Thumb" />
+  </wsdl:message>
+  <wsdl:message name="FilesUpload_ThumbSoapOut">
+    <wsdl:part name="parameters" element="tns:FilesUpload_ThumbResponse" />
+  </wsdl:message>
+  <wsdl:message name="FilesDeleteSoapIn">
+    <wsdl:part name="parameters" element="tns:FilesDelete" />
+  </wsdl:message>
+  <wsdl:message name="FilesDeleteSoapOut">
+    <wsdl:part name="parameters" element="tns:FilesDeleteResponse" />
+  </wsdl:message>
+  <wsdl:message name="FilesDeleteByPathSoapIn">
+    <wsdl:part name="parameters" element="tns:FilesDeleteByPath" />
+  </wsdl:message>
+  <wsdl:message name="FilesDeleteByPathSoapOut">
+    <wsdl:part name="parameters" element="tns:FilesDeleteByPathResponse" />
+  </wsdl:message>
+  <wsdl:message name="FilesDeleteByPathsSoapIn">
+    <wsdl:part name="parameters" element="tns:FilesDeleteByPaths" />
+  </wsdl:message>
+  <wsdl:message name="FilesDeleteByPathsSoapOut">
+    <wsdl:part name="parameters" element="tns:FilesDeleteByPathsResponse" />
+  </wsdl:message>
+  <wsdl:message name="FilesExistSoapIn">
+    <wsdl:part name="parameters" element="tns:FilesExist" />
+  </wsdl:message>
+  <wsdl:message name="FilesExistSoapOut">
+    <wsdl:part name="parameters" element="tns:FilesExistResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetImageSizeSoapIn">
+    <wsdl:part name="parameters" element="tns:GetImageSize" />
+  </wsdl:message>
+  <wsdl:message name="GetImageSizeSoapOut">
+    <wsdl:part name="parameters" element="tns:GetImageSizeResponse" />
+  </wsdl:message>
+  <wsdl:message name="ZipFileFromDirectorySoapIn">
+    <wsdl:part name="parameters" element="tns:ZipFileFromDirectory" />
+  </wsdl:message>
+  <wsdl:message name="ZipFileFromDirectorySoapOut">
+    <wsdl:part name="parameters" element="tns:ZipFileFromDirectoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="FilesWebServiceSoap">
+    <wsdl:operation name="ImgFilesUp">
+      <wsdl:input message="tns:ImgFilesUpSoapIn" />
+      <wsdl:output message="tns:ImgFilesUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ImgFileUp">
+      <wsdl:input message="tns:ImgFileUpSoapIn" />
+      <wsdl:output message="tns:ImgFileUpSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilesUpload_Thumb">
+      <wsdl:input message="tns:FilesUpload_ThumbSoapIn" />
+      <wsdl:output message="tns:FilesUpload_ThumbSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilesDelete">
+      <wsdl:input message="tns:FilesDeleteSoapIn" />
+      <wsdl:output message="tns:FilesDeleteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilesDeleteByPath">
+      <wsdl:input message="tns:FilesDeleteByPathSoapIn" />
+      <wsdl:output message="tns:FilesDeleteByPathSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilesDeleteByPaths">
+      <wsdl:input message="tns:FilesDeleteByPathsSoapIn" />
+      <wsdl:output message="tns:FilesDeleteByPathsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="FilesExist">
+      <wsdl:input message="tns:FilesExistSoapIn" />
+      <wsdl:output message="tns:FilesExistSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetImageSize">
+      <wsdl:input message="tns:GetImageSizeSoapIn" />
+      <wsdl:output message="tns:GetImageSizeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ZipFileFromDirectory">
+      <wsdl:input message="tns:ZipFileFromDirectorySoapIn" />
+      <wsdl:output message="tns:ZipFileFromDirectorySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="FilesWebServiceSoap" type="tns:FilesWebServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ImgFilesUp">
+      <soap:operation soapAction="http://www.yrd.com/ImgFilesUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgFileUp">
+      <soap:operation soapAction="http://www.yrd.com/ImgFileUp" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesUpload_Thumb">
+      <soap:operation soapAction="http://www.yrd.com/FilesUpload_Thumb" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesDelete">
+      <soap:operation soapAction="http://www.yrd.com/FilesDelete" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesDeleteByPath">
+      <soap:operation soapAction="http://www.yrd.com/FilesDeleteByPath" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesDeleteByPaths">
+      <soap:operation soapAction="http://www.yrd.com/FilesDeleteByPaths" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesExist">
+      <soap:operation soapAction="http://www.yrd.com/FilesExist" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageSize">
+      <soap:operation soapAction="http://www.yrd.com/GetImageSize" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZipFileFromDirectory">
+      <soap:operation soapAction="http://www.yrd.com/ZipFileFromDirectory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="FilesWebServiceSoap12" type="tns:FilesWebServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ImgFilesUp">
+      <soap12:operation soapAction="http://www.yrd.com/ImgFilesUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ImgFileUp">
+      <soap12:operation soapAction="http://www.yrd.com/ImgFileUp" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesUpload_Thumb">
+      <soap12:operation soapAction="http://www.yrd.com/FilesUpload_Thumb" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesDelete">
+      <soap12:operation soapAction="http://www.yrd.com/FilesDelete" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesDeleteByPath">
+      <soap12:operation soapAction="http://www.yrd.com/FilesDeleteByPath" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesDeleteByPaths">
+      <soap12:operation soapAction="http://www.yrd.com/FilesDeleteByPaths" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="FilesExist">
+      <soap12:operation soapAction="http://www.yrd.com/FilesExist" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetImageSize">
+      <soap12:operation soapAction="http://www.yrd.com/GetImageSize" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ZipFileFromDirectory">
+      <soap12:operation soapAction="http://www.yrd.com/ZipFileFromDirectory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="FilesWebService">
+    <wsdl:port name="FilesWebServiceSoap" binding="tns:FilesWebServiceSoap">
+      <soap:address location="http://fileservice.yrd.com/FilesWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="FilesWebServiceSoap12" binding="tns:FilesWebServiceSoap12">
+      <soap12:address location="http://fileservice.yrd.com/FilesWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

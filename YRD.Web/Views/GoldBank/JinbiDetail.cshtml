@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.menuid = 1113;
+    ViewBag.Title = "账户明细";
+}
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/GoldBank/GoldBalance">账户余额</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/GoldBank/JinbiDetail">账户明细</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li><a href="/GoldBank/GoldBalance">账户余额</a></li>
+                            <li><a href="/GoldBank/RechargeDetail">充值列表</a></li>
+                            <li class="active"><a href="/GoldBank/JinbiDetail" data-toggle="tab">账户明细</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--充值列表-->
+                            <div class="active tab-pane" id="accountList">
+                                <table id="datatable" class="table table-hover table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th class="w50">序号</th>
+                                            <th>时间</th>
+                                            <th>金额</th>
+                                            <th>备注</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="~/Content/JS/MyTable.js"></script>
+    <script>
+        var isPage = true;
+        var dataSource = "/GoldBank/getJinbiDetail";
+
+        var searchWhereData = function () {
+            return {
+            }
+        }
+
+        var searchData = function (e) {
+            var sd = {
+                start: e.start,
+                length: e.length,
+                draw: e.draw
+            };
+            var object = $.extend(sd, searchWhereData())
+            return object;
+        };
+        var columns = [//绑定数据
+
+            {
+                data: 'CreateTime',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html(iRow + 1);
+                }
+            },
+
+            {
+                data: 'CreateTime'
+            },
+            {
+                data: 'Jinbi'
+            },
+            { data: 'Remark' },
+        ];
+    </script>
+}

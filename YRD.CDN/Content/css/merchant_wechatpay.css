@@ -1,0 +1,129 @@
+.wc_top:after,
+.wcb_bottom:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+/*中间内容*/
+section{
+    background: #F2F2F2;
+    padding: 40px 0 0;
+}
+.wechat_cont{
+    width: 1000px;
+    margin: 0 auto;
+}
+/*上*/
+.wc_top{
+    padding: 0 20px;
+    width: 100%;
+}
+.wc_top p{
+    margin-bottom: 10px;
+}
+.wct_txt,.wct_txt>b,
+.wct_num,.wct_num>b{
+    font-size: 14px;
+    line-height: 20px;
+}
+.wct_num{
+    margin-right: 50px;
+}
+.wct_money,.wct_money>span{
+    font-size: 22px;
+    color: #FF6600;
+    font-weight: bold;
+    margin-top: 10px;
+}
+/*下*/
+.wc_bottom{
+    border: 3px solid #E1D596;
+    background: #FFFDEE;
+    padding: 17px;
+    margin-top: 20px;
+    width: 100%;
+    min-height: 460px;
+}
+.wcb_top{
+    color: #606456;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+.wcb_bottom>div{
+    width: 50%;
+}
+.wcb_ewm{
+    width: 210px;
+    bottom: 210px;
+    border: 1px solid #ECEBDC;
+    padding: 20px;
+    margin: 0 auto;
+}
+.wcb_ewm>img{
+    width: 100%;
+    height: 100%;
+}
+.wcb_use{
+    width: 250px;
+    height: 60px;
+    margin: 15px auto;
+}
+.wcb_use>img{
+    width: 100%;
+    height: 100%;
+}
+.wcb_phone{
+    width: 300px;
+    height: 400px;
+}
+.wcb_phone>img{
+    width: 100%;
+    height: 100%;
+}
+
+/*底部*/
+footer{
+    background: #fff;
+    padding: 10px 0;
+}
+footer>p{
+    font-size: 14px;
+    text-align: center;
+}
+
+
+/*支付成功*/
+.wcsucc_img{
+    width: 83px;
+    height: 83px;
+    margin: 60px auto 40px;
+    background: url(../image/wechat/ok.png) no-repeat center;
+}
+.wcsucc_txt,.wcsucc_txt>span{
+    font-size: 24px;
+    text-align: center;
+}
+.wcsucc_txt>span{
+    color: #FF6600;
+}
+.wcsucc_btn{
+    margin-top: 50px;
+    text-align: center;
+}
+.wcsucc_btn>a{
+    display: inline-block;
+    width: 200px;
+    height: 50px;
+    color: #fff;
+    font-size: 22px;
+    background: #FF6600;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 50px;
+}
+
+
+
+
+

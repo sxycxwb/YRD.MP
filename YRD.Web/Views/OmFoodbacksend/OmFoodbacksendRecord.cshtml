@@ -1,0 +1,204 @@
+﻿
+@{
+    ViewBag.Title = "退菜赠菜记录";
+}
+@section css{
+    <!--本页.css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/iconbg.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/common.css" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/operation_manage.css" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg txt"></b>
+                        <a>经营管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a>退菜赠菜记录</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid">
+            <div class="span12">
+                <div class="pull-right">
+                    <form class="clearfix">
+                        <input id="keyword" type="text" class="m-wrap medium inputbutton" placeholder="输入订单号或菜名"  />
+                        <button type="button" class="btn blue inputbutton" onclick="SearchList()">搜索</button>
+                    </form>
+                </div>
+                <select name="" id="dllType" class="m-wrap small">
+                    <option value="0">全部记录</option> 
+                    <option value="2">赠菜</option>
+                    <option value="3">退菜</option>
+                </select>
+                <button class="btn littleblue"><b class="iconbg daochu"></b>导出表格</button>
+            </div>
+            <div class="span12">
+                <div class="selectime">
+                    时间选择
+                    <div>
+                        <span class="rd rd_check">
+                            <input data-time="day" type="radio" class="cbrd" name="selectime" checked="checked" />
+                        </span>
+                        <span>当天</span>
+                    </div>
+                    <div>
+                        <span class="rd">
+                            <input data-time="week" type="radio" class="cbrd" name="selectime" />
+                        </span>
+                        <span>最近一周</span>
+                    </div>
+                    <div>
+                        <span class="rd">
+                            <input data-time="month" type="radio" class="cbrd" name="selectime" />
+                        </span>
+                        <span>本月</span>
+                    </div>
+                    <div>
+                        <span class="rd">
+                            <input data-time="auto" type="radio" class="cbrd" name="selectime" />
+                        </span>
+                        <span>自定义</span>
+                    </div>
+                </div>
+                <div class="inline-block" style="display: none;">
+                    <input id="d1" class="m-wrap Wdate" type="text" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',maxDate:'#F{$dp.$D(\'d2\')}'})" />
+                    <span>至</span>
+                    <input id="d2" class="m-wrap Wdate" type="text" onFocus="WdatePicker({dateFmt:'yyyy-MM-dd',minDate:'#F{$dp.$D(\'d1\')}'})" />
+                </div>
+                <input type="hidden" class="startTime" id="dt1" />
+                <input type="hidden" class="endTime" id="dt2" />
+            </div>
+            <!--表格区-->
+            <div>
+                <div class="span12 text-center">赠菜退菜记录<span class="timePeriod">(<span id="ST"></span>至<span id="ET"></span>)</span></div>
+                <table id="datatable" class="table table-hover table-striped table-bordered">
+                    <thead>
+                        <tr>
+                            <th class="w50">序号</th>
+                            <th>订单号</th>
+                            <th>类别</th>
+                            <th>开台时间</th>
+                            <th>餐桌</th>
+                            <th>菜名</th>
+                            <th>规格</th>
+                            <th>单价</th>
+                            <th>点餐数量</th>
+                            <th>退赠数量</th>
+                            <th>金额</th>
+                            <th>收银员</th>
+                            <th>备注</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @*<tr>
+                            <td class="w50">1</td>
+                            <td><a href="#">111xxx222</a></td>
+                            <td>退菜</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>退菜原因为暂时不</td>
+                        </tr>
+                        <tr>
+                            <td class="w50">2</td>
+                            <td></td>
+                            <td>赠菜</td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>*@
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section script{
+    <script src="~/Content/JS/MyTable.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/common.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/operation-manage.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/inventory-manage.js"></script>
+    <script>
+        var isPage = true;
+        var dataSource = "/OmFoodbacksend/getOmFoodbacksendRecord";
+
+        var searchWhereData = function () {
+            return {
+                keyword: $("#keyword").val(),
+                type: $("#dllType").val(),
+                st: $("#dt1").val(),
+                et: $("#dt2").val(),
+            }
+        }
+
+        var searchData = function (e) {
+            var sd = {
+                start: e.start,
+                length: e.length,
+                draw: e.draw
+            };
+            var object = $.extend(sd, searchWhereData())
+            return object;
+        };
+        var columns = [//绑定数据
+
+            {
+                data: 'ID',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    $(nTd).html(iRow + 1);
+                }
+            },
+            {
+                data: 'OrderID' 
+            },
+            {
+                data: 'AddType',
+                createdCell: function (nTd, sData, oData, iRow, iCol) {
+                    if (oData["AddType"] == 2) {
+                        $(nTd).html('<span>赠菜</span>');
+                    }  else if (oData["AddType"] == 3) {
+                        $(nTd).html('<span>退菜</span>');
+                    }
+                }
+            },
+            {
+                data: 'ConfirmOrderTime' 
+            },
+            { data: 'TableName' },
+            { data: 'FoodName' },
+            { data: 'FoodAttributeName' },
+            { data: 'GoodsPrice' },
+            { data: 'GoodsCount' },
+            { data: 'FoodCount' },
+            { data: 'FoodTotalPrice' },
+            { data: 'SellerName' },
+            { data: 'Remark' },
+        ];
+        function exdata(Data) {
+            $("#ST").html(Data.ST);
+            $("#ET").html(Data.ET); 
+        }
+    </script>
+}

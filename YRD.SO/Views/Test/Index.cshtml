@@ -1,0 +1,22 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="@ConfigHelper.GetCdnUrl/head/css/common.css" rel="stylesheet" />
+    <script src="@ConfigHelper.GetCdnUrl/jquery/jquery.min.js"></script>
+    <title>网站头部样式测试</title>
+    <script>
+        $(function () {
+            $("#head").load("@ConfigHelper.GetSoUrl/head/index");
+        })
+    </script>
+</head>
+<body>
+    <div id="head">
+    </div>
+</body>
+</html>

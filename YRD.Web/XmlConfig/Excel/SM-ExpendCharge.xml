@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>Title</code>
+    <name>名称</name>
+  </field>
+  <field>
+    <code>CreateTime</code>
+    <name>添加时间</name>
+  </field>
+  <field>
+    <code>ExpenditureMoney</code>
+    <name>支出金额</name>
+  </field>
+  <field>
+    <code>Introduction</code>
+    <name>备注</name>
+  </field>
+</fields>

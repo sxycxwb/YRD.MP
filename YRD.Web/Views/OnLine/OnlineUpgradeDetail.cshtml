@@ -1,0 +1,84 @@
+﻿@model  YRD.Model.ViewModels.ViewOnlineUpGradePayment
+@{
+    ViewBag.menuid = 1118;
+    ViewBag.Title = "付款操作";
+}
+@section css{
+    <link href="@ConfigHelper.GetCdnUrl/Content/css/uc-slider.css" rel="stylesheet" />
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/system-manage.css" />
+}
+<!--右侧内容-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li class="backprev">
+                        <a href="/OnLine/OnlineUpgrade">返回上一级</a>
+                    </li>
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/OnLine/OnlineUpgrade">版本开通</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/OnLine/OnLineUpgradeDetail">开通</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            @using (Ajax.BeginForm("OnLinePayment", null, new AjaxOptions()
+            {
+                HttpMethod = "Post",
+                OnBegin = "SubAjax.Loading",
+                OnComplete = "SubAjax.Complate",
+                OnFailure = "SubAjax.Failure",
+                OnSuccess = "SubAjax.Success"
+            }, new { @class = "form-horizontal", @role = "form", @id = "commentForm" }))
+            {
+                <input type="hidden" name="BatchId" value="@Model.BatchId" />
+                <input type="hidden" name="VersionID" value="@Model.VersionID" />
+                <h4 class="text-center">余额支付</h4>
+                <div class="control-group">
+                    <label class="control-label">类型</label>
+                    <div class="controls">
+                        <span class="text-inline">@Model.Remark</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">购买时间</label>
+                    <div class="controls">
+                        <span class="text-inline">@Model.StartTimeFormat 至 @Model.EndTimeFormat</span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">本次支付</label>
+                    <div class="controls">
+                        <span class="text-inline">¥ <span>@Model.TotalPrice</span></span>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">支付密码</label>
+                    <div class="controls">
+                        <input type="password" class="m-wrap medium" id="PayPassword" name="PayPassword" />
+                    </div>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn blue medium">立即支付</button>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/system-manage.js"></script>
+    <script src="~/Content/JS/MyForm.js">  </script>
+
+}

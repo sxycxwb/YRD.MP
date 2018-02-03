@@ -1,0 +1,484 @@
+/*表格中要省略几个字*/
+.table-ellipsis{
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+}
+@media screen and (max-width: 1280px) {
+    .te-50{
+        max-width: 40px !important;/*3个数字*/
+    }
+    .te-70{
+        max-width: 55px !important;/*3个字*/
+    }
+}
+@media screen and (min-width: 1281px) and (max-width: 1360px ){
+    .te-50{
+        max-width: 60px !important;/*8个数字*/
+    }
+    .te-70{
+        max-width: 80px !important;/*5个字*/
+    }
+}
+@media screen and (min-width: 1361px) and (max-width: 1600px ){
+    .te-50{
+        max-width: 80px !important;/*11个数字*/
+    }
+    .te-70{
+        max-width: 100px !important;/*6个字*/
+    }
+}
+/*********基础设置*******/
+#im_basic_set .nav-tabs>li:last-child>a{
+    color: #f60;
+}
+.tab-pane .item_btn{
+    margin: 10px 0;
+}
+.tab-pane .item_btn a{
+    margin-left: 3px;
+}
+#im_basic_set .div-select select{
+    margin-left: 10px;
+}
+/*库房设置*/
+.outboundtip{
+    margin-top: -10px;
+}
+/*有自动出库*/
+.hasauto_outbound_dialog{
+    border: 1px solid rgba(0,129,239,.5);
+    padding: 20px 0 0;
+    margin-bottom: 20px;
+    position: relative;
+    display: none;
+}
+.hasauto_outbound_dialog>b{
+    position: absolute;
+    top: -10px;
+    left: 190px;
+}
+.hasauto_outbound_dialog ul{
+    margin:0;
+}
+.hasauto_outbound_dialog ul>li{
+    display: inline-block;
+    list-style: none;
+    width: 50px;
+    margin-right: 10px;
+    margin-top: 7px;
+}
+.hasauto_outbound_dialog ul>li>span:not(.cb),
+.hasauto_outbound_dialog .inline-block>.cb + span{
+    position: relative;
+    top: -3px \9;
+}
+/******物料设置*******/
+.add_categories{
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+.item_btn .btn.yellow{
+    padding: 7px 14px;
+}
+/*添加单位名称*//*添加品牌*/
+.add_jlunit,
+.add_bzunit,
+.add_mbrand{
+    margin-left: 10px;
+}
+/*菜品成本*/
+#food_cost .edit_fc{
+    color: #06c;
+}
+#food_cost .add_fc{
+    color: #f00;
+}
+#food_cost .form-horizontal .controls{
+    height: 30px;
+    font-size: 14px;
+}
+#food_cost .form-horizontal .controls>div{
+    line-height: 30px;
+    margin-top: 3px;
+    text-align: center;
+}
+#food_cost .form-horizontal .span2,
+#food_cost .form-horizontal .span1{
+    margin-left: 0;
+}
+#food_cost .span2>a{
+    cursor: pointer;
+}
+#food_cost .form-horizontal .control-group{
+    margin-bottom: 10px;
+}
+#food_cost .form-horizontal .form-actions{
+    padding-left: 140px;
+}
+/*待添加-》添加料弹出框*/
+.add_material_dialog{
+    border: 1px solid #797979;
+    padding: 20px 10px;
+    margin-left: 120px;
+    margin-bottom: 20px;
+    position: relative;
+    max-height: 370px;
+    overflow: auto;
+}
+.add_material_dialog .close_mdialog{
+    margin-left: 10px;
+}
+.add_material_dialog .pull-right .inputbutton{
+    margin-right: 0;
+}
+.add_material_dialog table{
+    margin-top: 20px;
+}
+.add_material_dialog table th,
+.add_material_dialog table td{
+    padding: 0;
+    height: 30px;
+    line-height: 30px;
+}
+.add_material_dialog .table td>input{
+    text-align: center;
+    width: 50px !important;
+    height:20px;
+    vertical-align: middle;
+    margin-top: -3px;
+    padding: 0 !important;
+    margin-right: 0;
+    font-size: 12px;
+}
+.add_material_dialog table>tbody td>a{
+    color: #06c;
+}
+/*添加的子主料*/
+.item_mainm .controls>div,
+.item_vicem .controls>div,
+.item_mTitle .controls>div {
+    margin-left: 0;
+    border-bottom: 1px solid #eee;
+}
+/*添加的材料的标题*/
+.item_mTitle .controls,
+.item_mainm .controls,
+.item_vicem .controls{
+    padding: 0 10px;
+}
+/*固定表格的宽度*/
+#food_cost .percent12{
+    width: 12%;
+}
+#food_cost .percent8{
+    width: 8%;
+}
+
+/*供应商设置*/
+#supplier_set .table th,
+#supplier_set .table td{
+    padding: 8px 0;
+}
+#supplier_set form .control-label{
+    width: 100px;
+}
+#supplier_set form .controls{
+    margin-left: 140px;
+}
+#supplier_set form .form-actions{
+    margin-left: 20px;
+}
+#supplier_set form .fixed-phone .controls>input.m-wrap.small:first-child{
+    width: 55px !important;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+#supplier_set form .fixed-phone .controls>span{
+    vertical-align: middle;
+    margin-right: 2px;
+    font-size: 20px;
+}
+/*期初建账*/
+#initial_account .row-select select{
+    margin-left: 10px;
+}
+#initial_account form table input{
+    width: 60px !important;
+    background-color: #fff;
+    padding: 2px !important;
+    height: 15px;
+    text-align: center;
+}
+#initial_account form table select.small{
+    width: 85px !important;
+    height: 24px !important;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-image: url(../image/icon/selectsmall-down.png) !important;
+    text-align: center;
+}
+/*库房开启*/
+#warehouse_open .btn.medium{
+    padding: 0 36px;
+}
+#warehouse_open .control-label{
+    padding-top: 2px;
+}
+/***********订单中心***********/
+#im_order_center .selectime,
+#im_supplier_settle .selectime{
+    height: 35px;
+    line-height: 34px;
+    margin-bottom: 2px;
+}
+#im_order_center .selectime input,
+#im_supplier_settle .selectime input{
+    margin-top: -4px;
+}
+#im_order_center select{
+    margin-right: 2px;
+}
+#im_order_center .tab-pane>div,
+#im_inventory_summary .tab-pane>div{
+    margin-bottom: 20px;
+}
+#im_order_center .selectime,
+#im_inventory_summary .selectime,
+#im_supplier_settle .selectime{
+    display: inline-block;
+    margin-right: 30px;
+}
+#im_order_center .selectime>div,
+#im_inventory_summary .selectime>div,
+#im_supplier_settle .selectime>div{
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#im_order_center .selectime .rd,
+#im_inventory_summary .selectime .rd,
+#im_supplier_settle .selectime .rd{
+    vertical-align: middle;
+    margin-top: -3px;
+}
+/*详情页中的进度条*/
+#im_order_center .progress-bar{
+    list-style: none;
+    font-size: 14px;
+    margin-bottom: 80px;
+    margin-top: 30px;
+}
+#im_order_center .progress-bar + .row-fluid{
+    margin-bottom: 100px;
+}
+#im_order_center .progress-bar:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+#im_order_center .progress-bar.progress5>li.span2{
+    width: 20%;
+}
+#im_order_center .progress-bar.progress6>li.span2{
+    width: 16%;
+}
+#im_order_center .progress-bar>li{
+    float: left;
+    border-bottom: 3px solid #999;
+    padding-left: 10px;
+    margin-left: 0;
+    position: relative;
+}
+#im_order_center .progress-bar>li.active{
+   border-bottom-color: #FF6600;
+}
+#im_order_center .progress-bar>li>span{
+    display: inline-block;
+    /*text-align: center;*/
+    /*width: 100px;*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+}
+#im_order_center .progress-bar>li>i{
+    display: inline-block;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #999;
+    /*vertical-align: bottom;*/
+    /*margin: 0 50px 0 10px;*/
+    position: absolute;
+    bottom: 0;
+    left: 62%;
+}
+#im_order_center .progress-bar>li.span6>i{
+    left: 55%;
+}
+#im_order_center .progress-bar>li.span4>i {
+    left: 57%;
+}
+#im_order_center .progress-bar>li.active>i{
+    border-bottom-color: #FF6600;
+}
+#im_order_center .progress-bar>li>b{
+    font-weight: normal;
+    width: 60%;
+    /*text-align: center;*/
+    position: absolute;
+    top: -20px;
+    left: 50%;
+}
+#im_order_center .progress-bar>li>s{
+    text-decoration:none;
+    /*min-width: 60px;*/
+    text-align: center;
+    position: absolute;
+    top: 35px;
+    left: 50%;
+}
+
+/*详情页内容--签名图*/
+#im_order_center .modal-backdrop{
+    margin-bottom: 0 !important;
+    display: none;
+}
+.showImg{
+    background: #fff;
+    width: calc(1280px * 0.5);
+    height: calc(720px * 0.5);
+    box-sizing: border-box;
+    padding: 20px;
+    position: absolute;
+    top: calc(50% - 720px * 0.5 / 2);
+    left: calc(50% - 1280px * 0.5 / 2);
+}
+.showImg>img{
+    width: 100%;
+    height: 100%;
+}
+.showImg>a.closed{
+    position: absolute;
+    top: -19px;
+    right: -19px;
+    width: 38px;
+    height: 39px;
+    background:url(../image/icon/closeimg.png) no-repeat;
+}
+/*添加盘点单*/
+#inventory_order>form .control-group{
+    margin-top: 10px;
+}
+#inventory_order>form .controls>p{
+    margin-top: 8px;
+    font-size: 14px;
+}
+#inventory_order>form .controls .cb + span{
+    position: relative;
+    top: -3px \9;
+}
+#inventory_order>form .controls .inline-block{
+   margin:0 50px 10px 0;
+}
+#inventory_order>form .material_name .controls .inline-block{
+    margin-right: 10px;
+}
+#inventory_order>form .material_name .material_checked a{
+    margin-left: 80px;
+}
+/*盘点详情*/
+#inventory_order .plcheckBox{
+    width: 10%;
+}
+#inventory_order .plcheckBtn{
+    padding: 5px 12px;
+    position: relative;
+    bottom: 6px;
+}
+#inventory_order .profit{
+    color: #f60;
+}
+#inventory_order .loss{
+    color: #26A8A8;
+}
+#inventory_order .check{
+    background-color: #06c;
+    color: #fff;
+    border-radius: 4px;
+    padding: 3px 5px;
+}
+#inventory_order .noCheck{
+    color: #333;
+}
+#inventory_order .noCheck:hover{
+    cursor: default;
+}
+/********库存汇总*********/
+#receipt_statistic .select{
+    margin-right: 5px;
+    margin-right: 1px \9;
+}
+/*订单中心&库存汇总：详情中的一行数据无左外边距*/
+.nomargin h4{
+    margin-bottom: 20px;
+}
+.nomargin div[class^='span']{
+    margin-left: 0;
+}
+.nomargin div[class^='span'].pull-right{
+    text-align: right;
+}
+a.daochu,
+a.signImg{
+    color: #06c;
+}
+button.daochu{
+    border: 0;
+    padding: 0;
+    color: #06c;
+    background-color: transparent;
+    vertical-align: top;
+}
+/*********供应商结算********/
+#im_supplier_settle>div{
+    margin-bottom: 15px;
+}
+#im_supplier_settle .row-select select{
+    margin-right: 10px;
+}
+#im_supplier_settle .row-select a.btn{
+    margin-right: 10px;
+}
+#im_supplier_settle .row-jilu:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+#im_supplier_settle .row-jilu a.btn{
+    position: relative;
+    bottom: 10px;
+    margin-left: 10px;
+}
+#im_supplier_settle table tbody .showImg{
+    margin: 0;
+}
+#im_supplier_settle .row-payedStyle .inline-block {
+    display: block;
+}
+#im_supplier_settle .row-payedStyle .payedStyleInfo{
+    margin-left: 60px;
+    color: #666;
+    margin-top: 10px;
+}
+#im_supplier_settle .row-payedPromise img{
+    width: 260px;
+    height: 200px;
+}
+#im_supplier_settle .row-payedStyle b{
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 8px;
+}
+

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>ID</code>
+    <name>订单编号</name>
+  </field>
+  <field>
+    <code>Title</code>
+    <name>名称</name>
+  </field>
+  <field>
+    <code>MaterialTypeMainName</code>
+    <name>材料主类型名称</name>
+  </field>
+  <field>
+    <code>MaterialTypeChildName</code>
+    <name>材料子类型名称</name>
+  </field>
+  <field>
+    <code>MaterialSpecName</code>
+    <name>规格</name>
+  </field>
+  <field>
+    <code>MaterialUnitName</code>
+    <name>单位</name>
+  </field>
+  <field>
+    <code>CountReal</code>
+    <name>数量</name>
+  </field>
+  <field>
+    <code>PriceReal</code>
+    <name>实际金额</name>
+  </field>
+  <field>
+    <code>TotalPriceReal</code>
+    <name>总金额</name>
+  </field>
+  <field>
+    <code>FromWareHouseName</code>
+    <name>出料仓库</name>
+  </field>
+  <field>
+    <code>ToWareHouseName</code>
+    <name>领料仓库</name>
+  </field>
+</fields>

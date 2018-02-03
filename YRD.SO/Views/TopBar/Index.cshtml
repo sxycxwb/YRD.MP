@@ -1,0 +1,124 @@
+﻿@{Layout = null;
+var wwwurl = ConfigHelper.GetWwwUrl;
+var homeurl = ConfigHelper.GetHomeUrl;
+var sourl = ConfigHelper.GetSoUrl;
+var gsurl = ConfigHelper.GetGsUrl;
+}
+
+@*<link href="@ConfigHelper.GetCdnUrl/head/css/YRDhead.css" rel="stylesheet" />
+    <link href="@ConfigHelper.GetCdnUrl/head/css/YRDtopbar.css" rel="stylesheet" />
+    <script src="@ConfigHelper.GetCdnUrl/jquery/jquery.min.js"></script>*@
+<!--网站头部第一部分样式开始-->
+<div id="YRD_topbar">
+    <div id="YRD_topbar_layout">
+        <div class="YRD_bar_left">
+            <span id="spancity"></span>
+            <span class="separator">|</span>
+            <span>
+                <a href="@wwwurl/city" title="今农网切换城市">切换城市</a>
+            </span>
+            <span class="separator">|</span>
+            <span><a href="@wwwurl" title="返回今农网首页">返回首页</a></span>
+            <span class="separator">|</span>
+            <span><a href="javascript:void(0)" onclick="shoucang(document.title,window.location)">加入收藏</a></span>
+        </div>
+        <div class="YRD_bar_right">
+            <span id="spanunlogin">
+                <span> <a href="@sourl/login">登录</a></span>
+                <span class="separator">|</span>
+                <span><a href="@sourl/reg">免费注册</a></span>
+            </span>
+            <span id="spanlogin" style="display:none">
+                <span>欢迎 <span id="nickname"></span></span>
+                <span class="separator">|</span>
+                <span><a href="@homeurl/User/JoinUs">个人中心</a></span>
+                <span class="separator">|</span>
+                <span><a href="@sourl/login/LoginOut">退出</a></span>
+            </span>
+        </div>
+    </div>
+</div>
+<!--网站头部第一部分样式结束-->
+<!--网站头部第二部分样式开始-->
+<div id="header">
+    <div id="headerinside">
+        <a id="logo" href="@wwwurl">
+            <img alt="今农网" src="@ConfigHelper.GetCdnUrl/images/logo.png" />
+        </a>
+        <form action='@homeurl/search/index' method="post">
+            <div id="searchbar">
+                <div id="saerkey">
+                    <span id="key">
+                        <input type="text" id="keyword" name="keyword" class="keyword" value="请输入类别名称或关键字" onblur="if(this.value=='')this.value='请输入类别名称或关键字',this.className='keyword'"
+                               onfocus="if (this.value == '请输入类别名称或关键字') this.value = '', this.className = 'keywordonfoucs'" />
+                    </span>
+                </div>
+                <input type="submit" name="button" class="btnall" id="gover_search_key" value="搜索" onmousemove="this.className='btnal2'"
+                       onmouseout="this.className=''" />
+
+                <div class="search_suggest_01" id="gov_search_suggest_01">
+                    <ul></ul>
+                </div>
+
+                <div class="clearfabu">
+                </div>
+            </div>
+
+            <div class="header02_03">
+                <ul id="hotkeyword"></ul>
+            </div>
+        </form>
+        <a href="@homeurl/fabu" id="fabu">免费发布信息</a>
+    </div>
+</div>
+<!--网站头部第二部分样式结束-->
+
+<script type="text/javascript">
+    $(function () {
+        $.post("/TopBar/GetHot", function (data) {
+            $.each(data, function (i, item) {
+                $("#hotkeyword").append("<li><a href=\"@homeurl/Search?keyword=" + item.Name + "\" target=\"_blank\">" + item.Name + "</a></li>");
+            });
+        })
+        //判断  NickName 是否存在
+        var nickname = getCookie("NickName");
+        if (nickname == '' || nickname == null || nickname == "null") {
+            $("#spanlogin").hide();
+            $("#spanunlogin").show();
+        } else {
+            $("#spanlogin").show();
+            $("#spanunlogin").hide();
+            $("#nickname").html(nickname);
+        }
+        var citycode = getCookie("citycode");
+        var cityname = getCookie("cityname");
+        if (cityname != '' && cityname != 'null') {
+            $("#spancity").html(cityname);
+        } else {
+            $("#spancity").html("中国");
+        }
+    });
+    function shoucang(sTitle, sURL) {
+        try {
+            window.external.addFavorite(sURL, sTitle);
+        }
+        catch (e) {
+            try {
+                window.sidebar.addPanel(sTitle, sURL, "");
+            }
+            catch (e) {
+                alert("加入收藏失败，请使用Ctrl+D进行添加");
+            }
+        }
+    }
+    //读取cookies
+    function getCookie(name) {
+        var arr, reg = new RegExp("(^| )" + name + "=([^;]*)(;|$)");
+
+        if (arr = document.cookie.match(reg))
+
+            return decodeURIComponent(arr[2]);
+        else
+            return null;
+    }
+</script>

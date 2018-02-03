@@ -1,0 +1,215 @@
+﻿@{Layout = null;}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>会员注册-今农网</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Language" content="zh-CN" />
+    <meta name="Keywords" content="会员注册,今农网" />
+    <meta name="Description" content="会员注册,页面今农网" />
+    <link href="@ConfigHelper.GetCdnUrl/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    @*<link href="@ConfigHelper.GetCdnUrl/css/login.css" rel="stylesheet" type="text/css" />*@
+    <link href="@ConfigHelper.GetCdnUrl/css/login_registration.css" rel="stylesheet" type="text/css" />
+    <style>
+        body {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div id="header" class="win1000">
+        <a id="logo" href="@ConfigHelper.GetWwwUrl">
+            <img alt="今农网" width="150" height="60" src="@ConfigHelper.GetCdnUrl/images/logo.png" />
+        </a>
+        <div id="cityname" class="regname">
+            <span>会员注册</span>
+        </div>
+        <div id="logintext">
+            <a href="@ConfigHelper.GetWwwUrl">返回首页</a>|<a target="_blank" href="@ConfigHelper.GetWwwUrl/help">帮助</a>
+        </div>
+    </div>
+    <div class="cb win1000">
+        <div class="porleft">
+            <form class="form-horizontal" id="submitForm" action="#" role="form">
+                <div class="form-group">
+                    <label for="tg" class="col-sm-2 control-label">上级用户</label>
+                    <div class="col-sm-6">
+                        <input type="text" disabled="disabled" class="form-control" value="@ViewBag.tg" id="tg">
+                    </div>
+                    <span class="help-block">上级推广合作用户</span>
+                </div>
+                <div class="form-group">
+                    <label for="userName" class="col-sm-2 control-label">用户名</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="" id="userName" check-type="required" placeholder="请填写用户名" required-message="请填写用户名。">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password" class="col-sm-2 control-label">密  码</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="password" check-type="required" placeholder="请输入密码" required-message="请输入密码">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cpassword" class="col-sm-2 control-label">确认密码</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="cpassword" check-type="required" placeholder="请输入确认密码" required-message="确认密码不正确。">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">邮  箱</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" value="" id="email" check-type="mail required" placeholder="请输入获取验证码邮箱" required-message="邮箱不正确。">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="email" class="col-sm-2 control-label">验证码</label>
+                    <div class="col-sm-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="validatecode" placeholder="请输入验证码">
+                            <input type="hidden" id="validateid">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="button" id="btnCode">获取验证码</button>
+                            </span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="form-group">
+                    <label for="validatecode" class="col-sm-2 control-label">&nbsp;</label>
+                    <div class="col-sm-3">
+                        <button type="button" id="btnSubmit" style="width:120px" name="btnSubmit" class="btn btn-primary">注 册</button>
+                    </div>
+                    <div class="col-sm-4">
+                        <button type="button" id="btnReset" style="width:120px" name="btnReset" class="btn btn-primary">重 置</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+        <div class="porright" style="">
+            <h3>
+                您已经是会员，请<a href="/login">登录</a>
+            </h3>
+            <div class="tel-tip" style="padding-top: 20px; ">
+                <strong style="font-size: 20px;">服务宗旨？</strong> <span style="font-size: 14px; line-height: 30px;">为您提供绿色的，方便的快捷信息服务，我们竭诚为您打造身边的便捷的，精准的生活信息服务平台</span>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer" class="win1000">
+        <p style="font-size: 14px;">
+            今农网 &copy; NChanPin.com
+        </p>
+    </div>
+    <script type="text/javascript" src="@ConfigHelper.GetCdnUrl/jquery/jquery.min.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/bootstrap/js/bootstrap.min.js"></script>
+    <script src="@ConfigHelper.GetCdnUrl/bootstrap/js/bootstrap3-validation.js"></script>
+
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $("#submitForm").validation({ icon: true });
+            $("#btnSubmit").on('click', function (event) {
+                submitLogin();
+            });
+            $("#btnReset").on('click', function (event) {
+                $("input").val("");
+            });
+        });
+
+        // 回车键事件
+        // 绑定键盘按下事件 ，触发提交登录表单事件
+        $(document).keypress(function (e) {
+            // 回车键事件
+            if (e.which == 13) {
+                submitLogin();
+            }
+        });
+        function submitLogin() {
+            $('#btnSubmit').attr('disabled', "true");
+            var tg = $.trim($("#tg").val());
+            var userName = $.trim($("#userName").val());
+            var email = $.trim($("#email").val());
+            var password = $.trim($("#password").val());
+            var cpassword = $.trim($("#cpassword").val());
+            var validateid = $.trim($("#validateid").val());
+            var validatecode = $.trim($("#validatecode").val());
+            if (password != cpassword) {
+                alert("两次输入密码不一致");
+            }
+
+            var flag = $("#submitForm").valid(this, '内容出错');
+            if (flag) {
+                var data = { tg: tg, userName: userName, email: email, password: password, cpassword: cpassword, validateid: validateid, validatecode: validatecode }
+                $.ajax({
+                    type: 'post',
+                    url: '/reg/userreg',
+                    data: data,
+                    datatype: JSON,
+                    success: function (result) {
+                        if (result.Code == 0) {
+                            alert(result.Message);
+                        } else {
+                            alert(result.Message);
+                            window.location.href = result.Url;
+                        }
+                    },
+                    error: function () {
+                        alert("操作异常！");
+                    }
+                });
+            } else {
+                return false;
+            }
+            $('#btnSubmit').removeAttr("disabled");
+        }
+
+        var btnCode = document.getElementById('btnCode');
+        var wait = 60;
+        function time(btn) {
+            if (wait === 0) {
+                btn.removeAttribute("disabled");
+                btn.innerHTML = "获取验证码";
+                wait = 60;
+            } else {
+                btn.setAttribute("disabled", true);
+                btn.innerHTML = wait + "秒后重试";
+                wait--;
+                setTimeout(function () {
+                    time(btn);
+                }, 1000);
+            }
+        }
+        btnCode.onclick = function () {
+            var flag = false;
+            var userName = $.trim($("#userName").val());
+            var email = $.trim($("#email").val());
+            var data = { userName: userName, email: email }
+            $.ajax({
+                type: 'post',
+                url: '/reg/GetValidateCode',
+                data: data,
+                datatype: JSON,
+                success: function (result) {
+                    if (result.Code == 0) {
+                        flag = false;
+                        alert(result.Message);
+                    } else {
+                        time(btnCode);
+                        flag = true;
+                        $("#validateid").val(result.Data);
+                        alert(result.Message);
+                    }
+                },
+                error: function () {
+                    alert("操作异常！");
+                }
+            });
+        };
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,316 @@
+*{
+    font-family: 'Microsoft YaHei',Arail,Simsun;
+    font-size: 12px;
+    color: #1b2020;
+    padding: 0;
+    margin: 0;
+}
+h1,h2,h3,h4,h5,h6,p,ul,li,dl,dd{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+a{
+    text-decoration: none;
+}
+a:hover{
+    color: #f60;
+}
+img{
+    border: 0;
+    vertical-align: middle;
+}
+.lf{
+    float: left;
+}
+.rt{
+    float: right;
+}
+.clear{
+    clear: both;
+}
+/*********header & footer & 热线联系***********/
+/*整体样式*/
+#header,
+.container_box,
+#footer{
+    width: 1200px;
+    margin: 0 auto;
+}
+/*清楚浮动*/
+#header:after,#header>ul:after,
+.contact>.container_box:after,.ewm_box:after,
+form .control-group:after{
+    content: '';
+    display: block;
+    clear: both;
+}
+/*顶部*/
+header{
+    border-bottom: 1px solid #ff6600;
+}
+#header{
+    height: 75px;
+    line-height: 75px;
+}
+#header>.lf{
+    height: 75px;
+}
+#header .logo{
+    display: inline-block;
+    width: 59px;
+    height: 58px;
+}
+#header .logo>img{
+    width: 59px;
+    height: 58px;
+}
+#header .name{
+    font-size: 18px;
+    color: #ff6600;
+    margin-left: 15px;
+}
+#header i{
+    font-size: 13px;
+    color: #262322;
+}
+#header>ul>li{
+    float: left;
+    height: 75px;
+    margin-left: 35px;
+}
+#header>ul>li>a{
+    font-size: 16px;
+    padding: 12px 10px;
+}
+#header>ul>li>a:hover{
+    color: #ff6600;
+}
+#header>ul>li.active>a{
+    color: #ff6600;
+    border-bottom: 2px solid #ff6600;
+}
+/*产品介绍内容*/
+nav{
+    background: #484848;
+    width: 100%;
+    height: 0;
+    opacity: 0;
+}
+nav .container_box{
+    height: 60px;
+}
+.product_list{
+    width: 100%;
+    height: 60px;
+    line-height: 60px;
+    float: left ;
+    position: relative;
+    top: -1px;
+}
+.product_list>li:first-child{
+    margin-left: 310px;
+}
+.product_item{
+    float: left;
+    height: 60px;
+    margin-right: 25px;
+}
+.product_item>a{
+    font-size: 14px;
+    color: #fff;
+}
+.product_item>a:hover{
+    color: #ff6600;
+}
+.product_item.active>a{
+    color: #ff6600;
+}
+.product_item>b{
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    background: #Fff;
+    margin-right: 25px;
+    position: relative;
+    top: -3px;
+}
+/*热线联系*/
+.contact{
+    height: 210px;
+    padding: 50px 0 40px;
+    background: #f5f5f5;
+}
+.hot_phone{
+    float: left;
+    width: 300px;
+    height: 210px;
+}
+.hot>span{
+    font-size: 24px;
+    color: #252723;
+    font-weight: bold;
+    margin-left: 30px;
+    vertical-align: middle;
+}
+.phone{
+    font-size: 35px;
+    color: #252723;
+    margin: 30px 0 50px;
+    font-style: italic;
+}
+.hot_phone p{
+    font-size: 24px;
+    color: #252723;
+    letter-spacing: 2px;
+}
+.ewm_box{
+    float: right;
+}
+.ewm_item{
+    float: left;
+    width: 166px;
+    height: 210px;
+    text-align: center;
+    margin-left: 90px;
+}
+.ewm_item>img{
+    width: 166px;
+    height: 170px;
+}
+.ewm_item>p{
+    font-size: 18px;
+    color: #252723;
+    margin-top: 25px;
+}
+/*底部*/
+footer{
+    height: 65px;
+    line-height: 65px;
+    background: #ececec;
+}
+.cont_copy{
+    text-align: center;
+}
+.copy,.icp{
+    font-size: 20px;
+    color: #252723;
+    font-weight: bold;
+}
+.copy{
+    margin-right: 150px;
+}
+/*注册 & 找回密码 的表单样式*/
+form .control-group{
+    margin-bottom: 35px;
+}
+form .control-label{
+    float: left;
+    width: 430px;
+    height: 35px;
+    font-size: 18px;
+    line-height: 35px;
+    color: #4c4c4c;
+    text-align: right;
+    vertical-align: middle;
+}
+form .controls{
+    float: left;
+    min-width: 470px;
+    min-height: 35px;
+    margin-left: 30px;
+}
+form .controls>select,
+form .controls>input{
+    width: 260px;
+    height: 35px;
+    border: 1px solid #E8E8E8;
+    outline: none;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #a7a7a7;
+    padding: 0 15px 0 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+form .controls>select:focus,
+form .controls>input:focus{
+    border-color: #ff6600;
+}
+form .controls>select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url(../image/register/triangle.png) no-repeat 98% center;
+}
+form .controls>input{
+    /*margin-right: 20px;*/
+}
+form .help-inline{
+    display: inline-block;
+    line-height: 35px;
+    /*font-size: 14px;*/
+    margin-left: 20px;
+}
+form .yzm-btn{
+    display: inline-block;
+    /*width: 140px;*/
+    /*height: 35px;*/
+    /*line-height: 35px;*/
+    padding: 6px 20px;
+    border: 1px solid #f9f9f9;
+    border-radius: 4px;
+    background: #E4E4E4;
+    font-size: 16px;
+    color: #4c4c4c;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 20px;
+}
+form .yzm-btn.active{
+    border-color: #FF6600;
+    background: #FF6600;
+    color: #fff;
+}
+form .reget-yzm{
+    /*display: inline-block;*/
+    /*width: 140px;*/
+    /*height: 35px;*/
+    /*line-height: 35px;*/
+    padding: 6px 20px;
+    border: 1px solid #FF6600;
+    border-radius: 4px;
+    background: #FF6600;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 20px;
+    display: none;
+}
+form .reget-yzm>span{
+    font-size: 16px;
+    color: #fff;
+}
+form .submit-btn{
+    width: 200px;
+    height: 50px;
+    border:1px solid #ff6600;
+    background: #ff6600;
+    font-size: 22px;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    opacity: .8;
+    margin-top: 45px;
+}
+form .submit-btn:hover{
+    opacity: 1;
+}
+
+
+

@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.menuid = 1119;
+    ViewBag.Title = "账户明细";
+}
+@section css{
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionBalance">三级分销</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/JinbiDetail">账户明细</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li><a href="/DistributionBank/DistributionBalance">分销账户</a></li>
+                            <li class="active"><a href="#td_account_detail" data-toggle="tab">账户明细</a></li>
+                            <li><a href="/DistributionBank/DistributionOrder">分销订单</a></li>
+                            <li><a href="/DistributionBank/DistributionContract">签署合同</a></li>
+                            <li><a href="/DistributionBank/DistributionSet">返利设置</a></li>
+                            <li><a href="/DistributionBank/DistributionOpen">分销开启</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--账户明细-->
+                            <div class="active tab-pane" id="td_account_detail">
+                                <table id="datatable" class="table table-hover table-striped table-bordered">
+                                    <thead>
+                                        <tr>
+                                            <th>时间</th>
+                                            <th>金额</th>
+                                            <th>类型</th>
+                                            <th>备注</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section script{
+    <script src="~/Content/JS/MyTable.js"></script>
+    <script>
+        var isPage = true;
+        var dataSource = "/DistributionBank/getJinbiDetail";
+
+        var searchWhereData = function () {
+            return {
+            }
+        }
+
+        var searchData = function (e) {
+            var sd = {
+                start: e.start,
+                length: e.length,
+                draw: e.draw
+            };
+            var object = $.extend(sd, searchWhereData())
+            return object;
+        };
+        var columns = [//绑定数据 
+
+            {
+                data: 'CreateTime'
+            },
+            {
+                data: 'Jinbi'
+            },
+            {
+                data: 'TypeName'
+            },
+
+            { data: 'Remark' },
+        ];
+    </script>
+}

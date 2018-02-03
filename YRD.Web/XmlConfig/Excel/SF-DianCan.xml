@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>LoginName</code>
+    <name>姓名</name>
+  </field>
+  <field>
+    <code>RoleName</code>
+    <name>角色</name>
+  </field>
+  <field>
+    <code>totalmoney</code>
+    <name>销售总额</name>
+  </field>
+  <field>
+    <code>totalcount</code>
+    <name>开台总数</name>
+  </field>
+
+</fields>

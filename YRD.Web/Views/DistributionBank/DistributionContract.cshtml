@@ -1,0 +1,196 @@
+﻿@model YRD.Model.ViewModels.ViewDistributionContract
+@{
+    ViewBag.Title = "签署合同";
+    ViewBag.menuid = 1119;
+}
+@section css    {
+    <!--本页css-->
+    <link rel="stylesheet" href="@ConfigHelper.GetCdnUrl/Content/css/account-manage.css" />
+}
+
+<!--右侧内容-->
+<div class="page-content">
+    <div class="container-fluid">
+        <!--面包屑-->
+        <div class="row-fluid">
+            <div class="span12">
+                <ul class="breadcrumb">
+                    <li>
+                        <b class="iconbg account-manage"></b>
+                        <a href="/AccountInfo/AccountCenter">账户管理</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionBalance">三级分销</a>
+                        <b class="iconbg angle-right-solid"></b>
+                    </li>
+                    <li>
+                        <a href="/DistributionBank/DistributionContract">电子合同</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!--内容区域-->
+        <div class="row-fluid ">
+            <div class="portlet box tabbable">
+                <div class="portlet-body">
+                    <div class="tabbable portlet-tabs">
+                        <ul class="nav nav-tabs">
+                            <li><a href="/DistributionBank/DistributionBalance">分销账户</a></li>
+                            <li><a href="/DistributionBank/JinbiDetail">账户明细</a></li>
+                            <li><a href="/DistributionBank/DistributionOrder">分销订单</a></li>
+                            <li class="active"><a href="#td_sign_contract" data-toggle="tab">签署合同</a></li>
+                            <li><a href="/DistributionBank/DistributionPercentage">返利设置</a></li>
+                            <li><a href="/DistributionBank/DistributionOpen">分销开启</a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!--签署合同-->
+                            <div class="active tab-pane" id="td_sign_contract">
+                                @using (Ajax.BeginForm("SaveDistributionContract", null, new AjaxOptions()
+                                {
+                                    HttpMethod = "Post",
+                                    OnBegin = "SubAjax.Loading",
+                                    OnComplete = "SubAjax.Complate",
+                                    OnFailure = "SubAjax.Failure",
+                                    OnSuccess = "SubAjax.Success"
+                                }, new { @class = "form-horizontal", @role = "form", @id = "commentForm" }))
+                                {
+                                    <div class="row-fluid contractList">
+                                        <div class="span6">
+                                            <div class="stateBox">
+                                                <!--已签署：添加signed类-->
+                                                @if (Model.IsSignAgreement)
+                                                {
+                                                    <span class="f60">合同状态：已签署</span>
+                                                }
+                                                else
+                                                {
+                                                    <span class="">合同状态：未签署</span>
+                                                }
+
+                                            </div>
+                                            <div>
+                                                甲方（服务商）：
+                                                <span>山西友人岛电子商务有限公司</span>
+                                            </div>
+                                            <div>
+                                                乙方（商家）：
+                                                <span>@Model.ShopName</span>
+                                            </div>
+                                        </div>
+                                        @if (Model.IsSignAgreement)
+                                        {
+                                            <div class="span6">
+                                                <div>
+                                                    负责人：
+                                                    <span>@Model.LinkMan</span>
+                                                </div>
+                                                <div class=" agreeLabelBox">
+                                                    电话：
+                                                    <span>@Model.Phone</span>
+                                                    <b class="agreeLabel">同意</b>
+                                                </div>
+                                                <div>
+                                                    签署时间：
+                                                    <span>@Model.SignAgreementTimeFormat</span>
+                                                </div>
+                                            </div>
+                                        }
+                                        else
+                                        {
+
+                                        }
+                                    </div>
+                                    <div class="agree-cont">
+                                        <h1 class="agree-head">美味云三级分销电子合同</h1>
+                                        <div class="agree-body">
+                                            <div class="agree-txt">
+                                                <p>尊敬的客户：</p>
+                                                <p class="wrap2 atFirst">在接受本合同之前，请您仔细阅读本合同的全部内容（特别是以粗体下划线标注的内容）。如果您对本合同的条款有疑问的，请通过美味云客服渠道进行询问，美味云将向您解释条款内容。如果您不同意本合同的任意内容，或者无法准确理解美味云对条款的解释，请不要进行后续操作。</p>
+                                                <div class="atItem">
+                                                    <div class="atiTitle">第一条：立约背景</div>
+                                                    <div class="atiCont">鉴于注册商家（以下可简称为“商家”或“您”）在美味云官网注册成功，您已成为美味云智能餐饮管理系统的使用商家，现友人岛电子商务有限公司（以下可简称为“美味云”）就您开通三级分销功能、向消费者提供返佣事宜，为明确您的权利义务，保障平台各方及消费者的合法权益，特拟定本合同。</div>
+                                                </div>
+                                                <div class="atItem">
+                                                    <div class="atiTitle">第二条：合同生效</div>
+                                                    <div class="atiCont">您通过网络页面点击同意或以其他方式选择接受本合同内容，即表示您与友人岛已达成合同并同意接受本合同的全部约定内容。本合同自您的分销保证金冻结成功之时起生效。</div>
+                                                </div>
+                                                <div class="atItem">
+                                                    <div class="atiTitle">第三条：开通美味云三级分销功能的条件</div>
+                                                    <div class="atiCont">
+                                                        <div>1、您同意将支付于消费者返佣金额委托美味云按比例分配给一定的消费者，返佣详情说明请到商家账户中心查看</div>
+                                                        <div>2、您同意在本合同签署后支付一定数额的分销保证金（以下简称“保证金”）</div>
+                                                        <div>3、您同意美味云点用户使用账户余额支付部分或全部消费金额，用户使用的账户金额及时由美味云打到商家的账户中心</div>
+                                                    </div>
+                                                </div>
+                                                <div class="atItem">
+                                                    <div class="atiTitle">第四条：三级分销保证金</div>
+                                                    <div class="atiCont">
+                                                        <div>1）保证金的预存与冻结</div>
+                                                        <div class="wrap2">您同意美味云冻结相应数额的保证金。美味云有权根据您的业务变化及实际赔付情况以书面方式（包括但不限于电子邮件、传真等）通知您调整保证金金额，如您未能在收到通知后的一周内向您分销账户补足保证金的，则美味云有权立即中止或终止本合同。</div>
+                                                        <div>2）保证金的管理和使用</div>
+                                                        <div class="wrap2">如您违反法律法规、本合同或美味云任何规则、和/或违反对消费者的承诺致消费者利益受损时，您同意美味云有完全的权力根据自身的判断，直接使用保证金对消费者进行返佣。</div>
+                                                        <div class="wrap2">您应使保证金总额始终保持不低于美味云规定的金额，如发生返佣后，因分销金额不足导致使用了保证金，则美味云将自动停止一切返佣操作；您应自行转入一定金额到分销账户，如因故导致美味云向消费者支付了超出保证金数额的款项，则美味云有权要求您偿付美味云的损失，且在指定时间内补足分销金额（含保证金），美味云会在您交足分销金额后继续返佣给消费者，如在规定时间内未补足分销金额，美味云有权暂停向您提供一切服务（包括但不限于商家后台使用，收银端使用，其他app使用等）。</div>
+                                                        <div>3）保证金的解冻</div>
+                                                        <div class="wrap2">如合同签署后您未有违反法律法规、本合同或美味云任何规则的行为，且至您停止返佣，您未受到任何第三方投诉或发生交易纠纷，则美味云将在三个工作日内解除对保证金的冻结，同时商家账户的资金也可以申请提现提取，本合同另有规定的除外。</div>
+                                                        <div>4）如您违反本合同或美味云任何规则，给美味云造成任何损失（包括但不限于诉讼赔偿、诉讼费用、律师费用等），或根据美味云的相关规则规定，应向美味云支付违约金，美味云有权直接从保证金中扣除相当于美味云损失的金额或违约金，保证金不足以支付的，美味云可继续向您追偿。</div>
+                                                        <div>5）如美味云的损失通过上述方式仍无法弥补，则美味云有权单方面终止合同。同时美味云保留通过法律途径向您追偿的权利。</div>
+                                                        <div>6）您对消费者、任何第三方以及美味云的赔付责任不以保证金的数额为限；除对您保证金的处置外，美味云不对消费者或者其他第三方承担任何赔付义务。</div>
+                                                    </div>
+                                                </div>
+                                                <div class="atItem">
+                                                    <div class="atiTitle">第五条：免责及有限责任</div>
+                                                    <div class="atiCont">
+                                                        <div>1）责任免除</div>
+                                                        <div class="wrap2">因商家责任造成页面文字图片制作流程中断或延误。因战争、自然灾害、政府行为、互联网灾难、互联网通讯提供商等导致美味云服务器不能正常运行。因操作平台及应用软件原因或遭遇不法攻击导致美味云服务器临时性不能正常运行。</div>
+                                                        <div>2）有限责任</div>
+                                                        <div class="wrap2">本合同的签署、您的三级分销开通并不意味着美味云对您的入驻身份、资质、履约能力等行为或您自行上传、发布的信息的真实性、准确性、合法性、有效性承担任何明示或暗示的保证或担保等责任。</div>
+                                                    </div>
+                                                </div>
+                                                <div class="atOther">合同附件：</div>
+                                                <div class="atItem atOtherItem">
+                                                    <div class="atiTitle">委托协议书</div>
+                                                    <div class="atiCont">
+                                                        <div>致：山西友人岛电子商务有限公司</div>
+                                                        <div class="wrap2">本商家特以此函通知贵公司，在合同签署后保证金解冻前，本商家授权贵公司按美味云规则直接对本商家在贵公司处的账户中的余额进行返佣和保证金的冻结等操作。本商家同意贵公司依照本商家的授权进行操作的一切风险由本商家承担。</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @if (Model.IsSignAgreement)
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            <div class="agree-footer">
+                                                <div class="agree-agree">
+                                                    <span class="cb">
+                                                        <input id="agreeBtn" type="checkbox" class="cbrd" value="True" name="IsSignAgreement" />
+                                                    </span>
+                                                    <span class="agree-txt">我已阅读以上合同并同意美味云分销规则</span>
+                                                </div>
+                                                <div class="agree-btns">
+                                                    <button type="submit" class="btn grey medium" disabled>同意该合同</button>
+                                                    <button type="submit" class="btn blue medium hide">同意该合同</button>
+                                                </div>
+                                            </div>
+                                        }
+                                    </div>
+                                }
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section script{
+
+    <!--本页js-->
+    <script src="@ConfigHelper.GetCdnUrl/Content/js/account-manage.js"></script>
+    <script src="~/Content/JS/MyForm.js"></script>
+}

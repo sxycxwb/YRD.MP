@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>ID</code>
+    <name>出库单号</name>
+  </field>
+  <field>
+    <code>CreateTime</code>
+    <name>出库时间</name>
+  </field>
+  <field>
+    <code>PriceOrder</code>
+    <name>菜品销售</name>
+  </field>
+  <field>
+    <code>PayFinishTime</code>
+    <name>结账时间</name>
+  </field>
+  <field>
+    <code>PriceBudget</code>
+    <name>原料出库</name>
+  </field>
+  <field>
+    <code>Profit</code>
+    <name>销售利润</name>
+  </field>
+</fields>

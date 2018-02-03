@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>Title</code>
+    <name>名称</name>
+  </field>
+  <field>
+    <code>SupplierTypeName</code>
+    <name>类别</name>
+  </field>
+  <field>
+    <code>LinkMan</code>
+    <name>联系人</name>
+  </field>
+  <field>
+    <code>LinkPhone</code>
+    <name>手机号</name>
+  </field>
+  <field>
+    <code>Money</code>
+    <name>累计欠款</name>
+  </field>
+</fields>

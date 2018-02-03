@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<fields>
+  <field>
+    <code>MaterialName</code>
+    <name>材料名称</name>
+  </field>
+  <field>
+    <code>MaterialTypeMainName</code>
+    <name>材料主类型名称</name>
+  </field>
+  <field>
+    <code>MaterialTypeChildName</code>
+    <name>材料子类型名称</name>
+  </field>
+  <field>
+    <code>MaterialSpecName</code>
+    <name>材料规格名称</name>
+  </field>
+  <field>
+    <code>MaterialUnitName</code>
+    <name>材料单位名称</name>
+  </field>
+  <field>
+    <code>RemainCount</code>
+    <name>库存数量</name>
+  </field>
+  <field>
+    <code>CountReal</code>
+    <name>盘点数量</name>
+  </field>
+  <field>
+    <code>AveragePrice</code>
+    <name>平均价格</name>
+  </field>
+</fields>
