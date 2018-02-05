@@ -48,15 +48,15 @@ namespace YRD.Dao
         /// <summary>
         /// 销售额
         /// </summary>
-        public decimal FoodTypeMouthAmount { get; set; }
+        public decimal FoodTypeSalesAmount { get; set; }
         /// <summary>
         /// 销售额占比
         /// </summary>
-        public decimal FoodTypeFoodSalesMountRatio { get; set; }
+        public decimal FoodTypeSalesRatio { get; set; }
         /// <summary>
         /// 销售数量
         /// </summary>
-        public int FoodTypeSalesaNumber { get; set; }
+        public int FoodTypeSalesNumber { get; set; }
         /// <summary>
         /// 销售量占比
         /// </summary>

@@ -42,6 +42,10 @@ namespace YRD.Dao
         /// </summary>
         public string FoodSpecificationsName { get; set; }
         /// <summary>
+        /// 菜品类型名称
+        /// </summary>
+        public string FoodTypeName { get; set; }
+        /// <summary>
         /// 年份
         /// </summary>
         public int Year { get; set; }
@@ -64,7 +68,7 @@ namespace YRD.Dao
         /// <summary>
         /// 销售数量
         /// </summary>
-        public int SalesaNumber { get; set; }
+        public int SalesNumber { get; set; }
         /// <summary>
         /// 销售量占比
         /// </summary>

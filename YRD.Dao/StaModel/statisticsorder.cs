@@ -13,9 +13,9 @@ namespace YRD.Dao
     using System.Collections.Generic;
 
     /// <summary>
-    /// 餐桌日统计表
+    /// 订单日统计表
     /// </summary>
-    public partial class statisticstable
+    public partial class statisticsorder
     {
         /// <summary>
         /// 主键ID
@@ -38,61 +38,21 @@ namespace YRD.Dao
         /// </summary>
         public int Day { get; set; }
         /// <summary>
-        /// 总开台数
+        /// 订单总数
         /// </summary>
-        public int TotalOpenTableNumber { get; set; }
+        public int OrderNumber { get; set; }   
         /// <summary>
-        /// 总人数
-        /// </summary>
-        public int TotalPeopleNumber { get; set; }
-        /// <summary>
-        /// 总计销售金额
+        /// 订单总计销售金额
         /// </summary>
         public decimal TotalSalesAmount { get; set; }
         /// <summary>
-        /// 餐桌均价
+        /// 订单均价
         /// </summary>
-        public decimal TableAveragePrice { get; set; }
+        public decimal AverageAmount { get; set; }
         /// <summary>
-        /// 午餐均价
+        /// 订单来源
         /// </summary>
-        public decimal LunchAveragePrice { get; set; }
-        /// <summary>
-        /// 晚餐均价
-        /// </summary>
-        public decimal DinnerAveragePrice { get; set; }
-        /// <summary>
-        /// 餐桌预定数
-        /// </summary>
-        public int TotalReserveNumber { get; set; }
-        /// <summary>
-        /// 预定成功数
-        /// </summary>
-        public int ReserSuccessNumber { get; set; }
-        /// <summary>
-        /// 上座率
-        /// </summary>
-        public decimal Upperlimb { get; set; }
-        /// <summary>
-        /// 开台率
-        /// </summary>
-        public decimal OpenTableRate { get; set; }
-        /// <summary>
-        /// 翻台数
-        /// </summary>
-        public int TurnoverNum { get; set; }
-        /// <summary>
-        /// 翻台率
-        /// </summary>
-        public decimal TurnoverRate { get; set; }
-        /// <summary>
-        /// 预订率
-        /// </summary>
-        public decimal ReservationRate { get; set; }
-        /// <summary>
-        /// 预订成功率
-        /// </summary>
-        public decimal ReservationSuccessRate { get; set; }
+        public int OrderSource { get; set; }
         /// <summary>
         /// 时间标识
         /// </summary>

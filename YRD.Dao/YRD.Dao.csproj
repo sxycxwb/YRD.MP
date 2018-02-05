@@ -190,6 +190,7 @@
     <Compile Include="StaModel\statisticspeople.cs" />
     <Compile Include="StaModel\statisticsfoodtype.cs" />
     <Compile Include="StaModel\statisticsfood.cs" />
+    <Compile Include="StaModel\statisticsorder.cs" />
     <Compile Include="StaModel\statisticstable.cs" />
     <Compile Include="SwhModel\swhmaterialmainunit.cs" />
     <Compile Include="SwhModel\swhfood_material.cs" />
